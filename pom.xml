@@ -7,7 +7,29 @@
     <groupId>swt</groupId>
     <artifactId>sweet1</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
 
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.18.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>7.18.0</version>
+        <scope>test</scope>
+
+    </dependency>
+
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-picocontainer</artifactId>
+        <version>7.18.0</version>
+    </dependency>
+
+</dependencies>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
