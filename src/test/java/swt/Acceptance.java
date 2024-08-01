@@ -12,6 +12,7 @@ features = "usercases",
     plugin = {"summary","html:target/cucumber/report.html"},
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE ,
+
         glue = "swt")
 public class Acceptance {
 }

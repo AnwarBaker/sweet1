@@ -11,3 +11,4 @@ Feature: General Login
     When the user enters invalid credentials
     And the user clicks the login button
     Then an error message should be displayed
+
