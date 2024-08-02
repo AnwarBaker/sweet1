@@ -12,23 +12,18 @@ public class LoginTest {
 
 
      SweetProject s;
-    String username;
-    String pass;
-   /* public LoginTest(SweetProject s) {
-        this.s = s;
-    }*/
+
+
     public LoginTest() {
         s = new SweetProject();
     }
+
 @Test
     @Given("the user is on the login page")
     public void theUserIsOnTheLoginPage() {
 assertFalse(s.is_login);
 
     }
-
-
-
 
     @Test
     @When("the user enters valid credentials")

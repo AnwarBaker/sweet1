@@ -9,6 +9,7 @@ public class User {
         this.username=username;
         this.pass=pass;
     }
+
     public User(String username,String pass, int userlevel){
         this.username=username;
         this.pass=pass;

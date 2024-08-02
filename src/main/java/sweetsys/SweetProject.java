@@ -1,6 +1,6 @@
 package sweetsys;
 
-import swt.LoginClass;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -50,26 +50,7 @@ User u=new User();
     public static void main(String[] args) {
 
 
-        users.add(new User("anwar","123",1));
-        users.add(new User("ahmad","1234",2));
-        users.add(new User("yasmine","12345",1));
-        users.add(new User("tarneem","123456",3));
-        Scanner cin=new Scanner(System.in);
 
-       /*System.out.println("\nEnter Your Name Pls");
-        String namee=cin.nextLine();
-
-        User u=new User();
-
-        u.setUsername(namee);
-
-        System.out.println("\nEnter Your Password Pls");
-
-        String passw=cin.nextLine();
-
-        u.setPass(passw);
-        SweetProject t=new SweetProject();
-        t.isValidUser(users,u.getUsername(),u.getPass());*/
         SweetProject t=new SweetProject();
 
         t.setUsers(users);
@@ -80,5 +61,6 @@ User u=new User();
 
 
     }
+
 
 }
