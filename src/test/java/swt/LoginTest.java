@@ -54,7 +54,7 @@ assertFalse(s.is_login);
     @Test
     @When("the user enters invalid credentials")
     public void theUserEntersInvalidCredentials() {
-        User u = new User("fadi", "123");
+        User u = new User("fadi", "12345678",2);
         s.login(u);
         s.users.add(new User("anwar", "123", 1));
         s.users.add(new User("ahmad", "1234", 2));
@@ -69,7 +69,7 @@ assertFalse(s.is_login);
             System.out.println(" wrong username or password try again" );
         }
 
-        assertFalse("wrong username or password try again ", isValid);
+        assertFalse(isValid);
     }
 
 
@@ -94,7 +94,7 @@ assertTrue(Sys.b);
     @Test
     @Then("an error message should be displayed")
     public void anErrorMessageShouldBeDisplayed() {
-        User u = new User("fadi", "123");
+        User u = new User("fadi", "123548");
         s.login(u);
         s.users.add(new User("anwar", "123", 1));
         s.users.add(new User("ahmad", "1234", 2));
@@ -109,7 +109,7 @@ assertTrue(Sys.b);
           System.out.println("Invalid email or password");
       }
 
-        assertFalse(isValid);
+        assertFalse("Invalid email or password",isValid);
     }
 
 

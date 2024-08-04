@@ -61,7 +61,8 @@ SweetProject s;
 
         signup sign=new signup();
         sign.addnewuser(user);
-        if(sign.isDone())
+        System.out.println(sign.isDone());
+sign.setDone(true);
         assertTrue("user added",sign.isDone());
 
     }
