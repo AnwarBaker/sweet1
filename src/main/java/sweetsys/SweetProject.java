@@ -18,6 +18,36 @@ public class SweetProject {
     public boolean founddd;
     public boolean deleted;
 
+    static public ArrayList<ProductManegmwntSystem> products =new ArrayList<ProductManegmwntSystem>();
+    static public ArrayList<ProductManegmwntSystem> bestselling =new ArrayList<ProductManegmwntSystem>();
+
+
+
+    public static ArrayList<ProductManegmwntSystem> getBestselling() {
+        return bestselling;
+    }
+
+    public static void setBestselling(ArrayList<ProductManegmwntSystem> bestselling) {
+        SweetProject.bestselling = bestselling;
+    }
+
+    public boolean exist;
+
+    public boolean isExist() {
+        return exist;
+    }
+
+    public void setExist(boolean exist) {
+        this.exist = exist;
+    }
+
+    public static ArrayList<ProductManegmwntSystem> getProducts() {
+        return products;
+    }
+
+    public static void setProducts(ArrayList<ProductManegmwntSystem> products) {
+        SweetProject.products = products;
+    }
 
     User u=new User();
     public static boolean print;
@@ -27,6 +57,9 @@ public class SweetProject {
 
     }
 
+    public void productlogin(ProductManegmwntSystem prod) {
+
+    }
     public static ArrayList<User> getUsers() {
         return users;
     }
@@ -223,36 +256,145 @@ User user;
         }
     }
 
+
+
+
+
+
+
+    public void ProductUpdate(){
+        SweetProject s=new SweetProject();
+
+        ProductManegmwntSystem prod;
+
+        Scanner cin =new Scanner(System.in);
+        for(ProductManegmwntSystem products:s.getProducts()){
+            System.out.println(products);
+        }
+
+
+        System.out.println("enter UniqNumber of Product you want to update pls :\n");
+        int uniqnum=cin.nextInt();
+        prod=new ProductManegmwntSystem(uniqnum);
+        s.productlogin(prod);
+
+
+
+        for(ProductManegmwntSystem products :s.getProducts()){
+            if(products.getUniq()==prod.getUniq()){
+                found = true;
+            }
+        }
+
+        if(!found){
+            System.out.println("you entered wrong UniqNumber try again");
+            exit(0);
+        }
+        Scanner c =new Scanner(System.in);
+
+        System.out.println("\n \nenter the new Name of product you want to update pls :\n");
+        String newname=c.nextLine();
+        System.out.println("enter the new descripton of product you want to update pls :\n");
+        String newDiscription=c.nextLine();
+        System.out.println("enter the new price of product you want to update pls :a\n");
+        int newPrice=cin.nextInt();
+        System.out.println("enter the new earning num of product you want to update pls :a\n");
+        int newearning =cin.nextInt();
+        System.out.println("enter the new Num_of_Sales of product you want to update pls :a\n");
+        int newNumOfSales=cin.nextInt();
+        System.out.println("enter the new Condition num of product you want to update pls :a\n");
+        String newCondition =c.nextLine();
+
+        for(ProductManegmwntSystem products:s.getProducts()){
+            if(products.getUniq()==prod.getUniq()){
+
+                products.setProductName(newname);
+                products.setProductDescription(newDiscription);
+                products.setPrice(newPrice);
+                products.setEarning(newearning);
+                products.setNum_Of_Sales(newNumOfSales);
+                products.setCondition(newCondition);
+            }
+
+        }
+        System.out.println("Updated Data\n");
+        for(ProductManegmwntSystem products:s.getProducts()){
+            System.out.println(products);
+        }
+    }
+
+
+
+
+    public void addnewProduct(ProductManegmwntSystem prod){
+        SweetProject s=new SweetProject();
+        for(ProductManegmwntSystem products :s.getProducts()){
+          if(products.getUniq()==prod.getUniq()) {
+              System.out.println("this product already exists");
+              s.setExist(true);
+          }
+          else if(products.getUniq()!=prod.getUniq()){
+              s.setExist(false);
+          }
+
+        }
+        if(!s.isExist()){
+         s.products.add(prod);
+        }
+
+
+    }
+
+
+
+
+
+    public void DeleteProduct(){
+        SweetProject s=new SweetProject();
+
+        ProductManegmwntSystem prod;
+        for(ProductManegmwntSystem products:s.getProducts()){
+            System.out.println(products);
+        }
+
+        Scanner cin=new Scanner(System.in);
+        System.out.println("enter UniqNum of Product you want to Delete pls :\n");
+        int uniq=cin.nextInt();
+        prod=new ProductManegmwntSystem(uniq);
+        s.productlogin(prod);
+        found=false;
+        Iterator<ProductManegmwntSystem> iterator = s.getProducts().iterator();
+        while (iterator.hasNext()) {
+            ProductManegmwntSystem product = iterator.next();
+            if(product.getUniq()==prod.getUniq()){
+
+                iterator.remove();
+                found = true;
+                s.setProducts(s.products);
+                break;
+
+            }
+        }
+        if(!found){
+            System.out.println("you entered wrong details try again");
+            exit(0);
+        }
+
+        for(ProductManegmwntSystem product : s.getProducts()){
+            System.out.println(product);
+        }
+    }
+
+
+
     public static void main(String[] args) {
 
 
 
-        /*SweetProject t=new SweetProject();
 
-
-
-        t.users.add(new User("anwar", "123", 1));
-        t.users.add(new User("ahmad", "1234", 2));
-        t.users.add(new User("yasmine", "12345", 1));
-        t.users.add(new User("tarneem", "123456", 3));
-        t.setUsers(t.users);
-        t.setUsers(SweetProject.users);
-        t.ShowEachTypeOfUsers(SweetProject.users);*/
 
         SweetProject t=new SweetProject();
 
-
-
-        t.users.add(new User("anwar", "123", 1));
-        t.users.add(new User("ahmad", "1234", 2));
-        t.users.add(new User("yasmine", "12345", 1));
-        t.users.add(new User("tarneem", "123456", 3));
-        t.setUsers(t.users);
-
-        t.setUsers(SweetProject.users);
-boolean s;
-        s=t.isValidUser(t.users,"fadi","1234");
-        System.out.println(s);
 
 
     }
