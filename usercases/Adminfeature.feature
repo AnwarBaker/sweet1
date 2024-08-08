@@ -1,6 +1,6 @@
 Feature:Admin User Management
 
-@tag12
+
   Scenario: Manage user accounts
   Given Admin log in to the system
   When Admin navigate to the User Management section
