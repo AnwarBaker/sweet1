@@ -32,10 +32,10 @@ assertFalse(s.is_login);
 
         User u = new User("yasmine", "12345");
         s.login(u);
-        s.users.add(new User("anwar", "123", 1));
-        s.users.add(new User("ahmad", "1234", 2));
-        s.users.add(new User("yasmine", "12345", 1));
-        s.users.add(new User("tarneem", "123456", 3));
+        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
+        s.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
+        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com"));
+        s.users.add(new User("tarneem", "123456", 3,"tarneem1234@gmail.com"));
         s.setUsers(s.users);
 
 
