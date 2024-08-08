@@ -35,7 +35,10 @@ User user;
 if(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3){
        exist= s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
        if(!exist){
+           String email=user.getUsername()+user.getPass()+"@gmail.com";
+           user=new User(user.getUsername(),user.getPass(),user.getUserlevel(),email);
            s.users.add(user);
+
            s.setUsers(s.users);
            setDone(true);
            System.out.println("user added successfully");
@@ -52,10 +55,10 @@ if(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3){
    }
     public static void main(String[] args) {
         SweetProject s=new SweetProject();
-        s.users.add(new User("anwar", "123", 1));
-        s.users.add(new User("ahmad", "1234", 2));
-        s.users.add(new User("yasmine", "12345", 1));
-        s.users.add(new User("tarneem", "123456", 3));
+        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
+        s.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
+        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com"));
+        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com"));
         s.setUsers(s.users);
 
         signup sign=new signup();

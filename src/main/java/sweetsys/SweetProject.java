@@ -82,7 +82,7 @@ public class SweetProject {
 
     public String getErrorMessage() {
         if (!a) {
-            return "Invalid email or password";
+            return "Invalid Email or password";
         }
         return "";
     }

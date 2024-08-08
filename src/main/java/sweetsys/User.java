@@ -4,6 +4,7 @@ public class User {
     String username;
     String pass;
     int userlevel;
+    String Email;
 
     public User(String username,String pass){
         this.username=username;
@@ -14,16 +15,37 @@ public class User {
         this.username=username;
         this.pass=pass;
         this.userlevel=userlevel;
+
+    }
+
+    public User(String username,String pass, int userlevel,String Email){
+        this.username=username;
+        this.pass=pass;
+        this.userlevel=userlevel;
+        this.Email=Email;
     }
 
 
     @Override
     public String toString() {
-        return "Name='" + username+ "', Pass='" + pass+"' ,UserLevel='"+userlevel+"'"  ;
+        return "{" +
+                "username='" + username + '\'' +
+                ", pass='" + pass + '\'' +
+                ", userlevel=" + userlevel +
+                ", Email='" + Email + '\'' +
+                '}';
     }
 
     public User() {
 
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public int getUserlevel() {

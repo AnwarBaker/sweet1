@@ -32,10 +32,10 @@ SweetProject s;
        int UserLevel=3;
       User user=new User(name,pass,UserLevel);
       s.login(user);
-      s.users.add(new User("anwar", "123", 1));
-      s.users.add(new User("ahmad", "1234", 2));
-      s.users.add(new User("yasmine", "12345", 1));
-      s.users.add(new User("tarneem", "123456", 3));
+      s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
+      s.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
+      s.users.add(new User("yasmine", "12345", 1,"uasmine12345@gmail.com"));
+      s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com"));
       s.setUsers(s.users);
       boolean test=s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
       if(!test){
