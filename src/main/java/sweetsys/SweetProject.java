@@ -302,7 +302,7 @@ User user;
         int newearning =cin.nextInt();
         System.out.println("enter the new Num_of_Sales of product you want to update pls :a\n");
         int newNumOfSales=cin.nextInt();
-        System.out.println("enter the new Condition num of product you want to update pls :a\n");
+        System.out.println("enter the new Status num of product you want to update pls :a\n");
         String newCondition =c.nextLine();
 
         for(ProductManegmwntSystem products:s.getProducts()){
