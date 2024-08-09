@@ -45,6 +45,9 @@ static public ArrayList<UserShareProducts> userproducts=new ArrayList<UserShareP
 
     public UserShareProducts(){}
 
+    public UserShareProducts(String productName) {
+        this.productName = productName;
+    }
 
     public UserShareProducts(String productName, String productDescription, double expectedprice) {
         this.productName = productName;

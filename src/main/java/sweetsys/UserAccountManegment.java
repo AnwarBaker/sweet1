@@ -47,7 +47,7 @@ UserAccountManegment users =new UserAccountManegment();
             }
         }
         if(!isexist){
-            System.out.println("there is no Store Owner in the System");
+            System.out.println("there is no User in the System");
         }
 
     }
