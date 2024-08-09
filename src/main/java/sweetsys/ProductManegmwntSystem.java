@@ -95,7 +95,13 @@ public class ProductManegmwntSystem {
         this.earning = earning;
     }
 
-public ProductManegmwntSystem(String productName,String productDescription,Double price ,Double earning,int Num_Of_Sales,String condition,int uniq){
+    public ProductManegmwntSystem(String productName, String productDescription, double price) {
+        this.productName = productName;
+        this.productDescription = productDescription;
+        this.price = price;
+    }
+
+    public ProductManegmwntSystem(String productName, String productDescription, Double price , Double earning, int Num_Of_Sales, String condition, int uniq){
         this.productName=productName;
         this.productDescription=productDescription;
         this.price=price;

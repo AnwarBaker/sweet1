@@ -27,6 +27,7 @@ User user;
         this.done = done;
     }
 
+
     public void addnewuser(User user){
        SweetProject s=new SweetProject();
        boolean exist;
@@ -53,6 +54,8 @@ if(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3){
 }
 
    }
+
+
     public static void main(String[] args) {
         SweetProject s=new SweetProject();
         s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));

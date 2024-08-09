@@ -349,6 +349,8 @@ User user;
 
 
 
+
+
     public void DeleteProduct(){
         SweetProject s=new SweetProject();
 
@@ -393,11 +395,9 @@ User user;
 
 
 
-        SweetProject t=new SweetProject();
+        SweetProject s=new SweetProject();
 
 
 
-    }
 
-
-}
+    }}
