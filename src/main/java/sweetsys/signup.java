@@ -37,7 +37,7 @@ if(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3){
        exist= s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
        if(!exist){
            String email=user.getUsername()+user.getPass()+"@gmail.com";
-           user=new User(user.getUsername(),user.getPass(),user.getUserlevel(),email);
+           user=new User(user.getUsername(),user.getPass(),user.getUserlevel(),email,user.getCity());
            s.users.add(user);
 
            s.setUsers(s.users);
@@ -58,12 +58,11 @@ if(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3){
 
     public static void main(String[] args) {
         SweetProject s=new SweetProject();
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
-        s.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com"));
+        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
         s.setUsers(s.users);
-
         signup sign=new signup();
 
         Scanner cin=new Scanner(System.in);
@@ -75,7 +74,13 @@ if(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3){
         String pass=cin.nextLine();
         System.out.println("enter UserLevel of new employee pls :\n for Admin enter '1'\n for store owner enter '2'\n for user enter '3'\n ");
         int userlevel=cin.nextInt();
-        User new_user=new User(name,pass,userlevel);
+        Scanner i=new Scanner(System.in);
+
+            System.out.println("enter City of new User pls: ");
+           String city=i.nextLine();
+String email="";
+       User new_user=new User(name,pass,userlevel,email,city);
+
 
         sign.addnewuser(new_user);
 

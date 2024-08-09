@@ -5,6 +5,7 @@ public class User {
     String pass;
     int userlevel;
     String Email;
+    String city;
 
     public User(String username,String pass){
         this.username=username;
@@ -25,6 +26,17 @@ public class User {
         this.Email=Email;
     }
 
+    public User(String username, String pass, int userlevel, String email, String city) {
+        this.username = username;
+        this.pass = pass;
+        this.userlevel = userlevel;
+        Email = email;
+        this.city = city;
+    }
+
+    public User(String city) {
+        this.city = city;
+    }
 
     @Override
     public String toString() {
@@ -33,8 +45,11 @@ public class User {
                 ", pass='" + pass + '\'' +
                 ", userlevel=" + userlevel +
                 ", Email='" + Email + '\'' +
+                ", city='" + city + '\'' +
                 '}';
     }
+
+
 
     public User() {
 
@@ -46,6 +61,14 @@ public class User {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public int getUserlevel() {

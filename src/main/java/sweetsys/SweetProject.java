@@ -15,13 +15,69 @@ public class SweetProject {
     public boolean a;
 
     static public ArrayList<User> users =new ArrayList<User>();
+    static public ArrayList<User> Nablususers =new ArrayList<User>();
+    static public ArrayList<User> JeninUsers =new ArrayList<User>();
+
+
     public boolean founddd;
     public boolean deleted;
 
     static public ArrayList<ProductManegmwntSystem> products =new ArrayList<ProductManegmwntSystem>();
     static public ArrayList<ProductManegmwntSystem> bestselling =new ArrayList<ProductManegmwntSystem>();
 
+    static public ArrayList<ProductManegmwntSystem> Nablusprodcuts =new ArrayList<ProductManegmwntSystem>();
+    static public ArrayList<ProductManegmwntSystem> Jeninprodcuts =new ArrayList<ProductManegmwntSystem>();
+    static public ArrayList<ProductManegmwntSystem> Jeninbestselling =new ArrayList<ProductManegmwntSystem>();
+    static public ArrayList<ProductManegmwntSystem> Nablusbestselling =new ArrayList<ProductManegmwntSystem>();
 
+
+    public static ArrayList<ProductManegmwntSystem> getNablusprodcuts() {
+        return Nablusprodcuts;
+    }
+
+    public static void setNablusprodcuts(ArrayList<ProductManegmwntSystem> nablusprodcuts) {
+        Nablusprodcuts = nablusprodcuts;
+    }
+
+    public static ArrayList<ProductManegmwntSystem> getJeninprodcuts() {
+        return Jeninprodcuts;
+    }
+
+    public static void setJeninprodcuts(ArrayList<ProductManegmwntSystem> jeninsprodcuts) {
+        Jeninprodcuts = jeninsprodcuts;
+    }
+
+    public static ArrayList<ProductManegmwntSystem> getJeninbestselling() {
+        return Jeninbestselling;
+    }
+
+    public static void setJeninbestselling(ArrayList<ProductManegmwntSystem> jeninbestselling) {
+        Jeninbestselling = jeninbestselling;
+    }
+
+    public static ArrayList<ProductManegmwntSystem> getNablusbestselling() {
+        return Nablusbestselling;
+    }
+
+    public static void setNablusbestselling(ArrayList<ProductManegmwntSystem> nablusbestselling) {
+        Nablusbestselling = nablusbestselling;
+    }
+
+    public static ArrayList<User> getNablususers() {
+        return Nablususers;
+    }
+
+    public static void setNablususers(ArrayList<User> nablususers) {
+        Nablususers = nablususers;
+    }
+
+    public static ArrayList<User> getJeninUsers() {
+        return JeninUsers;
+    }
+
+    public static void setJeninUsers(ArrayList<User> jeninUsers) {
+        JeninUsers = jeninUsers;
+    }
 
     public static ArrayList<ProductManegmwntSystem> getBestselling() {
         return bestselling;

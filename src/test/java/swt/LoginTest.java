@@ -32,10 +32,10 @@ assertFalse(s.is_login);
 
         User u = new User("yasmine", "12345");
         s.login(u);
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
-        s.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem1234@gmail.com"));
+        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
         s.setUsers(s.users);
 
 
@@ -56,10 +56,10 @@ assertFalse(s.is_login);
     public void theUserEntersInvalidCredentials() {
         User u = new User("fadi", "12345678",2);
         s.login(u);
-        s.users.add(new User("anwar", "123", 1));
-        s.users.add(new User("ahmad", "1234", 2));
-        s.users.add(new User("yasmine", "12345", 1));
-        s.users.add(new User("tarneem", "123456", 3));
+        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
         s.setUsers(s.users);
 
 
@@ -96,10 +96,10 @@ assertTrue(Sys.b);
     public void anErrorMessageShouldBeDisplayed() {
         User u = new User("fadi", "123548");
         s.login(u);
-        s.users.add(new User("anwar", "123", 1));
-        s.users.add(new User("ahmad", "1234", 2));
-        s.users.add(new User("yasmine", "12345", 1));
-        s.users.add(new User("tarneem", "123456", 3));
+        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
         s.setUsers(s.users);
 
 

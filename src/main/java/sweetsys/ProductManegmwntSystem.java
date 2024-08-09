@@ -4,6 +4,7 @@ public class ProductManegmwntSystem {
     public boolean inside;
     public int uniq;
     public String productName;
+    public String city;
     public String productDescription;
     public double price;
     public double earning;
@@ -12,6 +13,15 @@ public class ProductManegmwntSystem {
     public double discount;
     public boolean added;
     public boolean updated;
+
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public double getDiscount() {
         return discount;
@@ -101,6 +111,18 @@ public class ProductManegmwntSystem {
         this.price = price;
     }
 
+    public ProductManegmwntSystem(int uniq, String productName, String city, String productDescription, double price, String condition, double earning, int num_Of_Sales, double discount) {
+        this.uniq = uniq;
+        this.productName = productName;
+        this.city = city;
+        this.productDescription = productDescription;
+        this.price = price;
+        this.condition = condition;
+        this.earning = earning;
+        Num_Of_Sales = num_Of_Sales;
+        this.discount = discount;
+    }
+
     public ProductManegmwntSystem(String productName, String productDescription, Double price , Double earning, int Num_Of_Sales, String condition, int uniq){
         this.productName=productName;
         this.productDescription=productDescription;
@@ -121,7 +143,18 @@ public class ProductManegmwntSystem {
         this.discount=discount;
     }
 
-    public ProductManegmwntSystem(String productName,String productDescription,Double price,int Num_Of_Sales,String condition,int uniq){
+    public ProductManegmwntSystem(int uniq, String productName, String city, String productDescription, double earning, double price, String condition, int num_Of_Sales) {
+        this.uniq = uniq;
+        this.productName = productName;
+        this.city = city;
+        this.productDescription = productDescription;
+        this.earning = earning;
+        this.price = price;
+        this.condition = condition;
+        Num_Of_Sales = num_Of_Sales;
+    }
+
+    public ProductManegmwntSystem(String productName, String productDescription, Double price, int Num_Of_Sales, String condition, int uniq){
         this.productName=productName;
         this.productDescription=productDescription;
         this.price=price;
@@ -148,14 +181,19 @@ public class ProductManegmwntSystem {
     @Override
     public String toString() {
         return "{" +
-                "uniq=" + uniq +
+                "uniqnum=" + uniq +
                 ", productName='" + productName + '\'' +
-                ", productDescription='" + productDescription + '\'' +
+                ", city='" + city + '\'' +
                 ", price=" + price +
+                ", productDescription='" + productDescription + '\'' +
                 ", earning=" + earning +
                 ", condition='" + condition + '\'' +
                 ", Num_Of_Sales=" + Num_Of_Sales +
                 ", discount=" + discount +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        ProductManegmwntSystem prod=new ProductManegmwntSystem(1,"mkdjfs","Nablus","sldkfjsdvhfh",10.0,60.0,"finished",5);
     }
 }
