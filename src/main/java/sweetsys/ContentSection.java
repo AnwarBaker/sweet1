@@ -69,40 +69,6 @@ boolean found=false;
 
 
 
-    /*public void DeleteUserRecipes(){
-        SweetProject s=new SweetProject();
-
-       UserShareProducts u=new UserShareProducts();
-        for(UserShareProducts uu:u.getUserproducts()){
-            System.out.println(uu);
-        }
-        System.out.println("\n\nenter Name of product you want to Delete pls :\n");
-        Scanner cin =new Scanner(System.in);
-        String name=cin.nextLine();
-
-        boolean found = false;
-
-        Iterator<UserShareProducts> iterator = u.getUserproducts().iterator();
-        while (iterator.hasNext()) {
-            UserShareProducts uu = iterator.next();
-            if(u.getProductName().equalsIgnoreCase(name)){
-
-                iterator.remove();
-                found = true;
-                u.setUserproducts(u.userproducts);
-                break;
-
-            }
-        }
-        if(!found){
-            System.out.println("you entered wrong details try again");
-            exit(0);
-        }
-
-        for(UserShareProducts uu:u.getUserproducts()){
-            System.out.println(uu);
-        }
-    }*/
 
 
     public void DeleteUserRecipes( ) {

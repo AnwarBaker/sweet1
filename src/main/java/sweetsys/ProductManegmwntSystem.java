@@ -123,6 +123,7 @@ public class ProductManegmwntSystem {
         this.discount = discount;
     }
 
+
     public ProductManegmwntSystem(String productName, String productDescription, Double price , Double earning, int Num_Of_Sales, String condition, int uniq){
         this.productName=productName;
         this.productDescription=productDescription;
@@ -132,6 +133,7 @@ public class ProductManegmwntSystem {
         this.condition=condition;
         this.Num_Of_Sales=Num_Of_Sales;
 }
+
     public ProductManegmwntSystem(String productName,String productDescription,Double price ,Double earning,int Num_Of_Sales,String condition,Double discount,int uniq ){
         this.productName=productName;
         this.productDescription=productDescription;

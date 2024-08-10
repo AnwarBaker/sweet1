@@ -24,6 +24,7 @@ SweetProject s;
 ContentSection i =new ContentSection();
 
 assertFalse(i.in);
+
     }
 
 
@@ -33,6 +34,7 @@ assertFalse(i.in);
     @Then("Admin can add, update, or delete recipes and posts shared by users")
     public void adminCanAddUpdateOrDeleteRecipesAndPostsSharedByUsers() {
         ContentSection c=new ContentSection();
+
 assertFalse(c.in);
     }
 
