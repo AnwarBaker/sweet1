@@ -2,10 +2,7 @@ package swt;
 
 import io.cucumber.java.en.*;
 import org.junit.Test;
-import sweetsys.ContentSection;
-import sweetsys.ProductManegmwntSystem;
-import sweetsys.SweetProject;
-import sweetsys.UserShareProducts;
+import sweetsys.*;
 
 import static org.junit.Assert.*;
 
@@ -54,7 +51,8 @@ ContentSection c=new ContentSection();
 
     @When("Admin can view all feedback from users")
     public void adminCanViewAllFeedbackFromUsers() {
-
+        FeedBack feed=new FeedBack();
+        assertFalse(feed.Done);
     }
 
 
@@ -63,7 +61,8 @@ ContentSection c=new ContentSection();
 
     @Then("Admin can respond to or moderate feedback")
     public void adminCanRespondToOrModerateFeedback() {
-
+        AdminFeedback aa=new AdminFeedback();
+assertFalse(aa.Done);
     }
 
 

@@ -8,12 +8,19 @@ public class FeedBack {
     public boolean in;
     public boolean Done;
     private String FeedbackMessage;
+    private int feednumber;
 private String senderName;
 private String productName;
 
 
+    public FeedBack(String feedbackMessage, int feednumber, String senderName, String productName) {
+        FeedbackMessage = feedbackMessage;
+        this.feednumber = feednumber;
+        this.senderName = senderName;
+        this.productName = productName;
+    }
 
-static public ArrayList<FeedBack> feedBacklist =new ArrayList<FeedBack>();
+    static public ArrayList<FeedBack> feedBacklist =new ArrayList<FeedBack>();
 
 
     public String getProductName() {
@@ -66,14 +73,25 @@ static public ArrayList<FeedBack> feedBacklist =new ArrayList<FeedBack>();
         this.productName = productName;
     }
 
+    public int getFeednumber() {
+        return feednumber;
+    }
+
+    public void setFeednumber(int feednumber) {
+        this.feednumber = feednumber;
+    }
+
     @Override
     public String toString() {
         return "{" +
                 "FeedbackMessage='" + FeedbackMessage + '\'' +
+                ", feednumber=" + feednumber +
                 ", senderName='" + senderName + '\'' +
                 ", productName='" + productName + '\'' +
                 '}';
     }
+
+
 
     public void UserFeedBack(User user){
         SweetProject s=new SweetProject();
@@ -101,10 +119,10 @@ static public ArrayList<FeedBack> feedBacklist =new ArrayList<FeedBack>();
         Scanner c =new Scanner(System.in);
         String feedbacke=c.nextLine();
         f.setFeedbackMessage(feedbacke);
-        FeedBack feed =new FeedBack(feedbacke,name,proname);
+        int i=f.getFeednumber();
+            FeedBack feed =new FeedBack(feedbacke,i+1,name,proname);
         f.feedBacklist.add(feed);
         f.setFeedBacklist(feedBacklist);
-            System.out.println(f.getFeedBacklist());
 
     }catch(Exception e) {}
 
@@ -112,7 +130,12 @@ static public ArrayList<FeedBack> feedBacklist =new ArrayList<FeedBack>();
 }
 
 
-
+public void ShowFeedBack(){
+        FeedBack feed=new FeedBack();
+        for(FeedBack f :feed.getFeedBacklist()){
+            System.out.println(f);
+        }
+}
 
 
 
@@ -131,6 +154,7 @@ SweetProject s =new SweetProject();
         s.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
 FeedBack fe=new FeedBack();
 fe.UserFeedBack(u);
+fe.ShowFeedBack();
 
     }
 
