@@ -105,6 +105,15 @@ try{
 
             s.setNablususers(s.Nablususers);
             s.setJeninUsers(s.JeninUsers);
+            System.out.println("Nablus Users : \n");
+            for (User uu :s.getNablususers()){
+                System.out.println(uu);
+            }
+            System.out.println("Jenin Users : \n");
+
+            for (User uuu :s.getJeninUsers()){
+                System.out.println(uuu);
+            }
 
 
     }catch (Exception e){}

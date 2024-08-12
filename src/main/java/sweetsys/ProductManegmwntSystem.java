@@ -15,6 +15,14 @@ public class ProductManegmwntSystem {
     public boolean updated;
 
 
+    public ProductManegmwntSystem(int uniq, String productName, String city, String productDescription, double price) {
+        this.uniq = uniq;
+        this.productName = productName;
+        this.city = city;
+        this.productDescription = productDescription;
+        this.price = price;
+    }
+
     public String getCity() {
         return city;
     }

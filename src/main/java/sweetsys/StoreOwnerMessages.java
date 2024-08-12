@@ -73,7 +73,7 @@ public class StoreOwnerMessages {
                 ", message='" + message + '\'' +
                 ", username='" + username + '\'' +
                 ", messagenum=" + messagenum +
-                '}';
+                '}'+"\n";
     }
 
 
