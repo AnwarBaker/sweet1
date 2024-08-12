@@ -106,25 +106,10 @@ public class OrderManegmentClass {
                 '}';
     }
 
-    public void ShowOrders(){
-        SweetProject sweet =new SweetProject();
-        OrderManegmentClass order =new OrderManegmentClass();
-        int i=1;
-        for(ProductManegmwntSystem prod :sweet.getProducts()){
-            order.setName(prod.getProductName());
-            order.setPrice(prod.getPrice());
-            order.setDiscount(prod.getDiscount());
-            order.setOrderNUM(i);
-            order.setOrderstatus(prod.getCondition());
-order.orderlist.add(new OrderManegmentClass(order.getName(),order.getPrice(),prod.getDiscount(),order.getOrderNUM(),order.getOrderstatus()));
-            i++;
 
-        }
-order.setOrderlist(order.orderlist);
-      for(OrderManegmentClass o :order.getOrderlist()){
-          System.out.println(o);
-      }
-    }
+
+
+
 
 
 
@@ -134,8 +119,14 @@ order.setOrderlist(order.orderlist);
         OrderManegmentClass order =new OrderManegmentClass();
 
         Scanner cin =new Scanner(System.in);
-       order.ShowOrders();
 
+        for(OrderManegmentClass oo :order.getOrderlist()){
+            if(oo.getName().equals(null)){
+                System.out.println("there is no order yet");
+                exit(0);
+            }
+            System.out.println(oo);
+        }
 
         System.out.println("enter Number of Order you want to update pls :\n");
         int ordernum=cin.nextInt();
@@ -180,7 +171,12 @@ order.setOrderlist(order.orderlist);
 
 
 
-
+public void ShowOrders(){
+        OrderManegmentClass oo=new OrderManegmentClass();
+        for(OrderManegmentClass o :oo.getOrderlist()){
+            System.out.println(o);
+        }
+}
 
 
     public static void main(String[] args) {
@@ -191,7 +187,7 @@ order.setOrderlist(order.orderlist);
         s.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,14,"not finished",3));
        s.setProducts(s.products);
        OrderManegmentClass order =new OrderManegmentClass();
-    //   order.ShowOrders();
+
        order.OrderUpdate();
     }
 }

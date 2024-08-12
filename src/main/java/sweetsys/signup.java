@@ -55,8 +55,35 @@ if(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3){
 
    }
 
+    public void addnewuserforuseronly(User user){
+        SweetProject s=new SweetProject();
+        boolean exist;
+        this.user=user;
+        setDone(false);
+        user.setUserlevel(3);
+        if(user.getUserlevel()==3){
+            exist= s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
+            if(!exist){
+                String email=user.getUsername()+user.getPass()+"@gmail.com";
+                user=new User(user.getUsername(),user.getPass(),user.getUserlevel(),email,user.getCity());
+                s.users.add(user);
 
-    public static void main(String[] args) {
+                s.setUsers(s.users);
+                setDone(true);
+                System.out.println("user added successfully");
+
+
+            }
+            else{
+                System.out.println("user already exists");
+            }
+        }else{
+            System.out.println("enter valid userlevel pls");
+        }
+
+    }
+
+   /* public static void main(String[] args) {
         SweetProject s=new SweetProject();
         s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
@@ -87,7 +114,7 @@ String email="";
         for(User u :s.users){
             System.out.println(u);
         }
-    }
+    }*/
 
 
 }

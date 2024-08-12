@@ -176,7 +176,7 @@ public class StoreOwnerMessages {
 
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         SweetProject s=new SweetProject();
         s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
@@ -199,6 +199,6 @@ public class StoreOwnerMessages {
 
         StoreOwnerMessages sto=new StoreOwnerMessages();
         sto.StoreResponseMessege(uu);
-    }
+    }*/
 
 }

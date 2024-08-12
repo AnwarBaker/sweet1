@@ -115,7 +115,7 @@ try {
 
 
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         SweetProject s=new SweetProject();
         s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
@@ -129,7 +129,7 @@ try {
         MessagingClass m=new MessagingClass();
         m.UserSendMesseges(u);
 
-    }
+    }*/
 
 
 

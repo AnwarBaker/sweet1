@@ -195,7 +195,7 @@ public class ProductManegmwntSystem {
                 '}';
     }
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         ProductManegmwntSystem prod=new ProductManegmwntSystem(1,"mkdjfs","Nablus","sldkfjsdvhfh",10.0,60.0,"finished",5);
-    }
+    }*/
 }

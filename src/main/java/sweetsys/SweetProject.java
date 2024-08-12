@@ -184,11 +184,11 @@ public class SweetProject {
 
 
 
-    public void ShowEachTypeOfUsers(ArrayList<User> users){
-
-        for(User u:users){
+    public void ShowEachTypeOfUsers(){
+SweetProject s=new SweetProject();
+        for(User u:s.getUsers()){
             if(u.getUserlevel()==1)  {
-                User user=new User(u.getUsername(),u.getPass(),u.getUserlevel());
+                User user=new User(u.getUsername(),u.getPass(),u.getUserlevel(),u.getEmail(),u.getCity());
 
                 SweetProject.AdminArrayList.add(user);
                 SweetProject.setAdminArrayList(AdminArrayList);
@@ -196,14 +196,14 @@ public class SweetProject {
 
             }
             else if(u.getUserlevel()==2)  {
-               User user=new User(u.getUsername(),u.getPass(),u.getUserlevel());
+               User user=new User(u.getUsername(),u.getPass(),u.getUserlevel(),u.getEmail(),u.getCity());
                 SweetProject.StoreOwnerArrayList.add(user);
                 SweetProject.setStoreOwnerArrayList(StoreOwnerArrayList);
                 SweetProject.print=true;
             }
 
             else if(u.getUserlevel()==3)  {
-               User user=new User(u.getUsername(),u.getPass(),u.getUserlevel());
+               User user=new User(u.getUsername(),u.getPass(),u.getUserlevel(),u.getEmail(),u.getCity());
 
                 SweetProject.UsersArrayList.add(user);
                 SweetProject.setUsersArrayList(UsersArrayList);
@@ -222,7 +222,7 @@ public class SweetProject {
         SweetProject s=new SweetProject();
 
 User user;
-        s.ShowEachTypeOfUsers(s.getUsers());
+        s.ShowEachTypeOfUsers();
         String name;
         System.out.println("\n\nenter UserName of employee you want to update pls :\n");
         Scanner cin =new Scanner(System.in);
@@ -251,6 +251,7 @@ User user;
         String newpass=c.nextLine();
         System.out.println("enter the new UserLevel of employee you want to update pls :a\n");
         int newuserlevel=cin.nextInt();
+        String email=newname+newpass+"@gmail.com";
 
         for(User u:s.getUsers()){
             if(u.getUsername().equals(user.getUsername())&&u.getPass().equals(user.getPass())&&u.getUserlevel()==user.getUserlevel()){
@@ -258,6 +259,7 @@ User user;
                 u.setUsername(newname);
                 u.setPass(newpass);
                 u.setUserlevel(newuserlevel);
+                u.setEmail(email);
 
             }
 
@@ -307,9 +309,7 @@ User user;
             exit(0);
         }
 
-        for(User u:s.getUsers()){
-            System.out.println(u);
-        }
+       s.ShowEachTypeOfUsers();
     }
 
 
@@ -445,7 +445,7 @@ User user;
 
 
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
 
 
 
@@ -456,4 +456,6 @@ User user;
 
 
 
-    }}
+    }*/
+    }
+

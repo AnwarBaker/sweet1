@@ -46,7 +46,7 @@ public class User {
                 ", userlevel=" + userlevel +
                 ", Email='" + Email + '\'' +
                 ", city='" + city + '\'' +
-                '}';
+                '}'+"\n";
     }
 
 

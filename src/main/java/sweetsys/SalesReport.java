@@ -144,7 +144,7 @@ public void addDiscount( ){
 
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         SweetProject s=new SweetProject();
         s.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,10,"finished",1));
         s.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
@@ -154,6 +154,6 @@ public void addDiscount( ){
         //sales.ShowBestProduct();
         sales.addDiscount();
 
-    }
+    }*/
 
 }

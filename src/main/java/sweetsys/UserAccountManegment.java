@@ -108,7 +108,7 @@ UserAccountManegment users =new UserAccountManegment();
     }
 
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         SweetProject s=new SweetProject();
         s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
         s.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
@@ -117,6 +117,6 @@ UserAccountManegment users =new UserAccountManegment();
         UserAccountManegment test=new UserAccountManegment();
         test.ShowUsers();
         test.UpdateUser();
-    }
+    }*/
 
 }

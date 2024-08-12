@@ -106,7 +106,7 @@ public class AdminFeedback {
     }
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         SweetProject s=new SweetProject();
         s.users.add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
         s.users.add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
@@ -122,6 +122,6 @@ public class AdminFeedback {
         s.login(uuu);
         AdminFeedback aa=new AdminFeedback();
         aa.AdminResponseMessege(uuu);
-    }
+    }*/
 
 }

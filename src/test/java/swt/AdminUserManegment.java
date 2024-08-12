@@ -47,7 +47,7 @@ public class AdminUserManegment {
 
 
 
-        s.ShowEachTypeOfUsers(SweetProject.users);
+        s.ShowEachTypeOfUsers();
 
 
       assertTrue("",s.print);

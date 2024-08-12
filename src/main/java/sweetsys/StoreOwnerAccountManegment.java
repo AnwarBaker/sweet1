@@ -57,7 +57,7 @@ public boolean updated;
 
             User user;
      StoreOwnerAccountManegment store=new StoreOwnerAccountManegment();
-
+store.ShowStoreOwners();
             String name;
             System.out.println("\n\nEnter UserName of employee you want to update pls :\n");
             Scanner cin =new Scanner(System.in);
@@ -104,7 +104,7 @@ public boolean updated;
     }
 
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         SweetProject s=new SweetProject();
         User u = new User("yasmine", "12345",2);
         s.login(u);
@@ -113,8 +113,8 @@ public boolean updated;
         s.users.add(new User("yasmine", "12345", 2,"yasmine12345@gmail.com"));
         s.users.add(new User("tarneem", "123456", 3,"tarneem1234@gmail.com"));
         StoreOwnerAccountManegment test=new StoreOwnerAccountManegment();
-        test.ShowStoreOwners();
+
         test.UpdateStoreOwnerAccount();
-    }
+    }*/
 
 }
