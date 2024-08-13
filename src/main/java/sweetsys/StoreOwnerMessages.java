@@ -135,6 +135,9 @@ public class StoreOwnerMessages {
 
 
 
+
+
+
     public void StoreResponseMessege(User user) {
 
         MessagingClass mm = new MessagingClass();
@@ -150,7 +153,7 @@ public class StoreOwnerMessages {
             StoreOwnerMessages storeresponse=new StoreOwnerMessages();
             int last=storeresponse.getMessegaesList().size()-1;
 
-           int resnum=storeresponse.getMessegaesList().get(last).getMessagenum();
+            int resnum=storeresponse.getMessegaesList().get(last).getMessagenum();
 
 
             for (MessagingClass mmm :  mm.getMessages()) {

@@ -602,20 +602,25 @@ f.ShowFeedBack();
                     User userstoreowner=new User(us.getUsername(), us.getPass(), 2,us.getEmail(),us.getCity());
                   StoreOwnerMessages message=new StoreOwnerMessages();
                   message.StoreOwnerSendMesseges(userstoreowner);
+
                     break;
                 case 2:
 
                     User userowner=new User(us.getUsername(), us.getPass(), 2,us.getEmail(),us.getCity());
+
                     StoreOwnerMessages messagee=new StoreOwnerMessages();
-                    for (StoreOwnerMessages sto : messagee.getMessegaesList()){
-                        if(sto.getStorOwnereName().equalsIgnoreCase(us.getUsername())){
+
+                    MessagingClass mes=new MessagingClass();
+                    for (MessagingClass sto : mes.getMessages()){
+                        if(sto.getReciverName().equalsIgnoreCase(us.getUsername())){
                             System.out.println(sto);
                         }
                     }
                     messagee.StoreResponseMessege(userowner);
-                    for (StoreOwnerMessages sto : messagee.getMessegaesList()){
-                        if(sto.getStorOwnereName().equalsIgnoreCase(us.getUsername())){
-                            System.out.println(sto);
+
+                    for (StoreOwnerMessages stom : messagee.getMessegaesList()){
+                        if(stom.getStorOwnereName().equalsIgnoreCase(us.getUsername())){
+                            System.out.println(stom);
                         }
                     }
                     break;
