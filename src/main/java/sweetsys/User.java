@@ -34,6 +34,12 @@ public class User {
         this.city = city;
     }
 
+    public User(String username, String pass, String city) {
+        this.username = username;
+        this.pass = pass;
+        this.city = city;
+    }
+
     public User(String city) {
         this.city = city;
     }

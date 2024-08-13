@@ -13,9 +13,10 @@ public class MainSweetSystem {
 
 
 
-
+User us=new User();
 
 SweetProject s= new SweetProject();
+
         s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
         s.users.add(new User("yasmine", "12345", 2,"yasmine12345@gmail.com","nablus"));
@@ -52,9 +53,10 @@ SweetProject s= new SweetProject();
 
         StoreOwnerMessages store=new StoreOwnerMessages();
         store.messegaesList.add(new StoreOwnerMessages("haya","loay","yes sure...",1));
-        store.messegaesList.add(new StoreOwnerMessages("haya","lana","yes sure...",1));
-        store.messegaesList.add(new StoreOwnerMessages("yasmine","rama","yes sure...",1));
-store.setMessegaesList(store.messegaesList);
+        store.messegaesList.add(new StoreOwnerMessages("haya","lana","yes sure...",2));
+        store.messegaesList.add(new StoreOwnerMessages("yasmine","rama","yes sure...",3));
+
+        store.setMessegaesList(store.messegaesList);
 
 
 
@@ -93,13 +95,15 @@ String storepass;
 String username;
 String userpass;
 
+
         do{
         System.out.println("Welcome to the Sweet Management System!");
         System.out.println("Please choose an option:");
         System.out.println("1. Admin");
         System.out.println("2. Store Owner");
         System.out.println("3. User");
-        System.out.println("4. Exit");
+        System.out.println("4. SignUp for new User");
+        System.out.println("5. Exit");
 
         choice = scanner.nextInt();
 
@@ -121,9 +125,11 @@ String userpass;
                     f=true;
                     System.out.println("You are Welcome Admin "+adminname);
                     User testcons =new User(adminname,adminpass,1,u.getEmail(),u.getCity());
+                    us.setUsername(adminname);
+                    us.setPass(adminpass);
                     s.login(testcons);
 
-                adminMenu(scanner);}}}
+                adminMenu(scanner,s,us);}}}
 
                 if(!f) {
                     System.out.println("you are not valid try again");
@@ -148,20 +154,27 @@ String userpass;
                         if(u.getUsername().equals(storename)&&u.getPass().equals(storepass)&&u.getUserlevel()==2){
                             ss=true;
                     System.out.println("You are Welcome Store Owner "+storename);
-                storeOwnerMenu(scanner,s);
+                            us.setUsername(storename);
+                            us.setPass(storepass);
+                storeOwnerMenu(scanner,s,us);
                         }}}
                 if(!ss) { System.out.println("you are not valid try again");}
                 break;
+
+
             case 3:
 
+
+
+                System.out.println("Logging into the system...");
 
                 Scanner vv=new Scanner(System.in);
                 System.out.println("Enter your Name pls :");
                 username=vv.nextLine();
-                Scanner cii=new Scanner(System.in);
+                Scanner ciii=new Scanner(System.in);
 
                 System.out.println("Enter your pass pls :");
-                userpass=cii.nextLine();
+                userpass=ciii.nextLine();
                 boolean sss=false;
                 if( s.isValidUser(s.getUsers(),username,userpass))
                 {
@@ -169,29 +182,60 @@ String userpass;
                         if(u.getUsername().equals(username)&&u.getPass().equals(userpass)&&u.getUserlevel()==3){
                             sss=true;
                             System.out.println("You are Welcome User "+username);
-
-                beneficiaryUserMenu(scanner);
+                            us.setUsername(username);
+                            us.setPass(userpass);
+                            beneficiaryUserMenu(scanner,s,us);
                         }}}
 
                 if(!sss){
                     System.out.println("you are not valid try again");}
+
+
                 break;
 
             case 4:
-                System.out.println("Exiting the system. Goodbye!");
+                System.out.println("Signing up a new user...");
+                signup sig=new signup();
+                Scanner vvv=new Scanner(System.in);
+
+                System.out.println("Enter your Name pls :");
+                String usernamee=vvv.nextLine();
+                Scanner cii=new Scanner(System.in);
+
+                System.out.println("Enter your pass pls :");
+                String userpasss=cii.nextLine();
+
+                System.out.println("Enter your city pls 'Nablus OR jenin' :");
+                String city =vvv.nextLine();
+                if(!city.equalsIgnoreCase("nablus")||!city.equalsIgnoreCase("jenin")){
+                    city=null;
+                }
+                us.setUsername(usernamee);
+                us.setPass(userpasss);
+                us.setCity(city);
+                User usersign=new User(usernamee,userpasss,city);
+                sig.addnewuserforuseronly(usersign);
+                s.ShowEachTypeOfUsers();
+                break;
+
+
+
+            case 5:
+                System.out.println("5. Exit The System");
+
                 break;
 
             default:
                 System.out.println("Invalid choice. Please try again.");
         }
-    } while (choice != 4);
+    } while (choice != 5);
 
         scanner.close();
 }
 
- public static void adminMenu(Scanner scanner) {
+ public static void adminMenu(Scanner scanner,SweetProject s,User us) {
     int choice;
-     SweetProject s = new SweetProject();
+    // SweetProject s = new SweetProject();
     do {
         System.out.println("Admin Menu:");
         System.out.println("1. User Management");
@@ -205,21 +249,21 @@ String userpass;
             case 1:
 
                 System.out.println("Managing user accounts...");
-                userManagementMenu(scanner, s);
+                userManagementMenu(scanner, s,us);
 
 
 
                 break;
             case 2:
                 System.out.println("Monitoring profits and generating reports...");
-                monitoringAndReportingMenu(scanner, s);
+                monitoringAndReportingMenu(scanner, s,us);
 
 
                 break;
             case 3:
                 System.out.println("Managing content...");
 
-                contentManagementMenu(scanner,s);
+                contentManagementMenu(scanner,s,us);
                 break;
             case 4:
                 break;
@@ -235,7 +279,7 @@ String userpass;
 
 
 
-    public static void userManagementMenu(Scanner scanner, SweetProject s) {
+    public static void userManagementMenu(Scanner scanner, SweetProject s,User us) {
         int choice;
         do {
             String newname;
@@ -289,7 +333,7 @@ String userpass;
     }
 
 
-    public static void monitoringAndReportingMenu(Scanner scanner, SweetProject s) {
+    public static void monitoringAndReportingMenu(Scanner scanner, SweetProject s,User us) {
         int choice;
         do {
             System.out.println("1. Generate Financial Reports");
@@ -339,7 +383,7 @@ a.ShowBestSellinForJenin();
 
 
 
-    public static void contentManagementMenu(Scanner scanner,SweetProject s) {
+    public static void contentManagementMenu(Scanner scanner,SweetProject s,User us) {
         int choice;
         do {
             System.out.println("Content Management Menu:");
@@ -378,13 +422,13 @@ f.ShowFeedBack();
 
                     break;
                 case 4:
-                    // Show feedback functionality
+
                     System.out.println("Responding to feedback...");
 
                     AdminFeedback adminfeed =new AdminFeedback();
-                    User userfeedback=new User();
 
-                    User uuu=new User("anwar",userfeedback.getPass(),1,userfeedback.getEmail(),userfeedback.getCity());
+
+                    User uuu=new User(us.getUsername(),us.getPass(),1,us.getEmail(),us.getCity());
                     adminfeed.AdminResponseMessege(uuu);
 
                     break;
@@ -408,7 +452,7 @@ f.ShowFeedBack();
 
 
 
-    public static void storeOwnerMenu(Scanner scanner,SweetProject s) {
+    public static void storeOwnerMenu(Scanner scanner,SweetProject s,User us) {
     int choice;
     do {
         System.out.println("Store Owner Menu:");
@@ -423,23 +467,23 @@ f.ShowFeedBack();
         switch (choice) {
             case 1:
                 System.out.println("Managing products...");
-                productManagementMenu(scanner ,s);
+                productManagementMenu(scanner ,s,us);
                 break;
             case 2:
 
                 System.out.println("Communication and Notifications...");
-                communicationAndNotificationsMenu(scanner, s);
+                communicationAndNotificationsMenu(scanner, s,us);
 
                 break;
 
             case 3:
                 System.out.println("Account Management...");
-                accountManagementMenu(scanner, s);
+                accountManagementMenu(scanner, s,us);
 
                 break;
             case 4:
                 System.out.println("Managing orders...");
-                orderManagementMenu(scanner, s);
+                orderManagementMenu(scanner, s,us);
                 break;
             case 5:
                 break;
@@ -455,7 +499,7 @@ f.ShowFeedBack();
 
 
 
-    public static void productManagementMenu(Scanner scanner, SweetProject s) {
+    public static void productManagementMenu(Scanner scanner, SweetProject s,User us) {
         int choice;
         do {
             System.out.println("Product Management Menu:");
@@ -539,7 +583,7 @@ f.ShowFeedBack();
 
 
 
-    public static void communicationAndNotificationsMenu(Scanner scanner, SweetProject s) {
+    public static void communicationAndNotificationsMenu(Scanner scanner, SweetProject s,User us) {
         int choice;
         do {
             System.out.println("Communication and Notifications Menu:");
@@ -553,15 +597,27 @@ f.ShowFeedBack();
             switch (choice) {
                 case 1:
 
-                  User userstoreowner=new User("yasmine", "12345", 3,"yasmine12345@gmail.com","Jenin");
+
+
+                    User userstoreowner=new User(us.getUsername(), us.getPass(), 2,us.getEmail(),us.getCity());
                   StoreOwnerMessages message=new StoreOwnerMessages();
                   message.StoreOwnerSendMesseges(userstoreowner);
                     break;
                 case 2:
 
-                    User userowner=new User("yasmine", "12345", 3,"yasmine12345@gmail.com","Jenin");
+                    User userowner=new User(us.getUsername(), us.getPass(), 2,us.getEmail(),us.getCity());
                     StoreOwnerMessages messagee=new StoreOwnerMessages();
+                    for (StoreOwnerMessages sto : messagee.getMessegaesList()){
+                        if(sto.getStorOwnereName().equalsIgnoreCase(us.getUsername())){
+                            System.out.println(sto);
+                        }
+                    }
                     messagee.StoreResponseMessege(userowner);
+                    for (StoreOwnerMessages sto : messagee.getMessegaesList()){
+                        if(sto.getStorOwnereName().equalsIgnoreCase(us.getUsername())){
+                            System.out.println(sto);
+                        }
+                    }
                     break;
                 case 3:
                     break;
@@ -575,7 +631,7 @@ f.ShowFeedBack();
 
 
 
-    public static void accountManagementMenu(Scanner scanner, SweetProject s) {
+    public static void accountManagementMenu(Scanner scanner, SweetProject s,User us) {
         int choice;
         do {
             System.out.println("Account Management Menu:");
@@ -602,7 +658,7 @@ f.ShowFeedBack();
 
 
 
-    public static void orderManagementMenu(Scanner scanner, SweetProject s) {
+    public static void orderManagementMenu(Scanner scanner, SweetProject s,User us) {
         int choice;
         do {
             System.out.println("Order Management:");
@@ -637,7 +693,7 @@ f.ShowFeedBack();
 
 
 
-public static void beneficiaryUserMenu(Scanner scanner) {
+public static void beneficiaryUserMenu(Scanner scanner ,SweetProject s,User us) {
     int choice;
     do {
         System.out.println("User Menu:");
@@ -651,15 +707,16 @@ public static void beneficiaryUserMenu(Scanner scanner) {
         switch (choice) {
             case 1:
                 System.out.println("Managing user account...");
-                // Add functionality here
+                userAccountManagementMenu(scanner, s,us);
                 break;
             case 2:
                 System.out.println("Exploring and purchasing desserts...");
-                // Add functionality here
+                explorationAndPurchaseMenu(scanner, s,us);
+
                 break;
             case 3:
                 System.out.println("Communicating and providing feedback...");
-                // Add functionality here
+                communicationAndFeedbackMenu(scanner, s,us);
                 break;
             case 4:
                 break;
@@ -669,4 +726,173 @@ public static void beneficiaryUserMenu(Scanner scanner) {
     } while (choice != 4);
 
 }
+
+
+
+
+
+    public static void userAccountManagementMenu(Scanner scanner, SweetProject s,User us) {
+        int choice;
+        String username;
+        String userpass;
+        do {
+            System.out.println("User Account Management:");
+            System.out.println("1. SignUp for new User");
+            System.out.println("2. Login into system");
+            System.out.println("3. Update Account Details");
+            System.out.println("4. Upload a new dessert creation with details");
+            System.out.println("5. Back to User Menu");
+
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Signing up a new user...");
+                    signup sig=new signup();
+                    Scanner vvv=new Scanner(System.in);
+
+                    System.out.println("Enter your Name pls :");
+                    String usernamee=vvv.nextLine();
+                    Scanner cii=new Scanner(System.in);
+
+                    System.out.println("Enter your pass pls :");
+                    String userpasss=cii.nextLine();
+
+                    System.out.println("Enter your city pls 'Nablus OR jenin' :");
+                    String city =vvv.nextLine();
+                    if(!city.equalsIgnoreCase("nablus")||!city.equalsIgnoreCase("jenin")){
+                        city=null;
+                    }
+                    User usersign=new User(usernamee,userpasss,city);
+                    sig.addnewuserforuseronly(usersign);
+                    s.ShowEachTypeOfUsers();
+                    break;
+
+
+                case 2:
+                    System.out.println("Logging into the system...");
+
+                    Scanner vv=new Scanner(System.in);
+                    System.out.println("Enter your Name pls :");
+                    username=vv.nextLine();
+                    Scanner ciii=new Scanner(System.in);
+
+                    System.out.println("Enter your pass pls :");
+                    userpass=ciii.nextLine();
+                    boolean sss=false;
+                    if( s.isValidUser(s.getUsers(),username,userpass))
+                    {
+                        for(User u :s.getUsers()){
+                            if(u.getUsername().equals(username)&&u.getPass().equals(userpass)&&u.getUserlevel()==3){
+                                sss=true;
+                                System.out.println("You are Welcome User "+username);
+
+                                beneficiaryUserMenu(scanner,s,us);
+                            }}}
+
+                    if(!sss){
+                        System.out.println("you are not valid try again");}
+                    break;
+
+
+
+                case 3:
+                    System.out.println("Updating account details...");
+                   UserAccountManegment useraccount =new UserAccountManegment();
+                   useraccount.UpdateUser();
+                    break;
+                case 4:
+                    System.out.println("Uploading a new dessert creation...");
+                    Scanner c=new Scanner(System.in);
+                    System.out.println("Enter new Product name\n");
+                    String proname=c.nextLine();
+
+                    Scanner sc=new Scanner(System.in);
+                    System.out.println("Enter new Product Discription :\n");
+                    String prodisc=sc.nextLine();
+
+                    Scanner sca=new Scanner(System.in);
+                    System.out.println("Enter Expected price of new Product:\n");
+                    double proprice=sca.nextInt();
+
+                    UserShareProducts userpro=new UserShareProducts(proname,prodisc,proprice);
+                    userpro.addnewProductForUser(userpro);
+
+                    break;
+                case 5:
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 5);
+    }
+
+
+
+    public static void explorationAndPurchaseMenu(Scanner scanner, SweetProject s,User us) {
+        int choice;
+        do {
+            System.out.println("Exploration and Purchase:");
+            System.out.println("1. Search for Dessert Recipes");
+            System.out.println("2. Filter Recipes Based on Dietary Needs or Food Allergies");
+            System.out.println("3. Back to User Menu");
+
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Searching for Dessert Recipes...");
+UserRecipes userre=new UserRecipes();
+userre.RecipesSearch();
+break;
+                case 2:
+                    System.out.println("Filtering Recipes Based on Dietary Needs or Food Allergies...");
+
+                    UserRecipes userrec=new UserRecipes();
+                    userrec.filterRecipes();
+
+
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 3);
+    }
+
+    public static void communicationAndFeedbackMenu(Scanner scanner, SweetProject s,User us) {
+        int choice;
+        do {
+            System.out.println("Communication and Feedback Menu:");
+            System.out.println("1. Directly communicate with store owners");
+            System.out.println("2. Provide feedback on purchased products");
+            System.out.println("3. Back to User Menu");
+
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Communicating with store owners...");
+                   MessagingClass message=new MessagingClass();
+                  User usersend=new User(us.getUsername(),us.getPass(),us.getCity());
+                  message.UserSendMesseges(usersend);
+                    break;
+                case 2:
+                    System.out.println("Providing feedback on purchased products...");
+
+                    FeedBack messagees=new FeedBack();
+                    User usersendd=new User(us.getUsername(),us.getPass(),us.getCity());
+                    messagees.UserFeedBack(usersendd);
+
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 3);
+    }
+
+
 }

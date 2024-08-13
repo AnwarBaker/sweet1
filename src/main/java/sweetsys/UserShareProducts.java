@@ -82,7 +82,9 @@ static public ArrayList<UserShareProducts> userproducts=new ArrayList<UserShareP
             newone.userproducts.add(prod);
             newone.setUserproducts(newone.userproducts);
         }
-
+for(UserShareProducts us :newone.getUserproducts()){
+    System.out.println(us);
+}
 
     }
 

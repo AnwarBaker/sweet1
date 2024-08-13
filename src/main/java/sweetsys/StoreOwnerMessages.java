@@ -94,12 +94,19 @@ public class StoreOwnerMessages {
             String message="";
             System.out.println("Enter name of User YOU Wanna message :");
             String username=cin.nextLine();
-            int i=0;
-            int mnum=0;
+
+
+            StoreOwnerMessages send=new StoreOwnerMessages();
+
+
+            int last=send.getMessegaesList().size()-1;
+
+            int mnum=send.getMessegaesList().get(last).getMessagenum();
+
             for (User us : s.getUsers()) {
-                i++;
+
                 if (us.getUserlevel() == 3 && us.getUsername().equals(username)) {
-                    mnum=i;
+
                      found = true;
                      break;
                 }
@@ -113,7 +120,7 @@ public class StoreOwnerMessages {
 
              StoreOwnerMessages mmm=new StoreOwnerMessages();
 
-            StoreOwnerMessages m=new StoreOwnerMessages(name,username,message,mnum);
+            StoreOwnerMessages m=new StoreOwnerMessages(name,username,message,mnum+1);
             m.messegaesList.add(m);
             m.setMessegaesList(messegaesList);
             System.out.println(m.getMessegaesList());
@@ -135,20 +142,22 @@ public class StoreOwnerMessages {
         String name = user.getUsername();
 
         try {
-            for (MessagingClass mmm : mm.getMessages()) {
-                System.out.println(mmm);
-            }
 
             System.out.println("Enter Name of User you want to response");
             Scanner cin = new Scanner(System.in);
             String usernamee = cin.nextLine();
-           int i=0;
-            int resnum=0;
+
+            StoreOwnerMessages storeresponse=new StoreOwnerMessages();
+            int last=storeresponse.getMessegaesList().size()-1;
+
+           int resnum=storeresponse.getMessegaesList().get(last).getMessagenum();
+
+
             for (MessagingClass mmm :  mm.getMessages()) {
-                i++;
+
                 if (mmm.getSenderName().equals(usernamee)) {
                     username=mmm.getSenderName();
-                    resnum=i;
+
                     find=true;
                 }
             }
@@ -156,11 +165,11 @@ public class StoreOwnerMessages {
                 System.out.println("Enter Your Response on "+usernamee+" message:");
                 Scanner c=new Scanner(System.in);
                 String res=c.nextLine();
-                StoreOwnerMessages st =new StoreOwnerMessages(name,usernamee,res,resnum);
+                StoreOwnerMessages st =new StoreOwnerMessages(name,usernamee,res,resnum+1);
                 StoreOwnerMessages aa=new StoreOwnerMessages();
                 aa.messegaesList.add(st);
                 aa.setMessegaesList(messegaesList);
-                System.out.println(aa.getMessegaesList());
+
             }
 
 

@@ -88,7 +88,7 @@ private String productName;
                 ", feednumber=" + feednumber +
                 ", senderName='" + senderName + '\'' +
                 ", productName='" + productName + '\'' +
-                '}';
+                '}'+"\n";
     }
 
 
@@ -115,15 +115,21 @@ private String productName;
               proname=p.getProductName();
             }
         }
+int last=f.getFeedBacklist().size()-1;
+
+       int feednumber=f.getFeedBacklist().get(last).getFeednumber();
+
             System.out.println("Enter Your feedback about "+proname+" pls");
         Scanner c =new Scanner(System.in);
         String feedbacke=c.nextLine();
         f.setFeedbackMessage(feedbacke);
-        int i=f.getFeednumber();
-            FeedBack feed =new FeedBack(feedbacke,i+1,name,proname);
+
+            FeedBack feed =new FeedBack(feedbacke,feednumber+1,name,proname);
         f.feedBacklist.add(feed);
         f.setFeedBacklist(feedBacklist);
-
+for(FeedBack ff:f.getFeedBacklist()){
+    System.out.println(ff);
+}
     }catch(Exception e) {}
 
 
