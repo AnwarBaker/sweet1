@@ -109,10 +109,6 @@ public class OrderManegmentClass {
 
 
 
-
-
-
-
     public void OrderUpdate(){
         SweetProject s=new SweetProject();
 
