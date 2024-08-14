@@ -81,7 +81,6 @@ public class StoreOwnerProductManegmentTest {
     }
 
 
-
     @Test
     @Then("System displays sales and profit reports")
     public void systemDisplaysSalesAndProfitReports() {
