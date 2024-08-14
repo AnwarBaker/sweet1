@@ -445,17 +445,6 @@ User user;
 
 
 
-  /*  public static void main(String[] args) {
 
-
-
-
-
-        SweetProject s=new SweetProject();
-
-
-
-
-    }*/
     }
 
