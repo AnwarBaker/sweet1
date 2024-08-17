@@ -130,7 +130,7 @@ UserAccountManegment test =new UserAccountManegment();
     @Test
     @Given("User navigates to the Share Creations section.")
     public void userNavigatesToTheShareCreationsSection() {
-assertFalse(s.exist);
+assertFalse(s.isExist());
 
     }
 

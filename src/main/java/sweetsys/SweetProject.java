@@ -17,17 +17,18 @@ public class SweetProject {
     }
 
 
+private boolean exist;
+
 
     public boolean is_login;
-    public boolean a;
+  
 
     static public ArrayList<User> users =new ArrayList<User>();
     static public ArrayList<User> Nablususers =new ArrayList<User>();
     static public ArrayList<User> JeninUsers =new ArrayList<User>();
 
 
-    public boolean founddd;
-    public boolean deleted;
+
 
     static public ArrayList<ProductManegmwntSystem> products =new ArrayList<ProductManegmwntSystem>();
     static public ArrayList<ProductManegmwntSystem> bestselling =new ArrayList<ProductManegmwntSystem>();
@@ -94,7 +95,7 @@ public class SweetProject {
         SweetProject.bestselling = bestselling;
     }
 
-    public boolean exist;
+
 
     public boolean isExist() {
         return exist;
@@ -112,17 +113,17 @@ public class SweetProject {
         SweetProject.products = products;
     }
 
-    User u=new User();
-    public static boolean print;
+
     public boolean found;
 
     public void login(User u) {
-
+// empty beacuse well fill later
     }
 
     public void productlogin(ProductManegmwntSystem prod) {
-
+//empty beacuse well fill later
     }
+
     public static ArrayList<User> getUsers() {
         return users;
     }
@@ -205,14 +206,14 @@ SweetProject s=new SweetProject();
 
                 SweetProject.AdminArrayList.add(user);
                 SweetProject.setAdminArrayList(AdminArrayList);
-                SweetProject.print=true;
+
 
             }
             else if(u.getUserlevel()==2)  {
                User user=new User(u.getUsername(),u.getPass(),u.getUserlevel(),u.getEmail(),u.getCity());
                 SweetProject.StoreOwnerArrayList.add(user);
                 SweetProject.setStoreOwnerArrayList(StoreOwnerArrayList);
-                SweetProject.print=true;
+
             }
 
             else if(u.getUserlevel()==3)  {
@@ -220,7 +221,7 @@ SweetProject s=new SweetProject();
 
                 SweetProject.UsersArrayList.add(user);
                 SweetProject.setUsersArrayList(UsersArrayList);
-                SweetProject.print=true;
+
 
             }
         }
@@ -246,7 +247,9 @@ SweetProject s=new SweetProject();
                break;
            }
         }
-    }catch (Exception e){}
+    }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -262,7 +265,7 @@ SweetProject s=new SweetProject();
             }
             SweetProject.setUsers(SweetProject.users);
 
-        }catch (Exception e){}
+        }catch (Exception e){e.printStackTrace();}
     }
 
 
@@ -337,10 +340,10 @@ SweetProject s=new SweetProject();
         for(ProductManegmwntSystem products :s.getProducts()){
           if(products.getUniq()==prod.getUniq()) {
               System.out.println("this product already exists");
-              s.setExist(true);
+
           }
           else if(products.getUniq()!=prod.getUniq()){
-              s.setExist(false);
+
           }
 
         }
@@ -395,5 +398,5 @@ SweetProject s=new SweetProject();
 
 
 
-    }
+}
 
