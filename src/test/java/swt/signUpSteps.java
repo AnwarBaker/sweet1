@@ -33,12 +33,12 @@ SweetProject s;
        int UserLevel=3;
       User user=new User(name,pass,UserLevel);
       s.login(user);
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-      s.setUsers(s.users);
-      boolean test=s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
+        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+      SweetProject.setUsers(SweetProject.users);
+      boolean test=s.isValidUser(SweetProject.getUsers(),user.getUsername(),user.getPass());
       if(!test){
           System.out.println("you are a valid user");
       }
@@ -54,16 +54,16 @@ SweetProject s;
         int UserLevel=3;
         User user=new User(name,pass,UserLevel);
         s.login(user);
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        s.setUsers(s.users);
+        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.users);
 
         Signup sign=new Signup();
         sign.addnewuser(user);
 
-        boolean userAdded = s.isValidUser(s.getUsers(), user.getUsername(), user.getPass());
+        boolean userAdded = s.isValidUser(SweetProject.getUsers(), user.getUsername(), user.getPass());
         assertTrue("The user should be added successfully", userAdded);
 
     }
@@ -77,12 +77,12 @@ SweetProject s;
         int UserLevel=1;
         User user=new User(name,pass,UserLevel);
         s.login(user);
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        s.setUsers(s.users);
-        boolean test=s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
+        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.users);
+        boolean test=s.isValidUser(SweetProject.getUsers(),user.getUsername(),user.getPass());
 
         assertTrue(user.getUsername()+"\talready exists",test);
    }
@@ -98,16 +98,16 @@ SweetProject s;
         int UserLevel=1;
         User user=new User(name,pass,UserLevel);
         s.login(user);
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        s.setUsers(s.users);
-        boolean test=s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
-        if(test){
-            System.out.println("this person already exists");
-        }
-        assertTrue(user.getUsername()+"\talready exists",test);
+        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.users);
+        boolean test=s.isValidUser(SweetProject.getUsers(),user.getUsername(),user.getPass());
+       String expectedMessage="User Exists";
+        assertTrue("Invalid email or password",test);
+        String actualExistMessage = s.getExistdataMessage();
+        assertEquals("the user should see a exist data message", expectedMessage, actualExistMessage);
     }
 
 

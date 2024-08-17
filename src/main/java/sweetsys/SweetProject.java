@@ -10,14 +10,13 @@ import static java.lang.System.exit;
 
 public class SweetProject {
     private String errorMessage;
+    private String existdataMessage;
 
     public boolean isIs_login() {
         return is_login;
     }
 
-    public void setIs_login(boolean is_login) {
-        this.is_login = is_login;
-    }
+
 
     public boolean is_login;
     public boolean a;
@@ -132,17 +131,26 @@ public class SweetProject {
         SweetProject.users = users;
     }
 
+    public String getExistdataMessage() {
+        return existdataMessage;
+    }
 
     public  boolean isValidUser(ArrayList<User> users, String name, String pass) {
         for (User search : users) {
             if (search.getUsername().equals(name) && search.getPass().equals(pass)) {
-               
+               this.existdataMessage="User Exists";
                 return true;
+
             }
         }
         this.errorMessage = "Invalid email or password";
         return false;
     }
+
+
+
+
+
 
     public String getErrorMessage() {
         return this.errorMessage;
@@ -216,6 +224,8 @@ SweetProject s=new SweetProject();
 
             }
         }
+
+
         System.out.println("All System employees :\n");
         System.out.println("Admins: \n" + SweetProject.getAdminArrayList());
         System.out.println("Store Owners: \n" + SweetProject.getStoreOwnerArrayList());
@@ -223,102 +233,37 @@ SweetProject s=new SweetProject();
     }
 
 
-    public void Update(){
-        SweetProject s=new SweetProject();
 
-User user;
-        s.ShowEachTypeOfUsers();
-        String name;
-        System.out.println("\n\nenter UserName of employee you want to update pls :\n");
-        Scanner cin =new Scanner(System.in);
-        name=cin.nextLine();
-        System.out.println("enter Pass of employee you want to update pls :\n");
-        String pass=cin.nextLine();
 
-        System.out.println("enter UserLevel of employee you want to update pls :\n");
-        int userlevel=cin.nextInt();
-        user=new User(name,pass,userlevel);
-        s.login(user);
-        for(User u:s.getUsers()){
-            if(u.getUsername().equals(user.getUsername())&&u.getPass().equals(user.getPass())&&u.getUserlevel()==user.getUserlevel()){
-                found = true;
 
-            }
+
+
+    public void Update(User user){
+        try{
+       for(int i = 0 ;i <SweetProject.users.size();i++){
+           if(SweetProject.users.get(i).getUsername().equalsIgnoreCase(user.getUsername())){
+               SweetProject.users.set(i,user);
+               break;
+           }
         }
-        if(!found){
-            System.out.println("you entered wrong details try again");
-            exit(0);
-        }
-        Scanner c =new Scanner(System.in);
-        System.out.println("\n \nenter the new UserName of employee you want to update pls :\n");
-        String newname=c.nextLine();
-        System.out.println("enter the new Pass of employee you want to update pls :\n");
-        String newpass=c.nextLine();
-        System.out.println("enter the new UserLevel of employee you want to update pls :a\n");
-        int newuserlevel=cin.nextInt();
-        String email=newname+newpass+"@gmail.com";
-
-        for(User u:s.getUsers()){
-            if(u.getUsername().equals(user.getUsername())&&u.getPass().equals(user.getPass())&&u.getUserlevel()==user.getUserlevel()){
-
-                u.setUsername(newname);
-                u.setPass(newpass);
-                u.setUserlevel(newuserlevel);
-                u.setEmail(email);
-
-            }
-
-        }
-        for(User u:s.getUsers()){
-            System.out.println(u);
-        }
+    }catch (Exception e){}
     }
 
 
+    public void Delete(User user){
+        try{
 
+            for(int i = 0 ;i <SweetProject.users.size();i++){
+                if(SweetProject.users.get(i).getUsername().equalsIgnoreCase(user.getUsername())&&SweetProject.users.get(i).getPass().equals(user.getPass())){
 
-
-    public void Delete(){
-        SweetProject s=new SweetProject();
-
-        User user;
-        for(User u:s.getUsers()){
-            System.out.println(u);
-        }
-        String name;
-        System.out.println("\n\nenter UserName of employee you want to Delete pls :\n");
-        Scanner cin =new Scanner(System.in);
-        name=cin.nextLine();
-        System.out.println("enter Pass of employee you want to Delete pls :\n");
-        String pass=cin.nextLine();
-
-        System.out.println("enter UserLevel of employee you want to Delete pls :\n");
-        int userlevel=cin.nextInt();
-        user=new User(name,pass,userlevel);
-        s.login(user);
-        found=false;
-        Iterator<User> iterator = s.getUsers().iterator();
-        while (iterator.hasNext()) {
-            User u = iterator.next();
-            if(u.getUsername().equals(user.getUsername())&&u.getPass().equals(user.getPass())&&u.getUserlevel()==user.getUserlevel()){
-
-                iterator.remove();
-                found = true;
-                s.setUsers(s.users);
-                break;
-
+                    SweetProject.users.remove(i);
+                    break;
+                }
             }
-        }
-        if(!found){
-            System.out.println("you entered wrong details try again");
-            exit(0);
-        }
+            SweetProject.setUsers(SweetProject.users);
 
-       s.ShowEachTypeOfUsers();
+        }catch (Exception e){}
     }
-
-
-
 
 
 
