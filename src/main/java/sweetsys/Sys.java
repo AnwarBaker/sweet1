@@ -1,8 +1,7 @@
 package sweetsys;
 
 public class Sys {
-    public static boolean b;
-
+    private static boolean b;
 
     public static boolean isB() {
         return b;

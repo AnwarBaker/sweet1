@@ -9,7 +9,15 @@ import java.util.Scanner;
 import static java.lang.System.exit;
 
 public class SweetProject {
+    private String errorMessage;
 
+    public boolean isIs_login() {
+        return is_login;
+    }
+
+    public void setIs_login(boolean is_login) {
+        this.is_login = is_login;
+    }
 
     public boolean is_login;
     public boolean a;
@@ -128,19 +136,16 @@ public class SweetProject {
     public  boolean isValidUser(ArrayList<User> users, String name, String pass) {
         for (User search : users) {
             if (search.getUsername().equals(name) && search.getPass().equals(pass)) {
-                this.a=true;
+               
                 return true;
             }
         }
-        this.a=false;
+        this.errorMessage = "Invalid email or password";
         return false;
     }
 
     public String getErrorMessage() {
-        if (!a) {
-            return "Invalid Email or password";
-        }
-        return "";
+        return this.errorMessage;
     }
 
 

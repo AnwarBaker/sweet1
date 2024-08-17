@@ -5,7 +5,7 @@ import org.junit.Test;
 import sweetsys.AdminuserManegmentClass;
 import sweetsys.SweetProject;
 import sweetsys.User;
-import sweetsys.signup;
+import sweetsys.Signup;
 
 import static org.junit.Assert.*;
 
@@ -66,7 +66,7 @@ public class AdminUserManegment {
         s.users.add(new User("tarneem", "123456", 3));
         s.setUsers(s.users);
 
-        signup sign=new signup();
+        Signup sign=new Signup();
         sign.addnewuser(user);
         if(sign.isDone())
             assertTrue("user added",sign.isDone());

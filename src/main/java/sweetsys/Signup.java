@@ -1,23 +1,30 @@
 package sweetsys;
 
-import java.util.*;
-public class signup {
+public class Signup {
 
 
 
     public boolean in;
     public boolean done;
 
-public signup(){}
+    public Signup() {
+
+    }
 
 
-    SweetProject s=new SweetProject();
+    public boolean isIn() {
+        return in;
+    }
+
+    public void setIn(boolean in) {
+        this.in = in;
+    }
+
+
 User user;
 
 
-   public signup(User u){
-       user=u;
-   }
+
 
     public boolean isDone() {
         return done;
@@ -28,32 +35,26 @@ User user;
     }
 
 
+
+
     public void addnewuser(User user){
-       SweetProject s=new SweetProject();
-       boolean exist;
-       this.user=user;
-       setDone(false);
-if(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3){
-       exist= s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
-       if(!exist){
-           String email=user.getUsername()+user.getPass()+"@gmail.com";
-           user=new User(user.getUsername(),user.getPass(),user.getUserlevel(),email,user.getCity());
-           s.users.add(user);
+        SweetProject s=new SweetProject();
 
-           s.setUsers(s.users);
-           setDone(true);
-           System.out.println("user added successfully");
+        boolean exist=s.isValidUser(s.getUsers(), user.getUsername(), user.getPass());
 
 
+       if(!exist&&(user.getUserlevel()==1||user.getUserlevel()==2||user.getUserlevel()==3)){;
+        String email=user.getUsername()+user.getPass()+"@gmail.com";
+       s.users.add(new User(user.getUsername(),user.getPass(), user.getUserlevel(),email));
+       s.setUsers(s.users);
        }
-       else{
-           System.out.println("user already exists");
+else {
+           System.out.println("User already exists");
        }
-}else{
-    System.out.println("enter valid userlevel pls");
-}
+    }
 
-   }
+
+
 
     public void addnewuserforuseronly(User user){
         SweetProject s=new SweetProject();

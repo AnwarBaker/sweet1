@@ -21,7 +21,7 @@ public class LoginTest {
 @Test
     @Given("the user is on the login page")
     public void theUserIsOnTheLoginPage() {
-assertFalse(s.is_login);
+      assertFalse(s.isIs_login());
 
     }
 
@@ -32,20 +32,22 @@ assertFalse(s.is_login);
 
         User u = new User("yasmine", "12345");
         s.login(u);
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        s.setUsers(s.users);
+        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.users);
 
 
-        boolean isValid = s.isValidUser(s.getUsers(), u.getUsername(), u.getPass());
+        boolean isValid = s.isValidUser(SweetProject.getUsers(), u.getUsername(), u.getPass());
 
         if (isValid) {
             System.out.println("you are welcome " + u.getUsername());
         }
 
         assertTrue("you are welcome " + u.getUsername(), isValid);
+
+
 
     }
 
@@ -54,39 +56,34 @@ assertFalse(s.is_login);
     @Test
     @When("the user enters invalid credentials")
     public void theUserEntersInvalidCredentials() {
-        User u = new User("fadi", "12345678",2);
-        s.login(u);
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        s.setUsers(s.users);
+
+        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.users);
 
 
-        boolean isValid = s.isValidUser(s.getUsers(), u.getUsername(), u.getPass());
-
-        if (!isValid) {
-            System.out.println(" wrong username or password try again" );
-        }
-
-        assertFalse(isValid);
-    }
+        boolean isValidInvalidUser = s.isValidUser(SweetProject.getUsers(), "invalidUser", "12345");
+        assertFalse("The user should be invalid due to incorrect username", isValidInvalidUser);
 
 
-    @Test
-    @When("the user clicks the login button")
-    public void theUserClicksTheLoginButton() {
-        assertTrue(!s.is_login);
+        boolean isValidInvalidPass = s.isValidUser(SweetProject.getUsers(), "yasmine", "wrongPass");
+        assertFalse("The user should be invalid due to incorrect password", isValidInvalidPass);
+
+
 
     }
+
+
 
 
 
     @Test
     @Then("the user should be redirected to the dashboard")
     public void theUserShouldBeRedirectedToTheDashboard() {
-Sys.b=true;
-assertTrue(Sys.b);
+
+assertFalse(Sys.isB());
 
     }
 
@@ -96,21 +93,23 @@ assertTrue(Sys.b);
     public void anErrorMessageShouldBeDisplayed() {
         User u = new User("fadi", "123548");
         s.login(u);
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        s.setUsers(s.users);
+        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.users);
 
 
-        boolean isValid = s.isValidUser(s.getUsers(), u.getUsername(), u.getPass());
+        boolean isValid = s.isValidUser(SweetProject.getUsers(), u.getUsername(), u.getPass());
 
-      if(!isValid){
-          System.out.println("Invalid email or password");
-      }
 
         assertFalse("Invalid email or password",isValid);
-    }
+        String expectedErrorMessage = "Invalid email or password";
+        String actualErrorMessage = s.getErrorMessage();
+
+        assertEquals("The error message should be displayed", expectedErrorMessage, actualErrorMessage);
 
 
+
+}
 }

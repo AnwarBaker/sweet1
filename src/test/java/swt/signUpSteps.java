@@ -4,25 +4,26 @@ import io.cucumber.java.en.*;
 import org.junit.Test;
 import sweetsys.SweetProject;
 import sweetsys.User;
-import sweetsys.signup;
+import sweetsys.Signup;
 
 import static org.junit.Assert.*;
 
-public class signupsteps{
+public class signUpSteps {
 
 SweetProject s;
 
-    public signupsteps() {
+    public signUpSteps() {
         s = new SweetProject();
     }
 @Test
     @Given("I am on the sign-up page")
     public void iAmOnTheSignUpPage() {
-        signup sign=new signup();
+        Signup sign=new Signup();
 
-    assertFalse(sign.in);
+    assertFalse(sign.isIn());
 
     }
+
 
     @Test
   @When("the user enters a valid signup data like")
@@ -59,11 +60,11 @@ SweetProject s;
         s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
         s.setUsers(s.users);
 
-        signup sign=new signup();
+        Signup sign=new Signup();
         sign.addnewuser(user);
-        System.out.println(sign.isDone());
-sign.setDone(true);
-        assertTrue("user added",sign.isDone());
+
+        boolean userAdded = s.isValidUser(s.getUsers(), user.getUsername(), user.getPass());
+        assertTrue("The user should be added successfully", userAdded);
 
     }
 
@@ -82,11 +83,13 @@ sign.setDone(true);
         s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
         s.setUsers(s.users);
         boolean test=s.isValidUser(s.getUsers(),user.getUsername(),user.getPass());
-        if(test){
-            System.out.println(user.getUsername()+" already exists");
-        }
+
         assertTrue(user.getUsername()+"\talready exists",test);
    }
+
+
+
+
     @Test
     @Then("the user should see a exist data message")
     public void theUserShouldSeeAExistDataMessage() {

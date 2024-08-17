@@ -117,7 +117,7 @@ public class OrderManegmentClass {
         Scanner cin =new Scanner(System.in);
 
         for(OrderManegmentClass oo :order.getOrderlist()){
-            if(oo.getName().equals(null)){
+            if(oo.getName() == null){
                 System.out.println("there is no order yet");
                 exit(0);
             }

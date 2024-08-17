@@ -21,7 +21,7 @@ SweetProject s;
 @Test
     @Given("User navigates to the registration page.")
     public void userNavigatesToTheRegistrationPage() {
-signup sign=new signup();
+Signup sign=new Signup();
 
 assertFalse(sign.in);
 
@@ -38,7 +38,7 @@ assertFalse(sign.in);
         s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com"));
         s.setUsers(s.users);
 
-        signup sign=new signup();
+        Signup sign=new Signup();
         User user=new User("hjsdvc","44sc",3);
         sign.addnewuser(user);
 
@@ -54,7 +54,7 @@ assertFalse(sign.in);
         s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com"));
         s.setUsers(s.users);
 
-        signup sign=new signup();
+        Signup sign=new Signup();
         User user=new User("ii","47",3);
         sign.addnewuser(user);
 
