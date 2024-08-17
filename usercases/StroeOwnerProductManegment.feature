@@ -17,12 +17,10 @@ Feature: Product Management
   Scenario: Identify best-selling products
 
   Given Store owner logs in to the system
-  When Store owner navigates to the Best-Selling Products section
   Then System displays the best-selling products
 
 
   Scenario: Implement dynamic discount features
 
   Given Store owner logs in to the system
-  When Store owner navigates to the Discount Management section
   Then Store owner can set dynamic discounts for products

@@ -34,16 +34,16 @@ try{
         AdminReports a=new AdminReports();
         a.SeperateEachCity();
 
-        int flag=s.Nablusprodcuts.get(0).getNum_Of_Sales();
+        int flag=s.Nablusprodcuts.get(0).getNumOfsales();
 
         System.out.println("Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n");
         for(ProductManegmwntSystem prod :s.getNablusprodcuts()){
-            if (prod.getNum_Of_Sales() > flag) {
-                flag = prod.getNum_Of_Sales();
+            if (prod.getNumOfsales() > flag) {
+                flag = prod.getNumOfsales();
             }
         }
         for(ProductManegmwntSystem last :s.getProducts()){
-            if (last.getNum_Of_Sales()==flag) {
+            if (last.getNumOfsales()==flag) {
                 s.Nablusbestselling.add(last);
                 s.setNablusbestselling(s.Nablusbestselling);
                 break;
@@ -51,7 +51,7 @@ try{
         }
         for(ProductManegmwntSystem store :s.getNablusbestselling()) {
 
-            System.out.println(store.getProductName() + "\t" + store.getProductDescription() + "\t\t\t" + store.getPrice() + "\t" + store.getEarning() + "\t\t" + store.getCondition() + "\t" + store.getNum_Of_Sales() + "\t\t\t\t" + store.getUniq() + "\n");
+            System.out.println(store.getProductName() + "\t" + store.getProductDescription() + "\t\t\t" + store.getPrice() + "\t" + store.getEarning() + "\t\t" + store.getCondition() + "\t" + store.getNumOfsales() + "\t\t\t\t" + store.getUniq() + "\n");
         }
 
 
@@ -65,16 +65,16 @@ try{
         AdminReports a=new AdminReports();
         a.SeperateEachCity();
 
-        int flag=s.Jeninprodcuts.get(0).getNum_Of_Sales();
+        int flag=s.Jeninprodcuts.get(0).getNumOfsales();
 
         System.out.println("Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n");
         for(ProductManegmwntSystem prod :s.getJeninprodcuts()){
-            if (prod.getNum_Of_Sales() > flag) {
-                flag = prod.getNum_Of_Sales();
+            if (prod.getNumOfsales() > flag) {
+                flag = prod.getNumOfsales();
             }
         }
         for(ProductManegmwntSystem last :s.getJeninprodcuts()){
-            if (last.getNum_Of_Sales()==flag) {
+            if (last.getNumOfsales()==flag) {
                 s.Jeninbestselling.add(last);
                 s.setJeninbestselling(s.Jeninbestselling);
                 break;
@@ -82,7 +82,7 @@ try{
         }
         for(ProductManegmwntSystem store :s.getJeninbestselling()) {
 
-            System.out.println(store.getProductName() + "\t" + store.getProductDescription() + "\t\t\t" + store.getPrice() + "\t" + store.getEarning() + "\t\t" + store.getCondition() + "\t" + store.getNum_Of_Sales() + "\t\t\t\t" + store.getUniq() + "\n");
+            System.out.println(store.getProductName() + "\t" + store.getProductDescription() + "\t\t\t" + store.getPrice() + "\t" + store.getEarning() + "\t\t" + store.getCondition() + "\t" + store.getNumOfsales() + "\t\t\t\t" + store.getUniq() + "\n");
         }
 
 

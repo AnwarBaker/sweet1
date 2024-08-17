@@ -76,7 +76,7 @@ SweetProject s=new SweetProject();
                             o.orderlist.add(o);
                             o.setOrderlist(o.orderlist);
                             System.out.println(pro.getUniq() + "\t" + pro.getProductName() + "\t" + pro.getProductDescription());
-                            pro.setNum_Of_Sales(pro.getNum_Of_Sales()+1);
+                            pro.setNumOfsales(pro.getNumOfsales()+1);
                         }
                     }
 
@@ -133,7 +133,7 @@ SweetProject s=new SweetProject();
                             o.orderlist.add(o);
                             o.setOrderlist(o.orderlist);
                             System.out.println(pro.getUniq() + "\t" + pro.getProductName() + "\t" + pro.getProductDescription());
-                            pro.setNum_Of_Sales(pro.getNum_Of_Sales()+1);
+                            pro.setNumOfsales(pro.getNumOfsales()+1);
                         }
                     }
 

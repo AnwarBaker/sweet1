@@ -119,9 +119,11 @@ private boolean exist;
     public void login(User u) {
 // empty beacuse well fill later
     }
-
+ProductManegmwntSystem prod;
     public void productlogin(ProductManegmwntSystem prod) {
-//empty beacuse well fill later
+
+        this.prod=prod;
+
     }
 
     public static ArrayList<User> getUsers() {
@@ -253,6 +255,8 @@ SweetProject s=new SweetProject();
     }
 
 
+
+
     public void Delete(User user){
         try{
 
@@ -271,87 +275,44 @@ SweetProject s=new SweetProject();
 
 
 
-    public void ProductUpdate(){
-        SweetProject s=new SweetProject();
-
-        ProductManegmwntSystem prod;
-
-        Scanner cin =new Scanner(System.in);
-        for(ProductManegmwntSystem products:s.getProducts()){
-            System.out.println(products);
-        }
-
-
-        System.out.println("enter UniqNumber of Product you want to update pls :\n");
-        int uniqnum=cin.nextInt();
-        prod=new ProductManegmwntSystem(uniqnum);
-        s.productlogin(prod);
-
-
-
-        for(ProductManegmwntSystem products :s.getProducts()){
-            if(products.getUniq()==prod.getUniq()){
-                found = true;
+    public void ProductUpdate( ProductManegmwntSystem prod){
+        try{
+            for(int i = 0 ;i <SweetProject.products.size();i++){
+                if(SweetProject.products.get(i).getUniq()==prod.getUniq()){
+                    SweetProject.products.set(i,prod);
+                    break;
+                }
             }
-        }
-
-        if(!found){
-            System.out.println("you entered wrong UniqNumber try again");
-            exit(0);
-        }
-        Scanner c =new Scanner(System.in);
-
-        System.out.println("\n \nenter the new Name of product you want to update pls :\n");
-        String newname=c.nextLine();
-        System.out.println("enter the new descripton of product you want to update pls :\n");
-        String newDiscription=c.nextLine();
-        System.out.println("enter the new price of product you want to update pls :a\n");
-        int newPrice=cin.nextInt();
-        System.out.println("enter the new earning num of product you want to update pls :a\n");
-        int newearning =cin.nextInt();
-        System.out.println("enter the new Num_of_Sales of product you want to update pls :a\n");
-        int newNumOfSales=cin.nextInt();
-        System.out.println("enter the new Status num of product you want to update pls :a\n");
-        String newCondition =c.nextLine();
-
-        for(ProductManegmwntSystem products:s.getProducts()){
-            if(products.getUniq()==prod.getUniq()){
-
-                products.setProductName(newname);
-                products.setProductDescription(newDiscription);
-                products.setPrice(newPrice);
-                products.setEarning(newearning);
-                products.setNum_Of_Sales(newNumOfSales);
-                products.setCondition(newCondition);
-            }
-
-        }
-        System.out.println("Updated Data\n");
-        for(ProductManegmwntSystem products:s.getProducts()){
-            System.out.println(products);
+            SweetProject.setProducts(SweetProject.products);
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
 
 
 
-    public void addnewProduct(ProductManegmwntSystem prod){
+
+    public void addnewProduct(ProductManegmwntSystem prod) {
         SweetProject s=new SweetProject();
-        for(ProductManegmwntSystem products :s.getProducts()){
-          if(products.getUniq()==prod.getUniq()) {
-              System.out.println("this product already exists");
+        boolean exist=false;
 
-          }
-          else if(products.getUniq()!=prod.getUniq()){
+        try{
+            for(int i=0 ;i<SweetProject.getProducts().size();i++){
+                if(SweetProject.products.get(i).getUniq()==prod.getUniq()){
+                    exist =true;
+                    break;
+                }
+            }
 
-          }
+  if(!exist){
+      int last=SweetProject.getProducts().size();
+      prod.setUniq(last);
+      SweetProject.products.add(prod);
+  }
+  SweetProject.setProducts(SweetProject.products);
 
-        }
-        if(!s.isExist()){
-         s.products.add(prod);
-        }
-
-
+    }catch(Exception e){e.printStackTrace();}
     }
 
 
@@ -359,43 +320,20 @@ SweetProject s=new SweetProject();
 
 
 
+    public void DeleteProduct(ProductManegmwntSystem prod){
+        try{
 
-    public void DeleteProduct(){
-        SweetProject s=new SweetProject();
+            for(int i = 0 ;i <SweetProject.products.size();i++){
+                if(SweetProject.products.get(i).getUniq()==prod.getUniq()){
 
-        ProductManegmwntSystem prod;
-        for(ProductManegmwntSystem products:s.getProducts()){
-            System.out.println(products);
-        }
-
-        Scanner cin=new Scanner(System.in);
-        System.out.println("enter UniqNum of Product you want to Delete pls :\n");
-        int uniq=cin.nextInt();
-        prod=new ProductManegmwntSystem(uniq);
-        s.productlogin(prod);
-        found=false;
-        Iterator<ProductManegmwntSystem> iterator = s.getProducts().iterator();
-        while (iterator.hasNext()) {
-            ProductManegmwntSystem product = iterator.next();
-            if(product.getUniq()==prod.getUniq()){
-
-                iterator.remove();
-                found = true;
-                s.setProducts(s.products);
-                break;
-
+                    SweetProject.products.remove(i);
+                    break;
+                }
             }
-        }
-        if(!found){
-            System.out.println("you entered wrong details try again");
-            exit(0);
-        }
+            SweetProject.setProducts(SweetProject.products);
 
-        for(ProductManegmwntSystem product : s.getProducts()){
-            System.out.println(product);
-        }
+        }catch (Exception e){e.printStackTrace();}
     }
-
 
 
 }

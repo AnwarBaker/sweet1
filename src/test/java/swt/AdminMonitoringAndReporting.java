@@ -33,7 +33,7 @@ assertFalse(s.is_login);
     @When("Admin selects the desired report type \\(e.g., monthly profits)")
     public void adminSelectsTheDesiredReportTypeEGMonthlyProfits() {
         SalesReport sales=new SalesReport();
-        assertFalse(sales.user_in);
+        assertFalse(sales.isUser_in());
     }
 
 
@@ -53,7 +53,7 @@ assertFalse(s.is_login);
     @When("Admin navigates to the Best-Selling Products section")
     public void adminNavigatesToTheBestSellingProductsSection() {
         SalesReport sales=new SalesReport();
-        assertFalse(sales.user_in);
+        assertFalse(sales.isUser_in());
     }
 
 
