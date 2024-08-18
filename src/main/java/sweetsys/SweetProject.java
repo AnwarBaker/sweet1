@@ -16,6 +16,9 @@ public class SweetProject {
 
 private boolean exist;
 
+    public boolean isExist() {
+        return exist;
+    }
 
     private boolean is_login;
   
@@ -94,9 +97,6 @@ private boolean exist;
 
 
 
-    public boolean isExist() {
-        return exist;
-    }
 
     public static ArrayList<ProductManegmwntSystem> getProducts() {
         return products;
@@ -221,12 +221,6 @@ ProductManegmwntSystem prod;
 
             }
         }
-
-
-        System.out.println("All System employees :\n");
-        System.out.println("Admins: \n" + SweetProject.getAdminArrayList());
-        System.out.println("Store Owners: \n" + SweetProject.getStoreOwnerArrayList());
-        System.out.println("Users: \n" + SweetProject.getUsersArrayList());
     }
 
 

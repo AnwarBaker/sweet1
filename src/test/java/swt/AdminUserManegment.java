@@ -128,6 +128,36 @@ s.login(user);
         assertEquals("The email should be updated", "anwar225@gmail.com", retrievedUser.getEmail());
         assertEquals("The city should be updated", "Nablus", retrievedUser.getCity());
 
+
+
+
+
+        for (User user : SweetProject.getUsers()) {
+            if (user.getUsername().equalsIgnoreCase("anwar")) {
+                assertEquals("225", user.getPass());
+                assertEquals("anwar225@gmail.com", user.getEmail());
+                assertEquals("Nablus", user.getCity());
+                break;
+            }
+        }
+
+
+        User nonExistentUser = new User("nonexistent", "000", 0, "nonexistent@gmail.com", "Unknown");
+        s.Update(nonExistentUser);
+        boolean userExists = false;
+        for (User user : SweetProject.users) {
+            if (user.getUsername().equalsIgnoreCase("nonexistent")) {
+                userExists = true;
+                break;
+            }
+        }
+        assertFalse(userExists);
+
+        try {
+
+        } catch (Exception e) {
+        }
+
     }
 
 

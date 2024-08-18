@@ -113,7 +113,7 @@ assertFalse(sign.in);
     @Test
     @Given("User navigates to the login page.")
     public void userNavigatesToTheLoginPage() {
- assertFalse(s.isExist());
+     assertFalse(s.isExist());
     }
 
 
