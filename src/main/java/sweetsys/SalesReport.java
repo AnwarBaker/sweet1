@@ -32,7 +32,6 @@ public class SalesReport {
     }
     public void ShoewSalesReport(){
 
-        System.out.println("Sales Reports");
         System.out.println("Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n");
         for(ProductManegmwntSystem prod : SweetProject.getProducts()){
 System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t\t"+prod.getPrice()+"\t"+prod.getEarning()+"\t\t"+prod.getCondition()+"\t"+prod.getNumOfsales()+"\t\t\t\t"+prod.getUniq()+"\n");

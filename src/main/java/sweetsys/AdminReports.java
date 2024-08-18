@@ -7,52 +7,46 @@ public class AdminReports {
     public boolean in;
 
     public void SeperateEachCity() {
-        SweetProject s = new SweetProject();
 
 try{
-        for (ProductManegmwntSystem pro : s.getProducts()) {
+        for (ProductManegmwntSystem pro : SweetProject.getProducts()) {
             String city = pro.getCity();
             if (city != null) {
                 if (city.equalsIgnoreCase("nablus")) {
-                s.Nablusprodcuts.add(pro);
+                SweetProject.Nablusprodcuts.add(pro);
             } else if (pro.getCity().equalsIgnoreCase("jenin")) {
-                s.Jeninprodcuts.add(pro);
+                SweetProject.Jeninprodcuts.add(pro);
             }
         }
         }
 
-        s.setNablusprodcuts(s.Nablusprodcuts);
-        s.setJeninprodcuts(s.Jeninprodcuts);
+        SweetProject.setNablusprodcuts(SweetProject.Nablusprodcuts);
+        SweetProject.setJeninprodcuts(SweetProject.Jeninprodcuts);
 
     }catch (Exception e){}
     }
 
 
     public void ShowBestSellinForNablus(){
-        SweetProject s=new SweetProject();
-        System.out.println("Nablus Store Best Product :\n");
+
         AdminReports a=new AdminReports();
-        a.SeperateEachCity();
 
-        int flag=s.Nablusprodcuts.get(0).getNumOfsales();
+        int flag= SweetProject.Nablusprodcuts.get(0).getNumOfsales();
 
-        System.out.println("Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n");
-        for(ProductManegmwntSystem prod :s.getNablusprodcuts()){
+        for(ProductManegmwntSystem prod : SweetProject.getNablusprodcuts()){
             if (prod.getNumOfsales() > flag) {
                 flag = prod.getNumOfsales();
             }
         }
-        for(ProductManegmwntSystem last :s.getProducts()){
+        for(ProductManegmwntSystem last : SweetProject.getProducts()){
             if (last.getNumOfsales()==flag) {
-                s.Nablusbestselling.add(last);
-                s.setNablusbestselling(s.Nablusbestselling);
+                SweetProject.Nablusbestselling.add(last);
+                SweetProject.setNablusbestselling(SweetProject.Nablusbestselling);
+                System.out.println(last);
                 break;
             }
         }
-        for(ProductManegmwntSystem store :s.getNablusbestselling()) {
 
-            System.out.println(store.getProductName() + "\t" + store.getProductDescription() + "\t\t\t" + store.getPrice() + "\t" + store.getEarning() + "\t\t" + store.getCondition() + "\t" + store.getNumOfsales() + "\t\t\t\t" + store.getUniq() + "\n");
-        }
 
 
     }
@@ -60,31 +54,25 @@ try{
 
 
     public void ShowBestSellinForJenin(){
-        SweetProject s=new SweetProject();
-        System.out.println("Jenin Store Best Product :\n");
+
         AdminReports a=new AdminReports();
         a.SeperateEachCity();
 
-        int flag=s.Jeninprodcuts.get(0).getNumOfsales();
+        int flag= SweetProject.Jeninprodcuts.get(0).getNumOfsales();
 
-        System.out.println("Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n");
-        for(ProductManegmwntSystem prod :s.getJeninprodcuts()){
+        for(ProductManegmwntSystem prod : SweetProject.getJeninprodcuts()){
             if (prod.getNumOfsales() > flag) {
                 flag = prod.getNumOfsales();
             }
         }
-        for(ProductManegmwntSystem last :s.getJeninprodcuts()){
+        for(ProductManegmwntSystem last : SweetProject.getJeninprodcuts()){
             if (last.getNumOfsales()==flag) {
-                s.Jeninbestselling.add(last);
-                s.setJeninbestselling(s.Jeninbestselling);
+                SweetProject.Jeninbestselling.add(last);
+                SweetProject.setJeninbestselling(SweetProject.Jeninbestselling);
+                System.out.println(last);
                 break;
             }
         }
-        for(ProductManegmwntSystem store :s.getJeninbestselling()) {
-
-            System.out.println(store.getProductName() + "\t" + store.getProductDescription() + "\t\t\t" + store.getPrice() + "\t" + store.getEarning() + "\t\t" + store.getCondition() + "\t" + store.getNumOfsales() + "\t\t\t\t" + store.getUniq() + "\n");
-        }
-
 
     }
 
@@ -94,29 +82,28 @@ try{
     public  void SeperateEachUserToCities(){
         SweetProject s=new SweetProject();
         try{
-            for (User u : s.getUsers()) {
+            for (User u : SweetProject.getUsers()) {
                 String city = u.getCity();
                 if (city != null) {
                     if (city.equalsIgnoreCase("nablus")) {
-                        s.Nablususers.add(u);
+                        SweetProject.Nablususers.add(u);
                     } else if (u.getCity().equalsIgnoreCase("jenin")) {
-                        s.JeninUsers.add(u);
+                        SweetProject.JeninUsers.add(u);
                     }
                 }
             }
 
-            s.setNablususers(s.Nablususers);
-            s.setJeninUsers(s.JeninUsers);
-            System.out.println("Nablus Users : \n");
-            for (User uu :s.getNablususers()){
-                System.out.println(uu);
-            }
-            System.out.println("Jenin Users : \n");
+            SweetProject.setNablususers(SweetProject.Nablususers);
+            SweetProject.setJeninUsers(SweetProject.JeninUsers);
 
-            for (User uuu :s.getJeninUsers()){
-                System.out.println(uuu);
+            System.out.println("Nablus Users: ");
+            for (User user : SweetProject.Nablususers) {
+                System.out.println(user);
             }
-
+            System.out.println("Jenin Users: ");
+            for (User user : SweetProject.JeninUsers) {
+                System.out.println(user);
+            }
 
     }catch (Exception e){}
 

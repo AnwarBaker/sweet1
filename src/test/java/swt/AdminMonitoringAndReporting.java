@@ -3,6 +3,10 @@ package swt;
 import io.cucumber.java.en.*;
 import org.junit.Test;
 import sweetsys.*;
+import org.junit.Before;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
@@ -14,6 +18,16 @@ SweetProject s;
         s = new SweetProject();
     }
 
+    @Before
+    public void setUp() {
+        SweetProject.getProducts().clear();
+        SweetProject.getNablusprodcuts().clear();
+        SweetProject.getJeninprodcuts().clear();
+        SweetProject.getNablusbestselling().clear();
+        SweetProject.getJeninbestselling().clear();
+        SweetProject.getNablususers().clear();
+        SweetProject.getJeninUsers().clear();
+    }
 
     @Test
     @Given("Admin logs in to the system")
@@ -25,7 +39,8 @@ assertFalse(s.isIs_login());
     @Test
     @When("Admin navigates to the Reports section")
     public void adminNavigatesToTheReportsSection() {
-
+        AdminReports admin=new AdminReports();
+assertFalse(admin.in);
     }
 
 
@@ -40,12 +55,29 @@ assertFalse(s.isIs_login());
     @Test
     @Then("System generates and displays the financial report")
     public void systemGeneratesAndDisplaysTheFinancialReport() {
-        SweetProject.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,14,"not finished",3));
-        SalesReport sales=new SalesReport();
-        sales.ShoewSalesReport();
-        assertFalse(sales.isPrinted());
+
+        SweetProject.products.clear();
+
+        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.products.add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outputStream));
+
+        try {
+
+            SalesReport sales = new SalesReport();
+            sales.ShoewSalesReport();
+            String output = outputStream.toString();
+            String expectedHeader = "Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n";
+            assertTrue("Sales report header should be displayed correctly", output.contains(expectedHeader));
+
+        } finally {
+            System.setOut(originalOut);
+        }
     }
 
 
@@ -66,13 +98,22 @@ assertFalse(s.isIs_login());
         SweetProject.products.add(new ProductManegmwntSystem(3,"pop cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
         SweetProject.products.add(new ProductManegmwntSystem(4,"marcemillo cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",13));
         SweetProject.products.add(new ProductManegmwntSystem(5,"lotos cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",30));
-        SweetProject.products.add(new ProductManegmwntSystem(6,"juice ","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",35));
+        SweetProject.products.add(new ProductManegmwntSystem(6,"juice la","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",35));
         AdminReports a=new AdminReports();
         a.SeperateEachCity();
         a.ShowBestSellinForNablus();
         a.ShowBestSellinForJenin();
-        assertFalse(a.printed);
+
+
+        assertEquals(1, SweetProject.getNablusbestselling().size());
+        assertTrue(SweetProject.getNablusbestselling().stream().anyMatch(p -> p.getProductName().equals("juice la") && p.getNumOfsales()==35));
+
+        assertEquals(1, SweetProject.getJeninbestselling().size());
+        assertTrue(SweetProject.getJeninbestselling().stream().anyMatch(p -> p.getProductName().equals("lotos cake") && p.getNumOfsales() == 30));
+
+
     }
+
 
 
     @Test
@@ -93,7 +134,18 @@ assertFalse(a.in);
         AdminReports a=new AdminReports();
 
         a.SeperateEachUserToCities();
-        assertFalse(a.printed);
+        System.out.println("Nablus Users:");
+        SweetProject.getNablususers().forEach(System.out::println);
+        System.out.println("Jenin Users:");
+        SweetProject.getJeninUsers().forEach(System.out::println);
+
+        assertEquals(2, SweetProject.getNablususers().size());
+        assertTrue(SweetProject.getNablususers().stream().anyMatch(u -> u.getUsername().equals("ahmad")));
+        assertTrue(SweetProject.getNablususers().stream().anyMatch(u -> u.getUsername().equals("yasmine")));
+
+        assertEquals(2, SweetProject.getJeninUsers().size());
+        assertTrue(SweetProject.getJeninUsers().stream().anyMatch(u -> u.getUsername().equals("anwar")));
+        assertTrue(SweetProject.getJeninUsers().stream().anyMatch(u -> u.getUsername().equals("tarneem")));
     }
 
 

@@ -5,8 +5,6 @@ public class UserAccountManegment {
 
      public boolean exist;
 
-
-
     public void UpdateUser(User user){
 
         try{
