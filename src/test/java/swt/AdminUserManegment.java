@@ -147,7 +147,7 @@ s.login(user);
 
         User userToDelete = new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus");
 
-        SweetProject s = new SweetProject();
+
         s.Delete(userToDelete);
 
         boolean userDeleted = SweetProject.getUsers().stream()

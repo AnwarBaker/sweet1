@@ -19,7 +19,7 @@ SweetProject s;
     @Test
     @Given("User logs in to the system")
     public void userLogsInToTheSystem() {
-       assertFalse(s.is_login);
+       assertFalse(s.isIs_login());
     }
 
 

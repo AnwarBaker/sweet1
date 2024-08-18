@@ -3,10 +3,7 @@ package sweetsys;
 
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
 
-import static java.lang.System.exit;
 
 public class SweetProject {
     private String errorMessage;
@@ -20,23 +17,23 @@ public class SweetProject {
 private boolean exist;
 
 
-    public boolean is_login;
+    private boolean is_login;
   
 
-    static public ArrayList<User> users =new ArrayList<User>();
-    static public ArrayList<User> Nablususers =new ArrayList<User>();
-    static public ArrayList<User> JeninUsers =new ArrayList<User>();
+    static public    ArrayList<User> users =new ArrayList<User>();
+    static protected   ArrayList<User> Nablususers =new ArrayList<User>();
+    static protected ArrayList<User> JeninUsers =new ArrayList<User>();
 
 
 
 
-    static public ArrayList<ProductManegmwntSystem> products =new ArrayList<ProductManegmwntSystem>();
-    static public ArrayList<ProductManegmwntSystem> bestselling =new ArrayList<ProductManegmwntSystem>();
+    static public ArrayList<ProductManegmwntSystem> products =new ArrayList<>();
+    static public ArrayList<ProductManegmwntSystem> bestselling =new ArrayList<>();
 
-    static public ArrayList<ProductManegmwntSystem> Nablusprodcuts =new ArrayList<ProductManegmwntSystem>();
-    static public ArrayList<ProductManegmwntSystem> Jeninprodcuts =new ArrayList<ProductManegmwntSystem>();
-    static public ArrayList<ProductManegmwntSystem> Jeninbestselling =new ArrayList<ProductManegmwntSystem>();
-    static public ArrayList<ProductManegmwntSystem> Nablusbestselling =new ArrayList<ProductManegmwntSystem>();
+    static protected ArrayList<ProductManegmwntSystem> Nablusprodcuts =new ArrayList<>();
+    static protected ArrayList<ProductManegmwntSystem> Jeninprodcuts =new ArrayList<>();
+    static protected ArrayList<ProductManegmwntSystem> Jeninbestselling =new ArrayList<ProductManegmwntSystem>();
+    static protected ArrayList<ProductManegmwntSystem> Nablusbestselling =new ArrayList<>();
 
 
     public static ArrayList<ProductManegmwntSystem> getNablusprodcuts() {
@@ -101,10 +98,6 @@ private boolean exist;
         return exist;
     }
 
-    public void setExist(boolean exist) {
-        this.exist = exist;
-    }
-
     public static ArrayList<ProductManegmwntSystem> getProducts() {
         return products;
     }
@@ -114,12 +107,13 @@ private boolean exist;
     }
 
 
-    public boolean found;
 
     public void login(User u) {
 // empty beacuse well fill later
     }
+
 ProductManegmwntSystem prod;
+
     public void productlogin(ProductManegmwntSystem prod) {
 
         this.prod=prod;
@@ -164,11 +158,11 @@ ProductManegmwntSystem prod;
 
 
 
-    static public ArrayList<User> AdminArrayList = new ArrayList<User>();
+    static protected ArrayList<User> AdminArrayList = new ArrayList<User>();
 
-    static public ArrayList<User> StoreOwnerArrayList = new ArrayList<User>();
+    static protected ArrayList<User> StoreOwnerArrayList = new ArrayList<User>();
 
-    static public ArrayList<User> UsersArrayList = new ArrayList<User>();
+    static protected ArrayList<User> UsersArrayList = new ArrayList<User>();
 
     public static ArrayList<User> getAdminArrayList() {
         return AdminArrayList;
@@ -201,8 +195,8 @@ ProductManegmwntSystem prod;
 
 
     public void ShowEachTypeOfUsers(){
-SweetProject s=new SweetProject();
-        for(User u:s.getUsers()){
+
+        for(User u: getUsers()){
             if(u.getUserlevel()==1)  {
                 User user=new User(u.getUsername(),u.getPass(),u.getUserlevel(),u.getEmail(),u.getCity());
 
@@ -242,8 +236,9 @@ SweetProject s=new SweetProject();
 
 
     public void Update(User user){
+
         try{
-       for(int i = 0 ;i <SweetProject.users.size();i++){
+       for(int i = 0; i < users.size(); i++){
            if(SweetProject.users.get(i).getUsername().equalsIgnoreCase(user.getUsername())){
                SweetProject.users.set(i,user);
                break;
@@ -260,7 +255,7 @@ SweetProject s=new SweetProject();
     public void Delete(User user){
         try{
 
-            for(int i = 0 ;i <SweetProject.users.size();i++){
+            for(int i = 0; i < users.size(); i++){
                 if(SweetProject.users.get(i).getUsername().equalsIgnoreCase(user.getUsername())&&SweetProject.users.get(i).getPass().equals(user.getPass())){
 
                     SweetProject.users.remove(i);
@@ -277,7 +272,7 @@ SweetProject s=new SweetProject();
 
     public void ProductUpdate( ProductManegmwntSystem prod){
         try{
-            for(int i = 0 ;i <SweetProject.products.size();i++){
+            for(int i = 0; i < products.size(); i++){
                 if(SweetProject.products.get(i).getUniq()==prod.getUniq()){
                     SweetProject.products.set(i,prod);
                     break;
@@ -294,23 +289,22 @@ SweetProject s=new SweetProject();
 
 
     public void addnewProduct(ProductManegmwntSystem prod) {
-        SweetProject s=new SweetProject();
-        boolean exist=false;
+        boolean Testxist=false;
 
         try{
             for(int i=0 ;i<SweetProject.getProducts().size();i++){
-                if(SweetProject.products.get(i).getUniq()==prod.getUniq()){
-                    exist =true;
+                if(products.get(i).getUniq()==prod.getUniq()){
+                    Testxist =true;
                     break;
                 }
             }
 
-  if(!exist){
+  if(!Testxist){
       int last=SweetProject.getProducts().size();
       prod.setUniq(last);
-      SweetProject.products.add(prod);
+      products.add(prod);
   }
-  SweetProject.setProducts(SweetProject.products);
+  setProducts(products);
 
     }catch(Exception e){e.printStackTrace();}
     }
@@ -323,14 +317,14 @@ SweetProject s=new SweetProject();
     public void DeleteProduct(ProductManegmwntSystem prod){
         try{
 
-            for(int i = 0 ;i <SweetProject.products.size();i++){
-                if(SweetProject.products.get(i).getUniq()==prod.getUniq()){
+            for(int i = 0; i < products.size(); i++){
+                if(products.get(i).getUniq()==prod.getUniq()){
 
                     SweetProject.products.remove(i);
                     break;
                 }
             }
-            SweetProject.setProducts(SweetProject.products);
+            setProducts(SweetProject.products);
 
         }catch (Exception e){e.printStackTrace();}
     }

@@ -9,7 +9,6 @@ public class UserShareProducts {
     public double expectedprice;
 
 static public ArrayList<UserShareProducts> userproducts=new ArrayList<UserShareProducts>();
-    public boolean done;
 
     public String getProductName() {
         return productName;
@@ -64,27 +63,22 @@ static public ArrayList<UserShareProducts> userproducts=new ArrayList<UserShareP
                 '}';
     }
 
+
+
     public void addnewProductForUser(UserShareProducts prod){
-        UserShareProducts newone =new UserShareProducts();
+        try{
         boolean founded=false;
-        SweetProject s=new SweetProject();
-        for(ProductManegmwntSystem products :s.getProducts()){
+        for(ProductManegmwntSystem products : SweetProject.getProducts()){
             if(products.getProductName().equalsIgnoreCase(prod.getProductName())&&products.getProductDescription().equalsIgnoreCase(prod.getProductDescription())) {
                 System.out.println("this product already exists");
                 founded=true;
-
             }
-
-
         }
-
         if(!founded){
-            newone.userproducts.add(prod);
-            newone.setUserproducts(newone.userproducts);
+            userproducts.add(prod);
+            setUserproducts(userproducts);
         }
-for(UserShareProducts us :newone.getUserproducts()){
-    System.out.println(us);
-}
+    }catch(Exception e){e.printStackTrace();}
 
     }
 

@@ -3,12 +3,11 @@ package swt;
 import io.cucumber.java.en.*;
 import org.junit.Test;
 import sweetsys.OrderManegmentClass;
-import sweetsys.ProductManegmwntSystem;
-import sweetsys.SalesReport;
+
 import sweetsys.SweetProject;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+
 
 
 public class StoreOwnerOrderManegSteps {
@@ -23,31 +22,58 @@ public class StoreOwnerOrderManegSteps {
     @Test
     @Given("Store owner navigates to the Order Management section.")
     public void storeOwnerNavigatesToTheOrderManagementSection() {
-        OrderManegmentClass Order =new OrderManegmentClass();
-   assertFalse(Order.in);
+        OrderManegmentClass order =new OrderManegmentClass();
+   assertFalse(order.isIn());
     }
 
     @Test
     @When("Store owner can view a list of orders")
     public void storeOwnerCanViewAListOfOrders() {
         OrderManegmentClass order =new OrderManegmentClass();
+        OrderManegmentClass.orderlist.clear();
+        OrderManegmentClass.orderlist.add(new OrderManegmentClass("Pastry", 5, 0.5, 2, "In Progress"));
+        OrderManegmentClass.orderlist.add(new OrderManegmentClass("cake",10,1.0,1,"done"));
+
+        OrderManegmentClass.setOrderlist(OrderManegmentClass.orderlist);
 
 
+        java.io.ByteArrayOutputStream outContent = new java.io.ByteArrayOutputStream();
+        System.setOut(new java.io.PrintStream(outContent));
 
-        OrderManegmentClass o=new OrderManegmentClass("cake",10,1.0,1,"done");
-        OrderManegmentClass oo=new OrderManegmentClass();
-        oo.orderlist.add(o);
-        oo.setOrderlist(oo.orderlist);
+
         order.ShowOrders();
-        assertFalse(order.isted);
+
+
+
+        String expectedOutput = "Orders{name='Pastry', price=5.0, OrderNUM=2, discount=0.5, orderstatus='In Progress'}\n" +
+                "Orders{name='cake', price=10.0, OrderNUM=1, discount=1.0, orderstatus='done'}\n";
+
+        String actualOutput = outContent.toString().replace("\r\n", "\n");
+        assertEquals(expectedOutput, actualOutput);
+
+
+
+         System.setOut(System.out);
     }
+
 
     @Test
     @Then("Store owner can update the status of each order")
     public void storeOwnerCanUpdateTheStatusOfEachOrder() {
-        OrderManegmentClass order =new OrderManegmentClass();
+        OrderManegmentClass.orderlist.clear();
+        OrderManegmentClass.orderlist.add(new OrderManegmentClass("Pastry", 5, 0.5, 2, "In Progress"));
+        OrderManegmentClass.orderlist.add(new OrderManegmentClass("cake",10,1.0,1,"done"));
 
-        assertFalse(order.isUpdated);
+        OrderManegmentClass.setOrderlist(OrderManegmentClass.orderlist);
+        OrderManegmentClass order =new OrderManegmentClass();
+        OrderManegmentClass ord = new OrderManegmentClass("Pastry", 5, 0.5, 2, "Completed");
+        order.OrderUpdate(ord);
+
+        String updatedStatus = OrderManegmentClass.orderlist.get(0).getOrderstatus();
+        assertEquals("Completed", updatedStatus);
+
+        String unchangedStatus = OrderManegmentClass.orderlist.get(1).getOrderstatus();
+        assertEquals("done", unchangedStatus);
     }
 
 

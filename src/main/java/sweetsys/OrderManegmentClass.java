@@ -1,32 +1,22 @@
 package sweetsys;
-
 import java.util.ArrayList;
-import java.util.Scanner;
-
-import static java.lang.System.exit;
+import java.util.stream.IntStream;
 
 public class OrderManegmentClass {
 
-    public boolean isted;
-    public boolean isUpdated;
-    String name;
-    double price;
-    double discount;
-    int OrderNUM;
-    String orderstatus;
+    private String name;
+    private double price;
+    private double discount;
+    private int OrderNUM;
+    private String orderstatus;
 
-    static public ArrayList<OrderManegmentClass> orderlist=new ArrayList<OrderManegmentClass>();
+    static public ArrayList<OrderManegmentClass> orderlist=new ArrayList<>();
 
-    public boolean in;
-    private boolean found;
+      public static boolean in;
 
     public OrderManegmentClass(){}
 
-    ProductManegmwntSystem p;
 
-    public OrderManegmentClass(ProductManegmwntSystem p) {
-        this.p = p;
-    }
 
     public String getName() {
         return name;
@@ -56,17 +46,13 @@ public class OrderManegmentClass {
         OrderManegmentClass.orderlist = orderlist;
     }
 
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
+
 
     public int getOrderNUM() {
         return OrderNUM;
     }
 
-    public void setOrderNUM(int orderNUM) {
-        OrderNUM = orderNUM;
-    }
+
 
     public String getOrderstatus() {
         return orderstatus;
@@ -84,16 +70,9 @@ public class OrderManegmentClass {
         this.orderstatus = orderstatus;
     }
 
-    public OrderManegmentClass(String name, double price, double discount, int orderNUM) {
-        this.name = name;
-        this.price = price;
-        this.discount = discount;
-        this.OrderNUM = orderNUM;
-    }
 
-    public OrderManegmentClass(int orderNUM) {
-        OrderNUM = orderNUM;
-    }
+
+
 
     @Override
     public String toString() {
@@ -106,84 +85,38 @@ public class OrderManegmentClass {
                 '}';
     }
 
-
-
-
-    public void OrderUpdate(){
-        SweetProject s=new SweetProject();
-
-        OrderManegmentClass order =new OrderManegmentClass();
-
-        Scanner cin =new Scanner(System.in);
-
-        for(OrderManegmentClass oo :order.getOrderlist()){
-            if(oo.getName() == null){
-                System.out.println("there is no order yet");
-                exit(0);
-            }
-            System.out.println(oo);
-        }
-
-        System.out.println("enter Number of Order you want to update pls :\n");
-        int ordernum=cin.nextInt();
-
-        order=new OrderManegmentClass(ordernum);
-
-
-
-
-        for(OrderManegmentClass orders :order.getOrderlist()){
-            if(orders.getOrderNUM()==order.getOrderNUM()){
-                found = true;
-            }
-        }
-
-
-        if(!found){
-            System.out.println("you entered wrong UniqNumber try again");
-            exit(0);
-        }
-
-        Scanner c =new Scanner(System.in);
-
-        System.out.println("\n \nenter the new Status of Order you want to update pls :\n");
-        String newstatus=c.nextLine();
-
-
-        for(OrderManegmentClass orders:order.getOrderlist()){
-            if(orders.getOrderNUM()==order.getOrderNUM()){
-
-                orders.setOrderstatus(newstatus);
-
-            }
-
-        }
-        System.out.println("Updated Data\n");
-        for(OrderManegmentClass orders:order.getOrderlist()){
-            System.out.println(orders);
-        }
+    public boolean isIn() {
+        return in;
     }
 
 
-
-
 public void ShowOrders(){
-        OrderManegmentClass oo=new OrderManegmentClass();
-        for(OrderManegmentClass o :oo.getOrderlist()){
+        for(OrderManegmentClass o :getOrderlist()){
             System.out.println(o);
         }
 }
 
 
-    public static void main(String[] args) {
-        SweetProject s=new SweetProject();
+    public void OrderUpdate(OrderManegmentClass order){
 
-        s.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,10,"finished",1));
-        s.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        s.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,14,"not finished",3));
-       s.setProducts(s.products);
-       OrderManegmentClass order =new OrderManegmentClass();
+        try{
+            if (order == null) {
+                System.out.println("Order cannot be null.");
+                return;
+            }
 
-       order.OrderUpdate();
+            if (orderlist == null) {
+                System.out.println("Order list is not initialized.");
+                return;
+            }
+
+            IntStream.range(0, orderlist.size()).filter(i -> orderlist.get(i).getOrderNUM() == order.getOrderNUM()).findFirst().ifPresent(i -> orderlist.get(i).setOrderstatus(order.getOrderstatus()));
+            setOrderlist(orderlist);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
+
+
 }
