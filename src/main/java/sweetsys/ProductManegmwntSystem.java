@@ -156,6 +156,9 @@ public class ProductManegmwntSystem {
         this.discount=discount;
     }
 
+
+
+
     public ProductManegmwntSystem(int uniq, String productName, String city, String productDescription, double earning, double price, String condition, int numOfsales) {
         this.uniq = uniq;
         this.productName = productName;
