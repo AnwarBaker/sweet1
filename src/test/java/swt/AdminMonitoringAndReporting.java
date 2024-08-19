@@ -127,6 +127,7 @@ assertFalse(a.in);
     @Test
     @Then("System displays user statistics categorized by city \\(e.g., Nablus, Jenin)")
     public void systemDisplaysUserStatisticsCategorizedByCityEGNablusJenin() {
+        SweetProject.users.clear();
         SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
         SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
