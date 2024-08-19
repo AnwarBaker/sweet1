@@ -1,8 +1,7 @@
 package swt;
-
 import io.cucumber.java.en.*;
 import org.junit.Test;
-import sweetsys.StoreClass;
+import sweetsys.userStoreclass;
 import sweetsys.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -37,7 +36,7 @@ SweetProject s;
         SweetProject.products.add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
         SweetProject.products.add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
         SweetProject.products.add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
-      SweetProject.setProducts(SweetProject.products);
+        SweetProject.setProducts(SweetProject.products);
         UserRecipes u=new UserRecipes();
         ProductManegmwntSystem prod = new ProductManegmwntSystem("Nutel cake", "Layers of chocolate cake with chocolate cream on the top", 60.0, 10.0, 10, "finished", 1);
         u.recipesSearch(prod);
@@ -108,7 +107,7 @@ SweetProject s;
 
     @Given("User navigates to the Store section")
     public void userNavigatesToTheStoreSection() {
-        StoreClass store =new StoreClass();
+        userStoreclass store =new userStoreclass();
 assertFalse(store.in);
     }
 
@@ -117,7 +116,7 @@ assertFalse(store.in);
     @Test
     @When("User selects a dessert to purchase")
     public void userSelectsADessertToPurchase() {
-        StoreClass store =new StoreClass();
+        userStoreclass store =new userStoreclass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
@@ -147,7 +146,7 @@ assertFalse(store.in);
 
     @Test
     public void testInvalidInput() {
-        StoreClass store = new StoreClass();
+        userStoreclass store = new userStoreclass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         SweetProject.products.clear();
@@ -169,7 +168,7 @@ assertFalse(store.in);
 
     @Test
     public void testEmptyInput() {
-        StoreClass store = new StoreClass();
+        userStoreclass store = new userStoreclass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
@@ -193,7 +192,7 @@ assertFalse(store.in);
     @Test
     @Then("User completes the purchase process")
     public void userCompletesThePurchaseProcess() {
-        StoreClass store =new StoreClass();
+        userStoreclass store =new userStoreclass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
