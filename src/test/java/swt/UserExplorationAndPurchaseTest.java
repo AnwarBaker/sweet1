@@ -2,6 +2,7 @@ package swt;
 
 import io.cucumber.java.en.*;
 import org.junit.Test;
+import sweetsys.StoreClass;
 import sweetsys.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -11,6 +12,7 @@ import static org.junit.Assert.*;
 public class UserExplorationAndPurchaseTest {
 
 SweetProject s;
+
 
     public UserExplorationAndPurchaseTest( ) {
         s=new SweetProject();
@@ -106,7 +108,7 @@ SweetProject s;
 
     @Given("User navigates to the Store section")
     public void userNavigatesToTheStoreSection() {
-StoreClass store =new StoreClass();
+        StoreClass store =new StoreClass();
 assertFalse(store.in);
     }
 
