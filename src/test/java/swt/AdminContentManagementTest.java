@@ -6,11 +6,11 @@ import sweetsys.*;
 
 import static org.junit.Assert.*;
 
-public class AdminContentManegment {
+public class AdminContentManagementTest {
 
 SweetProject s;
 
-    public AdminContentManegment( ) {
+    public AdminContentManagementTest( ) {
         s =new SweetProject();
     }
 
@@ -90,18 +90,18 @@ assertFalse(a.in);
         AdminFeedback adminfeed=new AdminFeedback();
 
         adminfeed.setAdminresponse(adminfeed.getAdminresponse());
-        adminfeed.setAdminName("sjkdfhks");
+        adminfeed.setAdminname("sjkdfhks");
         adminfeed.setResponse("jkdhksjd");
         adminfeed.setUsername("hjgsd");
         adminfeed.setResponseNumber(1);
 
         adminfeed.getResponse();
-        adminfeed.getAdminName();
+        adminfeed.getAdminname();
         adminfeed.getResponseNumber();
         adminfeed.getUsername();
 
-        AdminFeedback firstadminfeed=new AdminFeedback(adminfeed.getAdminName(),adminfeed.getResponseNumber(),adminfeed.getUsername(), adminfeed.getResponse());
-        AdminFeedback admincover=new AdminFeedback(adminfeed.getAdminName(),adminfeed.getResponseNumber(),adminfeed.getResponse(),adminfeed.getUsername());
+        AdminFeedback firstadminfeed=new AdminFeedback(adminfeed.getAdminname(),adminfeed.getResponseNumber(),adminfeed.getUsername(), adminfeed.getResponse());
+        AdminFeedback admincover=new AdminFeedback(adminfeed.getAdminname(),adminfeed.getResponseNumber(),adminfeed.getResponse(),adminfeed.getUsername());
 
 
     }

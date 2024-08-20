@@ -96,7 +96,6 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
     }
 
     if (!found) {
-        System.out.println("User not found");
         System.exit(0);
     }
 }
@@ -125,10 +124,10 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
             }
 
             if(!find){
-                System.out.println("not exist");
+
                 exit(0);
             }
-        System.out.println(getMessegaesList());
+
 
     }
 

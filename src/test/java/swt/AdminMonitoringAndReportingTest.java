@@ -70,7 +70,7 @@ assertFalse(admin.in);
         try {
 
             SalesReport sales = new SalesReport();
-            sales.ShoewSalesReport();
+            sales.shoewSalesreport();
             String output = outputStream.toString();
             String expectedHeader = "Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n";
             assertTrue("Sales report header should be displayed correctly", output.contains(expectedHeader));

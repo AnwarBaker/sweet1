@@ -5,7 +5,7 @@ public class UserAccountManegment {
 
      public boolean exist;
 
-    public void UpdateUser(User user){
+    public void updateUser(User user){
 
 
             if(user.getUserlevel()==3){

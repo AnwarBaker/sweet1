@@ -28,7 +28,7 @@ public class StoreOwnerProductManegmentTest {
     public void storeOwnerLogsInToTheSystem() {
 
 
-    assertFalse(Sys.isB());
+    assertFalse(Sys.b);
     }
 
 
@@ -172,7 +172,7 @@ SweetProject.products.clear();
         try {
 
             SalesReport sales = new SalesReport();
-            sales.ShoewSalesReport();
+            sales.shoewSalesreport();
             String output = outputStream.toString();
             String expectedHeader = "Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n";
             assertTrue("Sales report header should be displayed correctly", output.contains(expectedHeader));
@@ -223,7 +223,7 @@ SweetProject.bestselling.clear();
         SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
 
         SalesReport sales=new SalesReport();
-        sales.ShowBestProduct();
+        sales.showBestproduct();
 
       int expectednum= SweetProject.getBestselling().get(0).getNumOfsales();
       assertEquals(12,expectednum);

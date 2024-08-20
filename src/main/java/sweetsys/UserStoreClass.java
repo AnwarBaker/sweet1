@@ -1,9 +1,9 @@
 package sweetsys;
 import java.util.ArrayList;
-public class userStoreclass {
+public class UserStoreClass {
     public boolean in;
 
-    public userStoreclass(){
+    public UserStoreClass(){
         //dd
     }
     public void buyproducts(String input){

@@ -174,7 +174,7 @@ assertFalse(s.isExist());
         User updatedUser = new User("tarneem", "newpass", 3, "newemail@gmail.com");
 
         UserAccountManegment test = new UserAccountManegment();
-        test.UpdateUser(updatedUser);
+        test.updateUser(updatedUser);
 
         User foundUser = SweetProject.getUsers().stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase("tarneem"))
@@ -187,7 +187,7 @@ assertFalse(s.isExist());
         assertEquals("Email should be updated", "newemail@gmail.com", foundUser.getEmail());
 
         User nonUpdatableUser = new User("yasmine", "updatedpass", 2, "updatedemail@gmail.com");
-        test.UpdateUser(nonUpdatableUser);
+        test.updateUser(nonUpdatableUser);
 
         User unchangedUser = SweetProject.getUsers().stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase("yasmine"))

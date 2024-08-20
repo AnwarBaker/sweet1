@@ -1,11 +1,9 @@
 package sweetsys;
 
 public class AdminerManagementClass {
-    public static boolean is_exist;
+    private static boolean isExist;
 
-
-    public static boolean isIs_exist() {
-        return is_exist;
+    public static boolean isIsExist() {
+        return isExist;
     }
-
 }

@@ -6,7 +6,7 @@ public class AdminFeedback {
 
     public boolean in;
     private String username;
-    private String AdminName;
+    private String adminname;
     private String Response;
     private int responseNumber;
 
@@ -15,7 +15,7 @@ public class AdminFeedback {
 
 
     public AdminFeedback(String adminName, int responseNumber, String response, String username) {
-        AdminName = adminName;
+        adminname = adminName;
         this.responseNumber = responseNumber;
         Response = response;
         this.username = username;
@@ -37,12 +37,12 @@ public class AdminFeedback {
         this.username = username;
     }
 
-    public String getAdminName() {
-        return AdminName;
+    public String getAdminname() {
+        return adminname;
     }
 
-    public void setAdminName(String adminName) {
-        AdminName = adminName;
+    public void setAdminname(String adminname) {
+        this.adminname = adminname;
     }
 
     public String getResponse() {
@@ -68,7 +68,7 @@ public class AdminFeedback {
     public String toString() {
         return "AdminFeedback{" +
                 "username='" + username + '\'' +
-                ", AdminName='" + AdminName + '\'' +
+                ", AdminName='" + adminname + '\'' +
                 ", Response='" + Response + '\'' +
                 '}';
     }

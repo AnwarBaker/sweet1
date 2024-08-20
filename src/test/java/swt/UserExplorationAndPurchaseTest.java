@@ -1,7 +1,7 @@
 package swt;
 import io.cucumber.java.en.*;
 import org.junit.Test;
-import sweetsys.userStoreclass;
+import sweetsys.UserStoreClass;
 import sweetsys.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -111,7 +111,7 @@ SweetProject s;
 
     @Given("User navigates to the Store section")
     public void userNavigatesToTheStoreSection() {
-        userStoreclass store =new userStoreclass();
+        UserStoreClass store =new UserStoreClass();
 assertFalse(store.in);
     }
 
@@ -120,7 +120,7 @@ assertFalse(store.in);
     @Test
     @When("User selects a dessert to purchase")
     public void userSelectsADessertToPurchase() {
-        userStoreclass store =new userStoreclass();
+        UserStoreClass store =new UserStoreClass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
@@ -152,7 +152,7 @@ assertFalse(store.in);
 
     @Test
     public void testInvalidInput() {
-        userStoreclass store = new userStoreclass();
+        UserStoreClass store = new UserStoreClass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         SweetProject.products.clear();
@@ -174,7 +174,7 @@ assertFalse(store.in);
 
     @Test
     public void testEmptyInput() {
-        userStoreclass store = new userStoreclass();
+        UserStoreClass store = new UserStoreClass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
@@ -214,7 +214,7 @@ assertFalse(store.in);
     @Test
     @Then("User completes the purchase process")
     public void userCompletesThePurchaseProcess() {
-        userStoreclass store =new userStoreclass();
+        UserStoreClass store =new UserStoreClass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 

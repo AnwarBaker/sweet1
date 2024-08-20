@@ -30,7 +30,7 @@ public class AdminUserManagementTest {
     @When("Admin navigate to the User Management section")
     public void admin_navigate_to_the_user_management_section() {
 
-    assertFalse(AdminerManagementClass.isIs_exist());
+    assertFalse(AdminerManagementClass.isIsExist());
     }
 
 

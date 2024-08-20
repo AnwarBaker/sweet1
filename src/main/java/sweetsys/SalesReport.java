@@ -6,7 +6,7 @@ package sweetsys;
 public class SalesReport {
 
     private boolean userIn;
-    public boolean printed;
+
 
 
     public boolean isUserIn() {
@@ -17,7 +17,7 @@ public class SalesReport {
         //not now
 
     }
-    public void ShoewSalesReport(){
+    public void shoewSalesreport(){
 
         System.out.println("Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n");
         for(ProductManegmwntSystem prod : SweetProject.getProducts()){
@@ -27,7 +27,7 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
     }
 
 
-    public void ShowBestProduct(){
+    public void showBestproduct(){
 
         System.out.println("Best Product :\n");
 
@@ -53,7 +53,7 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
 
 
     public void addDiscount( ProductManegmwntSystem prod){
-        try{
+
           double discount=prod.getDiscount();
 
             for(ProductManegmwntSystem pro :SweetProject.getProducts()){
@@ -63,7 +63,7 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
                 }
             }
             SweetProject.setProducts(SweetProject.products);
-        }catch (Exception e){}
+
 
 
     }

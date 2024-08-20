@@ -83,7 +83,7 @@ public class LoginTest {
     @Then("the user should be redirected to the dashboard")
     public void theUserShouldBeRedirectedToTheDashboard() {
 
-assertFalse(Sys.isB());
+assertFalse(Sys.b);
 
     }
 
