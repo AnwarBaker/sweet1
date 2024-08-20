@@ -18,8 +18,6 @@ public class Signup {
 
 
 
-
-
     public void addnewuser(User user) {
         SweetProject s=new SweetProject();
 
