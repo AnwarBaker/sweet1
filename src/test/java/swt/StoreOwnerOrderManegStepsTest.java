@@ -41,7 +41,7 @@ public class StoreOwnerOrderManegStepsTest {
         System.setOut(new java.io.PrintStream(outContent));
 
 
-        order.ShowOrders();
+        order.showOrders();
 
 
 
@@ -70,7 +70,7 @@ public class StoreOwnerOrderManegStepsTest {
         OrderManegmentClass.setOrderlist(OrderManegmentClass.getOrderlist());
         OrderManegmentClass order =new OrderManegmentClass();
         OrderManegmentClass ord = new OrderManegmentClass("Pastry", 5, 0.5, 2, "Completed");
-        order.OrderUpdate(ord);
+        order.orderUpdate(ord);
 
         String updatedStatus = OrderManegmentClass.getOrderlist().get(0).getOrderstatus();
         assertEquals("Completed", updatedStatus);
@@ -85,11 +85,13 @@ public class StoreOwnerOrderManegStepsTest {
         tocover.setName("jkfhk");
         tocover.setPrice(12);
         tocover.setDiscount(10);
+        tocover.setOrdernum(2);
         tocover.setOrderlist(tocover.getOrderlist());
         tocover.getOrderlist();
         tocover.getDiscount();
         tocover.getName();
-        tocover.getOrderNUM();
+        tocover.getPrice();
+        tocover.getOrdernum();
         tocover.getDiscount();
 
 

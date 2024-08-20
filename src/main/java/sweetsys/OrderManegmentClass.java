@@ -7,7 +7,7 @@ public class OrderManegmentClass {
     private String name;
     private double price;
     private double discount;
-    private int OrderNUM;
+    private int ordernum;
     private String orderstatus;
 
     static protected ArrayList<OrderManegmentClass> orderlist=new ArrayList<>();
@@ -49,12 +49,13 @@ public class OrderManegmentClass {
     }
 
 
-
-    public int getOrderNUM() {
-        return OrderNUM;
+    public int getOrdernum() {
+        return ordernum;
     }
 
-
+    public void setOrdernum(int ordernum) {
+        this.ordernum = ordernum;
+    }
 
     public String getOrderstatus() {
         return orderstatus;
@@ -68,7 +69,7 @@ public class OrderManegmentClass {
         this.name = name;
         this.price = price;
         this.discount = discount;
-        this.OrderNUM = orderNUM;
+        this.ordernum = orderNUM;
         this.orderstatus = orderstatus;
     }
 
@@ -81,7 +82,7 @@ public class OrderManegmentClass {
         return "Orders{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", OrderNUM=" + OrderNUM +
+                ", OrderNUM=" + ordernum +
                 ", discount=" + discount +
                 ", orderstatus='" + orderstatus + '\'' +
                 '}';
@@ -92,27 +93,23 @@ public class OrderManegmentClass {
     }
 
 
-public void ShowOrders(){
+public void showOrders(){
         for(OrderManegmentClass o :getOrderlist()){
             System.out.println(o);
         }
 }
 
 
-    public void OrderUpdate(OrderManegmentClass order){
+    public void orderUpdate(OrderManegmentClass order){
 
 
-            if (order == null) {
-                System.out.println("Order cannot be null.");
+            if (order == null||orderlist == null) {
+                System.out.println("Order cannot be null. OR rder list is not initialized ");
                 return;
             }
 
-            if (orderlist == null) {
-                System.out.println("Order list is not initialized.");
-                return;
-            }
 
-            IntStream.range(0, orderlist.size()).filter(i -> orderlist.get(i).getOrderNUM() == order.getOrderNUM()).findFirst().ifPresent(i -> orderlist.get(i).setOrderstatus(order.getOrderstatus()));
+            IntStream.range(0, orderlist.size()).filter(i -> orderlist.get(i).getOrdernum() == order.getOrdernum()).findFirst().ifPresent(i -> orderlist.get(i).setOrderstatus(order.getOrderstatus()));
             setOrderlist(orderlist);
 
     }
