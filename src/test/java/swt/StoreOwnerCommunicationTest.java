@@ -6,11 +6,11 @@ import sweetsys.StoreOwnerMessages;
 import sweetsys.SweetProject;
 import static org.junit.Assert.*;
 
-public class StoreOwnerCommunication {
+public class StoreOwnerCommunicationTest {
 
     SweetProject s;
 
-    public StoreOwnerCommunication( ) {
+    public StoreOwnerCommunicationTest( ) {
         s = new SweetProject();
     }
 

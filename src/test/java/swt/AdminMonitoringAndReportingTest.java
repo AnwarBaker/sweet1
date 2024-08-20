@@ -10,11 +10,11 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
-public class AdminMonitoringAndReporting {
+public class AdminMonitoringAndReportingTest {
 
 SweetProject s;
 
-    public AdminMonitoringAndReporting( ) {
+    public AdminMonitoringAndReportingTest( ) {
         s = new SweetProject();
     }
 
@@ -48,7 +48,7 @@ assertFalse(admin.in);
     @When("Admin selects the desired report type \\(e.g., monthly profits)")
     public void adminSelectsTheDesiredReportTypeEGMonthlyProfits() {
         SalesReport sales=new SalesReport();
-        assertFalse(sales.isUser_in());
+        assertFalse(sales.isUserIn());
     }
 
 
@@ -85,7 +85,7 @@ assertFalse(admin.in);
     @When("Admin navigates to the Best-Selling Products section")
     public void adminNavigatesToTheBestSellingProductsSection() {
         SalesReport sales=new SalesReport();
-        assertFalse(sales.isUser_in());
+        assertFalse(sales.isUserIn());
     }
 
 

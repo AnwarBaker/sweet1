@@ -1,29 +1,16 @@
 package sweetsys;
 
 
-import static java.lang.System.exit;
+
 
 public class SalesReport {
 
-    private boolean user_in;
+    private boolean userIn;
     public boolean printed;
 
-    public boolean done;
 
-
-
-
-
-
-
-    public boolean isPrinted() {
-        return printed;
-    }
-
-
-
-    public boolean isUser_in() {
-        return user_in;
+    public boolean isUserIn() {
+        return userIn;
     }
 
     public SalesReport(){
@@ -37,9 +24,7 @@ public class SalesReport {
 System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t\t"+prod.getPrice()+"\t"+prod.getEarning()+"\t\t"+prod.getCondition()+"\t"+prod.getNumOfsales()+"\t\t\t\t"+prod.getUniq()+"\n");
         }
 
-
     }
-
 
 
     public void ShowBestProduct(){
@@ -78,9 +63,9 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
                 }
             }
             SweetProject.setProducts(SweetProject.products);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        }catch (Exception e){}
+
+
     }
 
 

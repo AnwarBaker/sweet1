@@ -1,26 +1,24 @@
 package sweetsys;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class FeedBack {
 
     public boolean in;
-    public boolean Done;
-    private String FeedbackMessage;
+    private String feedbackMessage;
     private int feednumber;
 private String senderName;
 private String productName;
 
 
     public FeedBack(String feedbackMessage, int feednumber, String senderName, String productName) {
-        FeedbackMessage = feedbackMessage;
+        this.feedbackMessage = feedbackMessage;
         this.feednumber = feednumber;
         this.senderName = senderName;
         this.productName = productName;
     }
 
-    static public ArrayList<FeedBack> feedBacklist =new ArrayList<FeedBack>();
+    static protected ArrayList<FeedBack> feedBacklist =new ArrayList<>();
 
 
     public String getProductName() {
@@ -32,11 +30,11 @@ private String productName;
     }
 
     public String getFeedbackMessage() {
-        return FeedbackMessage;
+        return feedbackMessage;
     }
 
     public void setFeedbackMessage(String feedbackMessage) {
-        FeedbackMessage = feedbackMessage;
+        this.feedbackMessage = feedbackMessage;
     }
 
     public String getSenderName() {
@@ -56,19 +54,19 @@ private String productName;
     }
 
     public FeedBack(String feedbackMessage, String senderName) {
-        FeedbackMessage = feedbackMessage;
+        this.feedbackMessage = feedbackMessage;
         this.senderName = senderName;
     }
 
     public FeedBack(String feedbackMessage) {
-        FeedbackMessage = feedbackMessage;
+        this.feedbackMessage = feedbackMessage;
     }
 
     public FeedBack() {
     }
 
     public FeedBack(String feedbackMessage, String senderName, String productName) {
-        FeedbackMessage = feedbackMessage;
+        this.feedbackMessage = feedbackMessage;
         this.senderName = senderName;
         this.productName = productName;
     }
@@ -84,7 +82,7 @@ private String productName;
     @Override
     public String toString() {
         return "{" +
-                "FeedbackMessage='" + FeedbackMessage + '\'' +
+                "FeedbackMessage='" + feedbackMessage + '\'' +
                 ", feednumber=" + feednumber +
                 ", senderName='" + senderName + '\'' +
                 ", productName='" + productName + '\'' +
@@ -93,75 +91,37 @@ private String productName;
 
 
 
-    public void UserFeedBack(User user){
-        SweetProject s=new SweetProject();
-        FeedBack f=new FeedBack();
+    public void userFeedback(User user,int num,String feedback){
+
         String name=user.getUsername();
-        Scanner cin=new Scanner(System.in);
-        try{
-        System.out.println("this is all our products name you can choose any of this to Enter Your FeedBack: \n");
 
-        for(ProductManegmwntSystem prod :s.getProducts()){
 
-            System.out.println(prod.getUniq()+"\t"+prod.getProductName()+"\t"+prod.getProductDescription()+"\n");
-
-        }
-        System.out.println("Enter the Number of Products you want \n");
-
-        int num= cin.nextInt();
         String proname="";
-        for(ProductManegmwntSystem p :s.getProducts()){
+        for(ProductManegmwntSystem p : SweetProject.getProducts()){
             if(num==p.getUniq()){
               proname=p.getProductName();
+              break;
             }
         }
-int last=f.getFeedBacklist().size()-1;
 
-       int feednumber=f.getFeedBacklist().get(last).getFeednumber();
+      int last= getFeedBacklist().size()-1;
 
-            System.out.println("Enter Your feedback about "+proname+" pls");
-        Scanner c =new Scanner(System.in);
-        String feedbacke=c.nextLine();
-        f.setFeedbackMessage(feedbacke);
+        setFeedbackMessage(feedback);
 
-            FeedBack feed =new FeedBack(feedbacke,feednumber+1,name,proname);
-        f.feedBacklist.add(feed);
-        f.setFeedBacklist(feedBacklist);
-for(FeedBack ff:f.getFeedBacklist()){
-    System.out.println(ff);
-}
-    }catch(Exception e) {}
-
+            FeedBack feed =new FeedBack(feedback,last,name,proname);
+        feedBacklist.add(feed);
+        setFeedBacklist(feedBacklist);
 
 }
 
 
-public void ShowFeedBack(){
-        FeedBack feed=new FeedBack();
-        for(FeedBack f :feed.getFeedBacklist()){
+public void showFeedback(){
+
+        for(FeedBack f : getFeedBacklist()){
             System.out.println(f);
         }
 }
 
 
-
-
-/*
-    public static void main(String[] args) {
-
-SweetProject s =new SweetProject();
-        s.users.add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
-        s.users.add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
-        s.setUsers(s.users);
-        User u=new User("talaa", "12346", 3,"talaa12346@gmail.com","Jenin");
-        s.login(u);
-        s.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        s.products.add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        s.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
-FeedBack fe=new FeedBack();
-fe.UserFeedBack(u);
-fe.ShowFeedBack();
-
-    }*/
 
 }

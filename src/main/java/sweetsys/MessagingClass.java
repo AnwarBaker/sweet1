@@ -1,52 +1,45 @@
 package sweetsys;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class MessagingClass {
 
-    public boolean messageDone;
-    private String SenderName;
-     private String ReciverName;
-     private String Meessage;
+    private String sendername;
+     private String recivername;
+     private String meessage;
 
-     static public ArrayList<MessagingClass> messages =new ArrayList<MessagingClass>();
+     static protected ArrayList<MessagingClass> messages =new ArrayList<>();
 
     public MessagingClass(String senderName, String reciverName, String message) {
-        SenderName = senderName;
-        ReciverName = reciverName;
-        Meessage = message;
+        sendername = senderName;
+        recivername = reciverName;
+        meessage = message;
     }
 
-    public MessagingClass(String senderName, String reciverName) {
-        SenderName = senderName;
-        ReciverName = reciverName;
+    public String getRecivername() {
+        return recivername;
     }
 
-    public String getReciverName() {
-        return ReciverName;
+    public void setRecivername(String recivername) {
+        this.recivername = recivername;
     }
 
-    public void setReciverName(String reciverName) {
-        ReciverName = reciverName;
+    public String getSendername() {
+        return sendername;
     }
 
-    public String getSenderName() {
-        return SenderName;
-    }
-
-    public void setSenderName(String senderName) {
-        SenderName = senderName;
+    public void setSendername(String sendername) {
+        this.sendername = sendername;
     }
 
     public String getMeessage() {
-        return Meessage;
+        return meessage;
     }
 
     public void setMeessage(String meessage) {
-        Meessage = meessage;
+        this.meessage = meessage;
     }
-
 
     public static ArrayList<MessagingClass> getMessages() {
         return messages;
@@ -61,9 +54,9 @@ public class MessagingClass {
     @Override
     public String toString() {
         return "{" +
-                "Message='" + Meessage + '\'' +
-                ", ReciverName='" + ReciverName + '\'' +
-                ", SenderName='" + SenderName + '\'' +
+                "Message='" + meessage + '\'' +
+                ", ReciverName='" + recivername + '\'' +
+                ", SenderName='" + sendername + '\'' +
                 '}'+"\n";
     }
 
@@ -72,69 +65,48 @@ public class MessagingClass {
 
 
 
+    public void usersendMessages(User user, String message) {
+        String name = user.getUsername();
+        String city = user.getCity();
 
-
-
-    public void UserSendMesseges(User user){
-
-
-SweetProject s=new SweetProject();
-String name =user.getUsername();
-String city= user.getCity();
-
-try {
-    for (User u : s.getUsers()) {
-        if (u.getUsername().equals(name)&&u.getUserlevel()==3) {
-            city = u.getCity();
-        }
-    }
-    String recive="";
-    for (User uss : s.getUsers()) {
-        if (uss.getUserlevel() == 2 && uss.getCity().equalsIgnoreCase(city)) {
-            recive = uss.getUsername();
+        if (city == null) {
+            city = "";
         }
 
+        for (User u : SweetProject.getUsers()) {
+            if (u.getUsername().equals(name) && u.getUserlevel() == 3) {
+                city = u.getCity();
+                if (city == null) {
+                    city = "";
+                }
+                break;
+            }
+        }
+
+        String recive = "";
+        for (User uss : SweetProject.getUsers()) {
+            if (uss.getUserlevel() == 2) {
+                String ussCity = uss.getCity();
+                if (city.equalsIgnoreCase(ussCity)) {
+                    recive = uss.getUsername();
+                    break;
+                }
+            }
+        }
+
+        MessagingClass m = new MessagingClass(name, recive, message);
+        messages.add(m);
+        setMessages(messages);
     }
-    System.out.println("Enter your message for "+recive+" "+city+" Store Owner");
-    Scanner cin =new Scanner(System.in);
-    String message =cin.nextLine();
-
-    MessagingClass m=new MessagingClass(name,recive,message);
-    m.messages.add(m);
-    m.setMessages(messages);
-    System.out.println(m.getMessages());
-
-}catch (Exception e){}
-
-    }
-
-
-
-
-
-
-
-
-   /* public static void main(String[] args) {
-        SweetProject s=new SweetProject();
-        s.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        s.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        s.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        s.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        s.users.add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
-        s.users.add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
-        s.setUsers(s.users);
-        User u=new User("talaa", "12346", 3,"talaa12346@gmail.com","Jenin");
-        s.login(u);
-        MessagingClass m=new MessagingClass();
-        m.UserSendMesseges(u);
-
-    }*/
-
-
 
 
 
 }
+
+
+
+
+
+
 
 

@@ -6,11 +6,11 @@ import sweetsys.*;
 import org.junit.After;
 import org.junit.Before;
 import static org.junit.Assert.*;
-public class UserAccountManeg {
+public class UserAccountTest {
 
 SweetProject s;
 
-    public UserAccountManeg() {
+    public UserAccountTest() {
         s=new SweetProject();
     }
 

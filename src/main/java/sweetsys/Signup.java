@@ -5,10 +5,10 @@ public class Signup {
 
 
     public boolean in;
-    public boolean done;
+
 
     public Signup() {
-
+//jj
     }
 
 
@@ -16,23 +16,6 @@ public class Signup {
         return in;
     }
 
-    public void setIn(boolean in) {
-        this.in = in;
-    }
-
-
-User user;
-
-
-
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
 
 
 

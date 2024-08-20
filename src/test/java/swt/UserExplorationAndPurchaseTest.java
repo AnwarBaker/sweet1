@@ -95,9 +95,13 @@ SweetProject s;
     }
 
     private static String getExpectedOutput() {
-        String expectedOutput = "These products do not cause you allergies\n" +
-                "{uniqnum=1, productName='Nutel cake', city='null', price=60.0, productDescription='Layers of chocolate cake with chocolate cream in the top', earning=10.0, condition='finished', Num_Of_Sales=10, discount=0.0}\n" +
-                "{uniqnum=2, productName='Nulla popcake', city='null', price=60.0, productDescription='Layers of chocolate cake with chocolate cream in the middle', earning=10.0, condition='not finished', Num_Of_Sales=12, discount=0.0}";
+
+        String expectedOutput = """
+    These products do not cause you allergies
+    {uniqnum=1, productName='Nutel cake', city='null', price=60.0, productDescription='Layers of chocolate cake with chocolate cream in the top', earning=10.0, condition='finished', Num_Of_Sales=10, discount=0.0}
+    {uniqnum=2, productName='Nulla popcake', city='null', price=60.0, productDescription='Layers of chocolate cake with chocolate cream in the middle', earning=10.0, condition='not finished', Num_Of_Sales=12, discount=0.0}
+    """;
+
         expectedOutput = expectedOutput.replace("\r\n", "\n").replace("\r", "\n");
         return expectedOutput;
     }
@@ -128,9 +132,11 @@ assertFalse(store.in);
 
         store.buyproducts("1,2");
 
-     String expectedSen = "You have selected the following products:\n" +
-                "1\tNutel cake\tLayers of chocolate cake with chocolate cream in the top\n" +
-                "2\tNulla popcake\tLayers of chocolate cake with chocolate cream in the middle\n";
+        String expectedSen = """
+    You have selected the following products:
+    1\tNutel cake\tLayers of chocolate cake with chocolate cream in the top
+    2\tNulla popcake\tLayers of chocolate cake with chocolate cream in the middle
+    """;
 
         String normalizedExpectedOutput = expectedSen.replace("\r\n", "\n").replace("\r", "\n");
         String normalizedActualOutput = outContent.toString().replace("\r\n", "\n").replace("\r", "\n");
@@ -159,7 +165,7 @@ assertFalse(store.in);
 
         String expectedOutput = "Invalid input. Please enter valid product numbers.\n";
 
-        // Normalize line separators
+
         String normalizedExpectedOutput = expectedOutput.replace("\r\n", "\n").replace("\r", "\n");
         String normalizedActualOutput = outContent.toString().replace("\r\n", "\n").replace("\r", "\n");
 
@@ -189,6 +195,7 @@ assertFalse(store.in);
         assertEquals(normalizedExpectedOutput, normalizedActualOutput);
     }
 
+
     @Test
     @Then("User completes the purchase process")
     public void userCompletesThePurchaseProcess() {
@@ -204,9 +211,11 @@ assertFalse(store.in);
 
         store.buyproducts("1,2");
 
-        String expectedSen = "You have selected the following products:\n" +
-                "1\tNutel cake\tLayers of chocolate cake with chocolate cream in the top\n" +
-                "2\tNulla popcake\tLayers of chocolate cake with chocolate cream in the middle\n";
+        String expectedSen = """
+    You have selected the following products:
+    1\tNutel cake\tLayers of chocolate cake with chocolate cream in the top
+    2\tNulla popcake\tLayers of chocolate cake with chocolate cream in the middle
+    """;
 
         String normalizedExpectedOutput = expectedSen.replace("\r\n", "\n").replace("\r", "\n");
         String normalizedActualOutput = outContent.toString().replace("\r\n", "\n").replace("\r", "\n");

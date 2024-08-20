@@ -9,12 +9,12 @@ import sweetsys.User;
 
 import static org.junit.Assert.*;
 
-public class storeOwnerAccountManagement {
+public class StoreOwnerAccountManagementTest {
 
 
     SweetProject s;
 
-    public storeOwnerAccountManagement() {
+    public StoreOwnerAccountManagementTest() {
         s=new SweetProject();
     }
 

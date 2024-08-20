@@ -9,13 +9,13 @@ import sweetsys.Signup;
 
 import static org.junit.Assert.*;
 
-public class AdminUserManegment {
+public class AdminUserManagementTest {
 
 
     SweetProject s;
 
 
-    public AdminUserManegment() {
+    public AdminUserManagementTest() {
         s = new SweetProject();
     }
 
@@ -153,10 +153,7 @@ s.login(user);
         }
         assertFalse(userExists);
 
-        try {
 
-        } catch (Exception e) {
-        }
 
     }
 

@@ -8,11 +8,11 @@ import sweetsys.Signup;
 
 import static org.junit.Assert.*;
 
-public class signUpSteps {
+public class SignUpStepsTest {
 
 SweetProject s;
 
-    public signUpSteps() {
+    public SignUpStepsTest() {
         s = new SweetProject();
     }
 @Test
@@ -30,8 +30,8 @@ SweetProject s;
   public void theUserEntersAValidSignupDataLike() {
        String name="check";
        String pass="1233";
-       int UserLevel=3;
-      User user=new User(name,pass,UserLevel);
+       int userLevel=3;
+      User user=new User(name,pass,userLevel);
       s.login(user);
         SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
@@ -51,8 +51,8 @@ SweetProject s;
     public void iShouldSeeAConfirmationMessage() {
         String name="fadi";
         String pass="123";
-        int UserLevel=3;
-        User user=new User(name,pass,UserLevel);
+        int userLevel=3;
+        User user=new User(name,pass,userLevel);
         s.login(user);
         SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
@@ -74,8 +74,8 @@ SweetProject s;
    public void theUserEntersSignupDataOfExistDataLike() {
         String name="anwar";
         String pass="123";
-        int UserLevel=1;
-        User user=new User(name,pass,UserLevel);
+        int userLevel=1;
+        User user=new User(name,pass,userLevel);
         s.login(user);
         SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
@@ -95,8 +95,8 @@ SweetProject s;
     public void theUserShouldSeeAExistDataMessage() {
         String name="anwar";
         String pass="123";
-        int UserLevel=1;
-        User user=new User(name,pass,UserLevel);
+        int userLevel=1;
+        User user=new User(name,pass,userLevel);
         s.login(user);
         SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
         SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));

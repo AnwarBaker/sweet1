@@ -10,11 +10,11 @@ import static org.junit.Assert.*;
 
 
 
-public class StoreOwnerOrderManegSteps {
+public class StoreOwnerOrderManegStepsTest {
 
     SweetProject s;
 
-    public StoreOwnerOrderManegSteps( ) {
+    public StoreOwnerOrderManegStepsTest( ) {
         s =new SweetProject();
     }
 

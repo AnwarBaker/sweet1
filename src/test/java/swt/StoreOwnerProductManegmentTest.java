@@ -150,7 +150,7 @@ SweetProject.products.clear();
     public void storeOwnerNavigatesToTheSalesReportsSection() {
         SalesReport sale=new SalesReport();
 
-        assertFalse(sale.isUser_in());
+        assertFalse(sale.isUserIn());
     }
 
 

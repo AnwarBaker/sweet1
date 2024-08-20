@@ -1,10 +1,5 @@
 package sweetsys;
-
-
-
 import java.util.ArrayList;
-
-
 public class SweetProject {
     private String errorMessage;
     private String existdataMessage;

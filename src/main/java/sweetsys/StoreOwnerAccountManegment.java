@@ -11,7 +11,7 @@ private boolean come;
 
     public void UpdateStoreOwnerAccount(User user){
 
-        try{
+
             if(user.getUserlevel()==2){
             for(int i = 0; i < SweetProject.users.size(); i++){
                 if(SweetProject.users.get(i).getUsername().equalsIgnoreCase(user.getUsername())){
@@ -19,9 +19,7 @@ private boolean come;
                     break;
                 }
             }}
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
     }
 
 

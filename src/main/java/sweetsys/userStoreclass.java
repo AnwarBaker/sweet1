@@ -1,6 +1,5 @@
 package sweetsys;
 import java.util.ArrayList;
-import static java.lang.System.exit;
 public class userStoreclass {
     public boolean in;
 
@@ -37,9 +36,7 @@ public class userStoreclass {
                 pro.setNumOfsales(pro.getNumOfsales()+1);
             }
         }
-        if(input==null){
-            exit(0);
-        }
+
 
     }
 

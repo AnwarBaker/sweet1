@@ -3,7 +3,7 @@ package sweetsys;
 public class AdminReports {
 
 
-    public boolean printed;
+
     public boolean in;
 
     public void SeperateEachCity() {

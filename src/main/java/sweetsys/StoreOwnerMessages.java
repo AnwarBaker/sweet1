@@ -158,8 +158,8 @@ public class StoreOwnerMessages {
 
             for (MessagingClass mmm :  mm.getMessages()) {
 
-                if (mmm.getSenderName().equals(usernamee)) {
-                    username=mmm.getSenderName();
+                if (mmm.getSendername().equals(usernamee)) {
+                    username=mmm.getSendername();
 
                     find=true;
                 }

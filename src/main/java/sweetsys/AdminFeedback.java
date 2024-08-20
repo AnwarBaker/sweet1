@@ -11,7 +11,7 @@ public class AdminFeedback {
     private int responseNumber;
 
 
-    static public ArrayList<AdminFeedback> adminresponse = new ArrayList<AdminFeedback>();
+    static public ArrayList<AdminFeedback> adminresponse = new ArrayList<>();
 
 
     public AdminFeedback(String adminName, int responseNumber, String response, String username) {

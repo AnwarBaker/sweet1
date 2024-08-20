@@ -99,7 +99,7 @@ public void ShowOrders(){
 
     public void OrderUpdate(OrderManegmentClass order){
 
-        try{
+
             if (order == null) {
                 System.out.println("Order cannot be null.");
                 return;
@@ -113,9 +113,6 @@ public void ShowOrders(){
             IntStream.range(0, orderlist.size()).filter(i -> orderlist.get(i).getOrderNUM() == order.getOrderNUM()).findFirst().ifPresent(i -> orderlist.get(i).setOrderstatus(order.getOrderstatus()));
             setOrderlist(orderlist);
 
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 
 

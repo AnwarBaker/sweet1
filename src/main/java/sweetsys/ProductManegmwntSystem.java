@@ -145,16 +145,6 @@ public class ProductManegmwntSystem {
         this.numOfsales=numOfsales;
 }
 
-    public ProductManegmwntSystem(String productName,String productDescription,Double price ,Double earning,int numOfsales,String condition,Double discount,int uniq ){
-        this.productName=productName;
-        this.productDescription=productDescription;
-        this.price=price;
-        this.earning=earning;
-        this.uniq=uniq;
-        this.condition=condition;
-        this.numOfsales=numOfsales;
-        this.discount=discount;
-    }
 
 
 
@@ -170,14 +160,7 @@ public class ProductManegmwntSystem {
         this.numOfsales = numOfsales;
     }
 
-    public ProductManegmwntSystem(String productName, String productDescription, Double price, int numOfsales, String condition, int uniq){
-        this.productName=productName;
-        this.productDescription=productDescription;
-        this.price=price;
-        this.uniq=uniq;
-        this.condition=condition;
-        this.numOfsales=numOfsales;
-    }
+
 
     public ProductManegmwntSystem(String productName,String productDescription,int numOfsales,String condition,int uniq){
         this.productName=productName;
