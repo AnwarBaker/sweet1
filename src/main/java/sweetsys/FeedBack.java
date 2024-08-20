@@ -104,11 +104,11 @@ private String productName;
             }
         }
 
-      int last= getFeedBacklist().size()-1;
+      int last= getFeedBacklist().size();
 
         setFeedbackMessage(feedback);
 
-            FeedBack feed =new FeedBack(feedback,last,name,proname);
+            FeedBack feed =new FeedBack(feedback,last+1,name,proname);
         feedBacklist.add(feed);
         setFeedBacklist(feedBacklist);
 

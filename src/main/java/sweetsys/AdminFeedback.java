@@ -84,11 +84,11 @@ public class AdminFeedback {
             System.out.println("Enter num of feedback you want to response");
             Scanner cin = new Scanner(System.in);
             int i = cin.nextInt();
-            String username="";
+            String usernamee="";
             int resnum=0;
             for (FeedBack feed : f.getFeedBacklist()) {
                 if (feed.getFeednumber() == i) {
-                  username=feed.getSenderName();
+                  usernamee=feed.getSenderName();
                   resnum=i;
                 }
             }

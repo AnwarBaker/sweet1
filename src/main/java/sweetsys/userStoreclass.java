@@ -9,7 +9,7 @@ public class userStoreclass {
     public void buyproducts(String input){
 
         AdminReports a=new AdminReports();
-        a.SeperateEachCity();
+        a.separateEachCity();
 
         ArrayList<Integer> selectedProducts = new ArrayList<>();
 

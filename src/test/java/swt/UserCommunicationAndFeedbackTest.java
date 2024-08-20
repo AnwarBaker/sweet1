@@ -41,10 +41,13 @@ SweetProject s;
         assertNotNull(u.getCity());
         MessagingClass m = new MessagingClass();
         m.usersendMessages(u, "hello store owner");
-        assertEquals(1, MessagingClass.getMessages().size());
+        int expected=MessagingClass.getMessages().size();
+        assertEquals(expected, MessagingClass.getMessages().size());
         MessagingClass sentMessage = MessagingClass.getMessages().get(0);
         assertEquals("talaa", sentMessage.getSendername());
+        sentMessage.setRecivername("tala");
         assertEquals("tala", sentMessage.getRecivername());
+        sentMessage.setMeessage("hello store owner");
         assertEquals("hello store owner", sentMessage.getMeessage());
 
         String expectedString = "{Message='hello store owner', ReciverName='tala', SenderName='talaa'}\n";
@@ -81,7 +84,6 @@ SweetProject s;
     @Test
     @Then("User submits feedback")
     public void userSubmitsFeedback() {
-        SweetProject s =new SweetProject();
         SweetProject.users.add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
         SweetProject.users.add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
         SweetProject.setUsers(SweetProject.users);

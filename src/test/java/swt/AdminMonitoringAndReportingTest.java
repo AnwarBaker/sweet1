@@ -100,9 +100,9 @@ assertFalse(admin.in);
         SweetProject.products.add(new ProductManegmwntSystem(5,"lotos cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",30));
         SweetProject.products.add(new ProductManegmwntSystem(6,"juice la","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",35));
         AdminReports a=new AdminReports();
-        a.SeperateEachCity();
-        a.ShowBestSellinForNablus();
-        a.ShowBestSellinForJenin();
+        a.separateEachCity();
+        a.showBestSellingForNablus();
+        a.showBestSellingForJenin();
 
 
         assertEquals(1, SweetProject.getNablusbestselling().size());
@@ -134,7 +134,7 @@ assertFalse(a.in);
         SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
         AdminReports a=new AdminReports();
 
-        a.SeperateEachUserToCities();
+        a.separateUsersByCity();
         System.out.println("Nablus Users:");
         SweetProject.getNablususers().forEach(System.out::println);
         System.out.println("Jenin Users:");

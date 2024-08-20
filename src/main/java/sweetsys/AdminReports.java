@@ -6,9 +6,10 @@ public class AdminReports {
 
     public boolean in;
 
-    public void SeperateEachCity() {
+    public void separateEachCity() {
 
-try{
+
+
         for (ProductManegmwntSystem pro : SweetProject.getProducts()) {
             String city = pro.getCity();
             if (city != null) {
@@ -23,13 +24,14 @@ try{
         SweetProject.setNablusprodcuts(SweetProject.Nablusprodcuts);
         SweetProject.setJeninprodcuts(SweetProject.Jeninprodcuts);
 
-    }catch (Exception e){}
+
+
     }
 
 
-    public void ShowBestSellinForNablus(){
+    public void showBestSellingForNablus(){
 
-        AdminReports a=new AdminReports();
+
 
         int flag= SweetProject.Nablusprodcuts.get(0).getNumOfsales();
 
@@ -53,10 +55,10 @@ try{
 
 
 
-    public void ShowBestSellinForJenin(){
+    public void showBestSellingForJenin(){
 
         AdminReports a=new AdminReports();
-        a.SeperateEachCity();
+        a.separateEachCity();
 
         int flag= SweetProject.Jeninprodcuts.get(0).getNumOfsales();
 
@@ -79,9 +81,9 @@ try{
 
 
 
-    public  void SeperateEachUserToCities(){
-        SweetProject s=new SweetProject();
-        try{
+    public  void separateUsersByCity(){
+
+
             for (User u : SweetProject.getUsers()) {
                 String city = u.getCity();
                 if (city != null) {
@@ -105,7 +107,7 @@ try{
                 System.out.println(user);
             }
 
-    }catch (Exception e){}
+
 
     }
 
