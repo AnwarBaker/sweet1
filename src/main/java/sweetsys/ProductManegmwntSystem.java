@@ -11,8 +11,8 @@ public class ProductManegmwntSystem {
     private String condition;
     private int numOfsales;
     private double discount;
-    public boolean added;
-    public boolean updated;
+
+
 
     public boolean isInside() {
         return inside;
@@ -58,13 +58,7 @@ public class ProductManegmwntSystem {
         this.condition = condition;
     }
 
-    public boolean isUpdated() {
-        return updated;
-    }
 
-    public void setUpdated(boolean updated) {
-        this.updated = updated;
-    }
 
     public int getUniq() {
         return uniq;
@@ -74,13 +68,8 @@ public class ProductManegmwntSystem {
         this.uniq = uniq;
     }
 
-    public boolean isAdded() {
-        return added;
-    }
 
-    public void setAdded(boolean added) {
-        this.added = added;
-    }
+
 
     public String getProductName() {
         return productName;

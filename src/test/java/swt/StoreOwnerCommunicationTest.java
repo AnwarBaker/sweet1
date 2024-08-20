@@ -38,7 +38,6 @@ public class StoreOwnerCommunicationTest {
         StoreOwnerMessages sto = new StoreOwnerMessages();
         sto.getMessegaesList().clear();
 
-        // Add users to the SweetProject
         SweetProject.users.add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
         SweetProject.users.add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
         SweetProject.users.add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "nablus"));
@@ -49,12 +48,10 @@ public class StoreOwnerCommunicationTest {
         s.login(user);
         SweetProject.setUsers(SweetProject.users);
 
-        // Create a new user and send a message
         User uu = new User("talaall", "1234666", 2, "talaall1234666@gmail.com", "Jenin");
         StoreOwnerMessages stor = new StoreOwnerMessages();
         stor.storeOwnersendmesseges(uu, "this is my response", "rama");
 
-        // Assertions to verify the expected behavior
         assertEquals(1, StoreOwnerMessages.getMessegaesList().size());
         StoreOwnerMessages sentMessage = StoreOwnerMessages.getMessegaesList().get(0);
         assertEquals("talaall", sentMessage.getStorownerename());

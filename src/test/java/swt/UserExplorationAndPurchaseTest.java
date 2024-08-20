@@ -193,6 +193,21 @@ assertFalse(store.in);
         String normalizedActualOutput = outContent.toString().replace("\r\n", "\n").replace("\r", "\n");
 
         assertEquals(normalizedExpectedOutput, normalizedActualOutput);
+
+        UserShareProducts cover=new UserShareProducts();
+        cover.setExpectedprice(20);
+        cover.setProductName("kjdhks");
+        cover.setProductDescription("jkdghjsdg");
+
+
+        cover.getProductName();
+        cover.getProductDescription();
+        cover.getExpectedprice();
+        cover.setUserproducts(cover.getUserproducts());
+        cover.getUserproducts();
+
+        UserShareProducts tocover=new UserShareProducts(cover.getProductName());
+
     }
 
 

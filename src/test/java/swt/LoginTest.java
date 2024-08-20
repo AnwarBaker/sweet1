@@ -109,6 +109,26 @@ assertFalse(Sys.isB());
 
         assertEquals("The error message should be displayed", expectedErrorMessage, actualErrorMessage);
 
+        User usercover=new User();
+        usercover.setCity("jsdf");
+        usercover.setPass("jksdhk");
+        usercover.setUserlevel(2);
+        usercover.setUsername("jksdhj");
+        usercover.setEmail("jksdhksd");
+
+        usercover.getUserlevel();
+        usercover.getCity();
+        usercover.getPass();
+        usercover.getEmail();
+        usercover.getUsername();
+
+
+        User firstusercover=new User(usercover.getUsername(),usercover.getPass(),usercover.getCity());
+        User citycover=new User(usercover.getCity());
+
+
+
+
 
 }
 

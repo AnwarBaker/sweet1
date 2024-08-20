@@ -180,8 +180,31 @@ SweetProject.products.clear();
         } finally {
             System.setOut(originalOut);
         }
+ProductManegmwntSystem product=new ProductManegmwntSystem();
+        product.setProductName("kjsdf");
+        product.setDiscount(5);
+        product.setProductDescription("jkhbkdjfhgkjdf");
+        product.setCondition("jkdfhk");
+        product.setEarning(10);
+        product.setPrice(50);
+        product.setCity("jenin");
+        product.setNumOfsales(10);
 
+        product.getUniq();
+        product.getCity();
+        product.getProductDescription();
+        product.getProductName();
+        product.getCondition();
+        product.getNumOfsales();
+        product.getEarning();
+        product.getPrice();
+        product.getDiscount();
 
+ ProductManegmwntSystem newproduct=new ProductManegmwntSystem( product.getUniq(),product.getProductName(),product.getCity(),product.getProductDescription(),product.getPrice());
+ ProductManegmwntSystem secnewproduct=new ProductManegmwntSystem(product.getProductName(),product.getProductDescription(),product.getPrice());
+ ProductManegmwntSystem thirdnewproduct=new ProductManegmwntSystem(product.getUniq(),product.getProductName(),product.getCity(),product.getProductDescription(),product.getPrice(),product.getCondition(),product.getEarning(),product.getNumOfsales(),product.getDiscount());
+ ProductManegmwntSystem covercons=new ProductManegmwntSystem(product.getProductName(),product.getProductDescription(),product.getNumOfsales(),product.getCondition(),product.getUniq());
+ ProductManegmwntSystem uniqcons=new ProductManegmwntSystem(product.getUniq());
     }
 
 

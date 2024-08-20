@@ -227,12 +227,12 @@ assertFalse(s.isExist());
 
 
 
-        assertTrue("The new product should be added to the user's shared products list", usershare.userproducts.contains(newProd));
+        assertTrue("The new product should be added to the user's shared products list", usershare.getUserproducts().contains(newProd));
 
         UserShareProducts existingProd = new UserShareProducts("Nutella cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0);
         usershare.addnewProductForUser(existingProd);
 
-        assertEquals("The existing product should not be added again", 1, usershare.userproducts.size());
+        assertEquals("The existing product should not be added again", 1, usershare.getUserproducts().size());
 
     }
 

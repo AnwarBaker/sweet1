@@ -8,7 +8,7 @@ public class UserShareProducts {
     public String productDescription;
     public double expectedprice;
 
-static public ArrayList<UserShareProducts> userproducts=new ArrayList<UserShareProducts>();
+static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
 
     public String getProductName() {
         return productName;
