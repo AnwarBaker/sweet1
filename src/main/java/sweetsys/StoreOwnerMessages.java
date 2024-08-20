@@ -96,7 +96,7 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
     }
 
     if (!found) {
-        System.exit(0);
+        exit(0);
     }
 }
 
@@ -104,33 +104,24 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
 
     public void storeResponsemessege(User user,String usernamee,String res) {
 
-        boolean find=false;
+        boolean find = false;
         String name = user.getUsername();
 
 
-            int last= getMessegaesList().size();
+        int last = getMessegaesList().size();
 
 
-            for (MessagingClass mmm :  MessagingClass.getMessages()) {
+        for (MessagingClass mmm : MessagingClass.getMessages()) {
 
-                if (mmm.getSendername().equals(usernamee)) {
-                    username=mmm.getSendername();
-                    find=true;
-                    StoreOwnerMessages st =new StoreOwnerMessages(name,usernamee,res,last+1);
-                    messegaesList.add(st);
-                    setMessegaesList(messegaesList);
-                    break;
-                }
+            if (mmm.getSendername().equals(usernamee)) {
+                username = mmm.getSendername();
+                find = true;
+                StoreOwnerMessages st = new StoreOwnerMessages(name, usernamee, res, last + 1);
+                messegaesList.add(st);
+                setMessegaesList(messegaesList);
+                break;
             }
-
-            if(!find){
-
-                exit(0);
-            }
-
-
+        }
     }
-
-
 
 }

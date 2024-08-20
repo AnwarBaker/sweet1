@@ -19,7 +19,7 @@ boolean found=false;
 
         if(!found){
             System.out.println("you entered wrong details try again");
-            exit(0);
+
         }
 
     }
@@ -40,7 +40,7 @@ boolean found=false;
         UserShareProducts.setUserproducts(UserShareProducts.getUserproducts());
 if(!found){
     System.out.println("non exist");
-    exit(0);
+
 }
 
     }
