@@ -23,7 +23,7 @@ public class AdminUserManagementTest {
 @Test
     @Given("Admin log in to the system")
     public void adminLogInToTheSystem() {
-    assertFalse(s.isIs_login());
+    assertFalse(s.isExist());
     }
 
     @Test

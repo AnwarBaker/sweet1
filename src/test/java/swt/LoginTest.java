@@ -21,7 +21,7 @@ public class LoginTest {
 @Test
     @Given("the user is on the login page")
     public void theUserIsOnTheLoginPage() {
-      assertFalse(s.isIs_login());
+      assertFalse(s.isExist());
 
     }
 

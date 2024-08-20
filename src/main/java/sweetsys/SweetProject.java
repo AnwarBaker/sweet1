@@ -4,9 +4,6 @@ public class SweetProject {
     private String errorMessage;
     private String existdataMessage;
 
-    public boolean isIs_login() {
-        return is_login;
-    }
 
 
 private boolean exist;
@@ -15,7 +12,7 @@ private boolean exist;
         return exist;
     }
 
-    private boolean is_login;
+
   
 
     static public    ArrayList<User> users =new ArrayList<User>();
@@ -300,7 +297,7 @@ ProductManegmwntSystem prod;
 
 
     public void DeleteProduct(ProductManegmwntSystem prod){
-        
+
 
             for(int i = 0; i < products.size(); i++){
                 if(products.get(i).getUniq()==prod.getUniq()){

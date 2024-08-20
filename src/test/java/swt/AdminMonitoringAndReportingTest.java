@@ -32,7 +32,7 @@ SweetProject s;
     @Test
     @Given("Admin logs in to the system")
     public void adminLogsInToTheSystem() {
-assertFalse(s.isIs_login());
+assertFalse(s.isExist());
     }
 
 
