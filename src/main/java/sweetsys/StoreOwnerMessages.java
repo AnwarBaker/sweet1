@@ -95,27 +95,20 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
         }
     }
 
-    if (!found) {
-        exit(0);
-    }
+
 }
 
 
 
     public void storeResponsemessege(User user,String usernamee,String res) {
 
-        boolean find = false;
+
         String name = user.getUsername();
-
-
         int last = getMessegaesList().size();
-
-
         for (MessagingClass mmm : MessagingClass.getMessages()) {
 
             if (mmm.getSendername().equals(usernamee)) {
                 username = mmm.getSendername();
-                find = true;
                 StoreOwnerMessages st = new StoreOwnerMessages(name, usernamee, res, last + 1);
                 messegaesList.add(st);
                 setMessegaesList(messegaesList);

@@ -66,7 +66,7 @@ static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
 
 
     public void addnewProductForUser(UserShareProducts prod){
-        try{
+
         boolean founded=false;
         for(ProductManegmwntSystem products : SweetProject.getProducts()){
             if(products.getProductName().equalsIgnoreCase(prod.getProductName())&&products.getProductDescription().equalsIgnoreCase(prod.getProductDescription())) {
@@ -78,7 +78,7 @@ static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
             userproducts.add(prod);
             setUserproducts(userproducts);
         }
-    }catch(Exception e){e.printStackTrace();}
+
 
     }
 
