@@ -3,8 +3,7 @@ package sweetsys;
 import java.util.ArrayList;
 
 public class UserRecipes {
-
-
+    
     public boolean in;
 
     public void recipesSearch(ProductManegmwntSystem prod){
@@ -18,11 +17,9 @@ public class UserRecipes {
 
     }
 
-
-
     public void filterRecipes(String name){
 
-try{
+
         ArrayList<Integer> n =new ArrayList<>();
         for(ProductManegmwntSystem prod : SweetProject.getProducts()){
             if(prod.getProductName().contains(name)||prod.getProductDescription().contains(name)){
@@ -36,14 +33,6 @@ try{
             }
 
         }
-}catch (Exception e){
-e.printStackTrace();
-}
-
-
-
     }
-
-
 
 }

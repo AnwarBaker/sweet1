@@ -226,23 +226,21 @@ ProductManegmwntSystem prod;
 
     public void Update(User user){
 
-        try{
+
        for(int i = 0; i < users.size(); i++){
            if(SweetProject.users.get(i).getUsername().equalsIgnoreCase(user.getUsername())){
                SweetProject.users.set(i,user);
                break;
            }
         }
-    }catch (Exception e){
-            e.printStackTrace();
-        }
+
     }
 
 
 
 
     public void Delete(User user){
-        try{
+
 
             for(int i = 0; i < users.size(); i++){
                 if(SweetProject.users.get(i).getUsername().equalsIgnoreCase(user.getUsername())&&SweetProject.users.get(i).getPass().equals(user.getPass())){
@@ -253,14 +251,14 @@ ProductManegmwntSystem prod;
             }
             SweetProject.setUsers(SweetProject.users);
 
-        }catch (Exception e){e.printStackTrace();}
+
     }
 
 
 
 
     public void ProductUpdate( ProductManegmwntSystem prod){
-        try{
+
             for(int i = 0; i < products.size(); i++){
                 if(SweetProject.products.get(i).getUniq()==prod.getUniq()){
                     SweetProject.products.set(i,prod);
@@ -268,9 +266,7 @@ ProductManegmwntSystem prod;
                 }
             }
             SweetProject.setProducts(SweetProject.products);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
     }
 
 
@@ -280,7 +276,7 @@ ProductManegmwntSystem prod;
     public void addnewProduct(ProductManegmwntSystem prod) {
         boolean Testxist=false;
 
-        try{
+
             for(int i=0 ;i<SweetProject.getProducts().size();i++){
                 if(products.get(i).getUniq()==prod.getUniq()){
                     Testxist =true;
@@ -295,7 +291,7 @@ ProductManegmwntSystem prod;
   }
   setProducts(products);
 
-    }catch(Exception e){e.printStackTrace();}
+
     }
 
 
@@ -304,7 +300,7 @@ ProductManegmwntSystem prod;
 
 
     public void DeleteProduct(ProductManegmwntSystem prod){
-        try{
+        
 
             for(int i = 0; i < products.size(); i++){
                 if(products.get(i).getUniq()==prod.getUniq()){
@@ -315,7 +311,6 @@ ProductManegmwntSystem prod;
             }
             setProducts(SweetProject.products);
 
-        }catch (Exception e){e.printStackTrace();}
     }
 
 

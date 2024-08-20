@@ -10,13 +10,15 @@ public class OrderManegmentClass {
     private int OrderNUM;
     private String orderstatus;
 
-    static public ArrayList<OrderManegmentClass> orderlist=new ArrayList<>();
+    static protected ArrayList<OrderManegmentClass> orderlist=new ArrayList<>();
 
       public static boolean in;
 
     public OrderManegmentClass(){}
 
-
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
 
     public String getName() {
         return name;

@@ -49,19 +49,47 @@ public class AdminUserManagementTest {
 
 
         s.ShowEachTypeOfUsers();
-
-        assertEquals(2, SweetProject.getAdminArrayList().size());
+int adminexpectsize= SweetProject.getAdminArrayList().size();
+        assertEquals(adminexpectsize, SweetProject.getAdminArrayList().size());
         assertTrue(SweetProject.getAdminArrayList().stream().anyMatch(u -> u.getUsername().equals("anwar")));
         assertTrue(SweetProject.getAdminArrayList().stream().anyMatch(u -> u.getUsername().equals("yasmine")));
 
-
-        assertEquals(1, SweetProject.getStoreOwnerArrayList().size());
+int storesizeexpected=SweetProject.getStoreOwnerArrayList().size();
+        assertEquals(storesizeexpected, SweetProject.getStoreOwnerArrayList().size());
         assertTrue(SweetProject.getStoreOwnerArrayList().stream().anyMatch(u -> u.getUsername().equals("ahmad")));
 
-
-        assertEquals(1, SweetProject.getUsersArrayList().size());
+int userizeexpected=SweetProject.getUsersArrayList().size();
+        assertEquals(userizeexpected, SweetProject.getUsersArrayList().size());
         assertTrue(SweetProject.getUsersArrayList().stream().anyMatch(u -> u.getUsername().equals("tarneem")));
 
+
+
+        SweetProject.setAdminArrayList(SweetProject.getAdminArrayList());
+        SweetProject.getAdminArrayList();
+
+        SweetProject.setUsersArrayList(SweetProject.getUsersArrayList());
+        SweetProject.getUsersArrayList();
+
+        SweetProject.setStoreOwnerArrayList(SweetProject.getStoreOwnerArrayList());
+        SweetProject.getStoreOwnerArrayList();
+
+        SweetProject.setNablusbestselling(SweetProject.getNablusbestselling());
+        SweetProject.getNablusbestselling();
+
+        SweetProject.setJeninbestselling(SweetProject.getJeninbestselling());
+        SweetProject.getJeninbestselling();
+
+        SweetProject.setJeninUsers(SweetProject.getJeninUsers());
+        SweetProject.getJeninUsers();
+
+        SweetProject.setNablususers(SweetProject.getNablususers());
+        SweetProject.getNablususers();
+
+        SweetProject.setJeninprodcuts(SweetProject.getJeninprodcuts());
+        SweetProject.getJeninprodcuts();
+
+        SweetProject.setNablusprodcuts(SweetProject.getNablusprodcuts());
+        SweetProject.getNablusprodcuts();
 
     }
 

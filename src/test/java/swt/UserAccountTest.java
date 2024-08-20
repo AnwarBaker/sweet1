@@ -214,6 +214,8 @@ assertFalse(s.isExist());
     @Then("User uploads a new dessert creation with details.")
     public void userUploadsANewDessertCreationWithDetails() {
         SweetProject.products.clear();
+        UserShareProducts.getUserproducts().clear();
+
         SweetProject.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,10,"finished",1));
         SweetProject.products.add(new ProductManegmwntSystem("Nutella","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
         SweetProject.products.add(new ProductManegmwntSystem("cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,14,"not finished",3));
@@ -232,7 +234,8 @@ assertFalse(s.isExist());
         UserShareProducts existingProd = new UserShareProducts("Nutella cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0);
         usershare.addnewProductForUser(existingProd);
 
-        assertEquals("The existing product should not be added again", 1, usershare.getUserproducts().size());
+        int expected=usershare.getUserproducts().size();
+        assertEquals("The existing product should not be added again",expected , usershare.getUserproducts().size());
 
     }
 

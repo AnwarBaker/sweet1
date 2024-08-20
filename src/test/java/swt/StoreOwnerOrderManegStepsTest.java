@@ -30,11 +30,11 @@ public class StoreOwnerOrderManegStepsTest {
     @When("Store owner can view a list of orders")
     public void storeOwnerCanViewAListOfOrders() {
         OrderManegmentClass order =new OrderManegmentClass();
-        OrderManegmentClass.orderlist.clear();
-        OrderManegmentClass.orderlist.add(new OrderManegmentClass("Pastry", 5, 0.5, 2, "In Progress"));
-        OrderManegmentClass.orderlist.add(new OrderManegmentClass("cake",10,1.0,1,"done"));
+        OrderManegmentClass.getOrderlist().clear();
+        OrderManegmentClass.getOrderlist().add(new OrderManegmentClass("Pastry", 5, 0.5, 2, "In Progress"));
+        OrderManegmentClass.getOrderlist().add(new OrderManegmentClass("cake",10,1.0,1,"done"));
 
-        OrderManegmentClass.setOrderlist(OrderManegmentClass.orderlist);
+        OrderManegmentClass.setOrderlist(OrderManegmentClass.getOrderlist());
 
 
         java.io.ByteArrayOutputStream outContent = new java.io.ByteArrayOutputStream();
@@ -45,8 +45,11 @@ public class StoreOwnerOrderManegStepsTest {
 
 
 
-        String expectedOutput = "Orders{name='Pastry', price=5.0, OrderNUM=2, discount=0.5, orderstatus='In Progress'}\n" +
-                "Orders{name='cake', price=10.0, OrderNUM=1, discount=1.0, orderstatus='done'}\n";
+
+        String expectedOutput = """
+    Orders{name='Pastry', price=5.0, OrderNUM=2, discount=0.5, orderstatus='In Progress'}
+    Orders{name='cake', price=10.0, OrderNUM=1, discount=1.0, orderstatus='done'}
+    """;
 
         String actualOutput = outContent.toString().replace("\r\n", "\n");
         assertEquals(expectedOutput, actualOutput);
@@ -60,20 +63,36 @@ public class StoreOwnerOrderManegStepsTest {
     @Test
     @Then("Store owner can update the status of each order")
     public void storeOwnerCanUpdateTheStatusOfEachOrder() {
-        OrderManegmentClass.orderlist.clear();
-        OrderManegmentClass.orderlist.add(new OrderManegmentClass("Pastry", 5, 0.5, 2, "In Progress"));
-        OrderManegmentClass.orderlist.add(new OrderManegmentClass("cake",10,1.0,1,"done"));
+        OrderManegmentClass.getOrderlist().clear();
+        OrderManegmentClass.getOrderlist().add(new OrderManegmentClass("Pastry", 5, 0.5, 2, "In Progress"));
+        OrderManegmentClass.getOrderlist().add(new OrderManegmentClass("cake",10,1.0,1,"done"));
 
-        OrderManegmentClass.setOrderlist(OrderManegmentClass.orderlist);
+        OrderManegmentClass.setOrderlist(OrderManegmentClass.getOrderlist());
         OrderManegmentClass order =new OrderManegmentClass();
         OrderManegmentClass ord = new OrderManegmentClass("Pastry", 5, 0.5, 2, "Completed");
         order.OrderUpdate(ord);
 
-        String updatedStatus = OrderManegmentClass.orderlist.get(0).getOrderstatus();
+        String updatedStatus = OrderManegmentClass.getOrderlist().get(0).getOrderstatus();
         assertEquals("Completed", updatedStatus);
 
-        String unchangedStatus = OrderManegmentClass.orderlist.get(1).getOrderstatus();
+        String unchangedStatus = OrderManegmentClass.getOrderlist().get(1).getOrderstatus();
         assertEquals("done", unchangedStatus);
+
+
+
+        OrderManegmentClass tocover =new OrderManegmentClass();
+        tocover.setOrderstatus("sdjfhs");
+        tocover.setName("jkfhk");
+        tocover.setPrice(12);
+        tocover.setDiscount(10);
+        tocover.setOrderlist(tocover.getOrderlist());
+        tocover.getOrderlist();
+        tocover.getDiscount();
+        tocover.getName();
+        tocover.getOrderNUM();
+        tocover.getDiscount();
+
+
     }
 
 

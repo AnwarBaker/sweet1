@@ -1,10 +1,10 @@
 package sweetsys;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class AdminFeedback {
-    public boolean Done;
+
+    public boolean in;
     private String username;
     private String AdminName;
     private String Response;
@@ -74,54 +74,30 @@ public class AdminFeedback {
     }
 
 
-    public void AdminResponseMessege(User user) {
-        FeedBack f = new FeedBack();
+    public void adminResponsemessege(User user,int num,String resmsg) {
+
+
         String name = user.getUsername();
-        try {
-            for (FeedBack feed : f.getFeedBacklist()) {
-                System.out.println(feed);
-            }
-            System.out.println("Enter num of feedback you want to response");
-            Scanner cin = new Scanner(System.in);
-            int i = cin.nextInt();
-            String usernamee="";
+
+            String usernameee="";
             int resnum=0;
-            for (FeedBack feed : f.getFeedBacklist()) {
-                if (feed.getFeednumber() == i) {
-                  usernamee=feed.getSenderName();
-                  resnum=i;
+            for (FeedBack feed : FeedBack.getFeedBacklist()) {
+                if (feed.getFeednumber() == num) {
+                  usernameee = feed.getSenderName();
+                  resnum=num;
                 }
             }
-            System.out.println("Enter Your Response on "+username+" feedback:");
-            Scanner c=new Scanner(System.in);
-            String res=c.nextLine();
-            AdminFeedback a=new AdminFeedback(name,resnum,res,username);
-            AdminFeedback aa=new AdminFeedback();
-            aa.adminresponse.add(a);
-            aa.setAdminresponse(adminresponse);
-            System.out.println(aa.getAdminresponse());
 
-        } catch (Exception e) {}
+
+            AdminFeedback a=new AdminFeedback(name,resnum,resmsg,usernameee);
+            adminresponse.add(a);
+            setAdminresponse(adminresponse);
+            System.out.println(getAdminresponse());
+
 
     }
 
 
-    /*public static void main(String[] args) {
-        SweetProject s=new SweetProject();
-        s.users.add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
-        s.users.add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
-        s.setUsers(s.users);
-        User u=new User("talaa", "12346", 3,"talaa12346@gmail.com","Jenin");
-        s.login(u);
-        s.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        s.products.add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        s.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
-        FeedBack fe=new FeedBack();
-        fe.UserFeedBack(u);
-        User uuu=new User("eeee", "1", 1,"eeee1@gmail.com","Jenin");
-        s.login(uuu);
-        AdminFeedback aa=new AdminFeedback();
-        aa.AdminResponseMessege(uuu);
-    }*/
+
 
 }
