@@ -94,8 +94,8 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
             break;
         }
     }
-    if (!found) {
-        throw new RuntimeException("User not found");
+    if(!found){
+        exit(0);
     }
 
 
@@ -119,7 +119,7 @@ boolean find=false;
                 break;
             }
         }
-        if(!find){throw new RuntimeException("User not found");}
+        if(!find){exit(0);}
     }
 
 }

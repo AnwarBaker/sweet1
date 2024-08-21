@@ -49,7 +49,7 @@
         </dependency>
         <!-- new -->
 
-        <!--   <dependency>
+          <dependency>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-surefire-plugin</artifactId>
               <version>2.12.4</version>
@@ -60,7 +60,7 @@
              <artifactId>testng</artifactId>
               <version>6.9.8</version>
               <scope>test</scope>
-          </dependency>-->
+          </dependency>
 
     </dependencies>
 
