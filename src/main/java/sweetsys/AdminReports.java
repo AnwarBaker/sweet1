@@ -40,21 +40,15 @@ public class AdminReports {
                 flag = prod.getNumOfsales();
             }
         }
-        for(ProductManegmwntSystem last : SweetProject.getProducts()){
-            if (last.getNumOfsales()==flag) {
+        for(ProductManegmwntSystem last : SweetProject.getProducts()) {
+            if (last.getNumOfsales() == flag) {
                 SweetProject.Nablusbestselling.add(last);
                 SweetProject.setNablusbestselling(SweetProject.Nablusbestselling);
                 System.out.println(last);
                 break;
             }
         }
-
-
-
     }
-
-
-
     public void showBestSellingForJenin(){
 
         AdminReports a=new AdminReports();
@@ -77,9 +71,6 @@ public class AdminReports {
         }
 
     }
-
-
-
 
     public  void separateUsersByCity(){
 
@@ -107,11 +98,6 @@ public class AdminReports {
                 System.out.println(user);
             }
 
-
-
     }
-
-
-
 
 }

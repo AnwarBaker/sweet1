@@ -4,8 +4,6 @@ import static java.lang.System.exit;
 public class ContentSection {
     public boolean in;
 
-
-
     public void updateUserrecipes(UserShareProducts pro){
 boolean found=false;
         for(int i=0 ;i<UserShareProducts.getUserproducts().size();i++){

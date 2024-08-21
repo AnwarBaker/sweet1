@@ -62,9 +62,6 @@ public class MessagingClass {
 
     public MessagingClass(){}
 
-
-
-
     public void usersendMessages(User user, String message) {
         String name = user.getUsername();
         String city = user.getCity();
@@ -98,8 +95,6 @@ public class MessagingClass {
         messages.add(m);
         setMessages(messages);
     }
-
-
 
 }
 

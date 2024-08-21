@@ -1,8 +1,6 @@
 package sweetsys;
 
-
 public class StoreOwnerAccountManegment {
-
 
 private boolean come;
     public boolean isCome() {
@@ -21,6 +19,4 @@ private boolean come;
             }}
 
     }
-
-
 }

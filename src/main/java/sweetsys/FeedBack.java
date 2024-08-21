@@ -10,7 +10,6 @@ public class FeedBack {
 private String senderName;
 private String productName;
 
-
     public FeedBack(String feedbackMessage, int feednumber, String senderName, String productName) {
         this.feedbackMessage = feedbackMessage;
         this.feednumber = feednumber;
@@ -88,9 +87,6 @@ private String productName;
                 ", productName='" + productName + '\'' +
                 '}'+"\n";
     }
-
-
-
     public void userFeedback(User user,int num,String feedback){
 
         String name=user.getUsername();
@@ -114,14 +110,11 @@ private String productName;
 
 }
 
-
 public void showFeedback(){
 
         for(FeedBack f : getFeedBacklist()){
             System.out.println(f);
         }
 }
-
-
 
 }

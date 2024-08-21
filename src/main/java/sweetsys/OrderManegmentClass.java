@@ -73,10 +73,6 @@ public class OrderManegmentClass {
         this.orderstatus = orderstatus;
     }
 
-
-
-
-
     @Override
     public String toString() {
         return "Orders{" +
@@ -99,8 +95,7 @@ public void showOrders(){
         }
 }
 
-
-    public void orderUpdate(OrderManegmentClass order){
+  public void orderUpdate(OrderManegmentClass order){
 
 
             if (order == null||orderlist == null) {
@@ -113,6 +108,4 @@ public void showOrders(){
             setOrderlist(orderlist);
 
     }
-
-
 }

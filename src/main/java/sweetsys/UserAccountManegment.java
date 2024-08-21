@@ -2,7 +2,6 @@ package sweetsys;
 
 public class UserAccountManegment {
 
-
      public boolean exist;
 
     public void updateUser(User user){
@@ -17,7 +16,5 @@ public class UserAccountManegment {
             }}
 
     }
-
-
 
 }

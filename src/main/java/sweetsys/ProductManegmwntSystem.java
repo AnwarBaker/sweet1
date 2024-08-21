@@ -13,7 +13,6 @@ public class ProductManegmwntSystem {
     private double discount;
 
 
-
     public boolean isInside() {
         return inside;
     }
@@ -58,8 +57,6 @@ public class ProductManegmwntSystem {
         this.condition = condition;
     }
 
-
-
     public int getUniq() {
         return uniq;
     }
@@ -67,8 +64,6 @@ public class ProductManegmwntSystem {
     public void setUniq(int uniq) {
         this.uniq = uniq;
     }
-
-
 
 
     public String getProductName() {
@@ -123,7 +118,6 @@ public class ProductManegmwntSystem {
         this.discount = discount;
     }
 
-
     public ProductManegmwntSystem(String productName, String productDescription, Double price , Double earning, int numOfsales, String condition, int uniq){
         this.productName=productName;
         this.productDescription=productDescription;
@@ -133,9 +127,6 @@ public class ProductManegmwntSystem {
         this.condition=condition;
         this.numOfsales=numOfsales;
 }
-
-
-
 
 
     public ProductManegmwntSystem(int uniq, String productName, String city, String productDescription, double earning, double price, String condition, int numOfsales) {
@@ -148,8 +139,6 @@ public class ProductManegmwntSystem {
         this.condition = condition;
         this.numOfsales = numOfsales;
     }
-
-
 
     public ProductManegmwntSystem(String productName,String productDescription,int numOfsales,String condition,int uniq){
         this.productName=productName;
@@ -180,6 +169,5 @@ public class ProductManegmwntSystem {
                 ", discount=" + discount +
                 '}';
     }
-
 
 }

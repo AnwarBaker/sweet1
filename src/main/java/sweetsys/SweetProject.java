@@ -19,9 +19,6 @@ private boolean exist;
     static protected   ArrayList<User> Nablususers =new ArrayList<>();
     static protected ArrayList<User> JeninUsers =new ArrayList<>();
 
-
-
-
     static public ArrayList<ProductManegmwntSystem> products =new ArrayList<>();
     static public ArrayList<ProductManegmwntSystem> bestselling =new ArrayList<>();
 
@@ -88,8 +85,6 @@ private boolean exist;
     }
 
 
-
-
     public static ArrayList<ProductManegmwntSystem> getProducts() {
         return products;
     }
@@ -137,17 +132,9 @@ ProductManegmwntSystem prod;
     }
 
 
-
-
-
-
     public String getErrorMessage() {
         return this.errorMessage;
     }
-
-
-
-
 
 
     static protected ArrayList<User> AdminArrayList = new ArrayList<User>();
@@ -211,11 +198,6 @@ ProductManegmwntSystem prod;
     }
 
 
-
-
-
-
-
     public void update(User user){
 
 
@@ -227,8 +209,6 @@ ProductManegmwntSystem prod;
         }
 
     }
-
-
 
 
     public void delete(User user){
@@ -243,11 +223,7 @@ ProductManegmwntSystem prod;
             }
             SweetProject.setUsers(SweetProject.users);
 
-
     }
-
-
-
 
     public void productUpdate( ProductManegmwntSystem prod){
 
@@ -260,9 +236,6 @@ ProductManegmwntSystem prod;
             SweetProject.setProducts(SweetProject.products);
 
     }
-
-
-
 
 
     public void addnewProduct(ProductManegmwntSystem prod) {
@@ -285,10 +258,6 @@ ProductManegmwntSystem prod;
 
 
     }
-
-
-
-
 
 
     public void deleteProduct(ProductManegmwntSystem prod){

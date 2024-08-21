@@ -101,8 +101,6 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
 
 }
 
-
-
     public void storeResponsemessege(User user,String usernamee,String res) {
 
 boolean find=false;

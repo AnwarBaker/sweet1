@@ -63,8 +63,6 @@ static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
                 '}';
     }
 
-
-
     public void addnewProductForUser(UserShareProducts prod){
 
         boolean founded=false;
@@ -79,8 +77,6 @@ static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
             setUserproducts(userproducts);
         }
 
-
     }
 
- 
 }

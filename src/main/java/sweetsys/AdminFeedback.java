@@ -93,11 +93,5 @@ public class AdminFeedback {
             adminresponse.add(a);
             setAdminresponse(adminresponse);
             System.out.println(getAdminresponse());
-
-
     }
-
-
-
-
 }

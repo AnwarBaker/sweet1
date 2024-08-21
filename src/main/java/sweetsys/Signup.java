@@ -2,9 +2,7 @@ package sweetsys;
 
 public class Signup {
 
-
-
-    public boolean in;
+   public boolean in;
 
 
     public Signup() {
@@ -15,8 +13,6 @@ public class Signup {
     public boolean isIn() {
         return in;
     }
-
-
 
     public void addnewuser(User user) {
         SweetProject s=new SweetProject();
@@ -34,9 +30,6 @@ public class Signup {
         }
     }
 
-
-
-
     public void addnewuserforuseronly(User user) {
         SweetProject s=new SweetProject();
         boolean exist = s.isValidUser(s.getUsers(), user.getUsername(), user.getPass());
@@ -49,9 +42,5 @@ public class Signup {
             System.out.println("User already exists");
         }
     }
-
-
-
-
 
 }

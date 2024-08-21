@@ -1,13 +1,8 @@
 package sweetsys;
 
-
-
-
 public class SalesReport {
 
     private boolean userIn;
-
-
 
     public boolean isUserIn() {
         return userIn;
@@ -25,7 +20,6 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
         }
 
     }
-
 
     public void showBestproduct(){
 
@@ -67,7 +61,4 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
 
 
     }
-
-
-
 }
