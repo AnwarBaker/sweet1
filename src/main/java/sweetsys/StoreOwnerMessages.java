@@ -94,6 +94,9 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
             break;
         }
     }
+    if(!found){
+        exit(0);
+    }
 
 
 }
