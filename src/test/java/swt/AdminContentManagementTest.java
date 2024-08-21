@@ -51,7 +51,7 @@ assertFalse(i.in);
                 break;
             }
         }
-       // assertTrue("The product should be updated", updated);
+        assertTrue("The product should be updated", updated);
 
         c.deleteUserrecipes(toupdatepro);
 
@@ -62,7 +62,7 @@ assertFalse(i.in);
                 break;
             }
         }
-        //assertTrue("The product should be deleted", deleted);
+        assertTrue("The product should be deleted", deleted);
 assertFalse(s.isExist());
 
 
