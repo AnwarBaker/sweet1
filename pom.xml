@@ -55,6 +55,13 @@
             <version>2.12.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.8</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 
@@ -80,6 +87,7 @@
                 </goals>
             </execution>
         </executions>
+
     </plugin>
     </plugins>
     </build>
