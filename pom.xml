@@ -49,7 +49,7 @@
         </dependency>
         <!-- new -->
 
-          <dependency>
+       <!--   <dependency>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-surefire-plugin</artifactId>
               <version>2.12.4</version>
@@ -60,19 +60,24 @@
              <artifactId>testng</artifactId>
               <version>6.9.8</version>
               <scope>test</scope>
-          </dependency>
+          </dependency>-->
 
     </dependencies>
 
 
     <!-- new -->
-   <!-- <build>
+   <build>
     <plugins>
 
     <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.7</version>
+        <configuration>
+            <excludes>
+                <exclude>**/AdminContentManagementTest.java</exclude>
+            </excludes>
+        </configuration>
         <executions>
             <execution>
                 <goals>
@@ -90,7 +95,7 @@
 
     </plugin>
     </plugins>
-    </build>-->
+    </build>
 
 
     <!-- new -->
@@ -110,6 +115,7 @@
 
 
     </properties>
+
 
 </project>
 
