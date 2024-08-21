@@ -200,14 +200,21 @@ assertFalse(store.in);
         cover.setProductDescription("jkdghjsdg");
 
 
-        cover.getProductName();
-        cover.getProductDescription();
-        cover.getExpectedprice();
+        String proname=cover.getProductName();
+        String prodisc=cover.getProductDescription();
+        double priceex =cover.getExpectedprice();
+
         cover.setUserproducts(cover.getUserproducts());
         cover.getUserproducts();
 
-        UserShareProducts tocover=new UserShareProducts(cover.getProductName());
 
+        assertEquals("kjdhks", proname);
+        assertEquals("jkdghjsdg", prodisc);
+
+        UserShareProducts tocoverstring =new UserShareProducts(cover.getProductName(),cover.getProductDescription(),cover.getExpectedprice());
+        UserShareProducts tocover =new UserShareProducts(cover.getProductName());
+        tocoverstring.getUserproducts().add(tocoverstring);
+        tocoverstring.getUserproducts().toString();
     }
 
 

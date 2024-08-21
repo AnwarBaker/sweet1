@@ -3,7 +3,6 @@ package swt;
 import io.cucumber.java.en.*;
 import org.junit.*;
 import sweetsys.SweetProject;
-import sweetsys.Sys;
 import sweetsys.User;
 
 import static org.junit.Assert.*;
@@ -83,7 +82,7 @@ public class LoginTest {
     @Then("the user should be redirected to the dashboard")
     public void theUserShouldBeRedirectedToTheDashboard() {
 
-assertFalse(Sys.b);
+assertFalse(s.isExist());
 
     }
 

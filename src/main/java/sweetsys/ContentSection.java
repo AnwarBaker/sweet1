@@ -40,7 +40,7 @@ boolean found=false;
         UserShareProducts.setUserproducts(UserShareProducts.getUserproducts());
 if(!found){
     System.out.println("non exist");
-
+exit(0);
 }
 
     }

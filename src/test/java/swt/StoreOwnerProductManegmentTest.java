@@ -5,7 +5,6 @@ import sweetsys.ProductManegmwntSystem;
 import sweetsys.SalesReport;
 import sweetsys.SweetProject;
 import io.cucumber.java.en.*;
-import sweetsys.Sys;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -28,7 +27,7 @@ public class StoreOwnerProductManegmentTest {
     public void storeOwnerLogsInToTheSystem() {
 
 
-    assertFalse(Sys.b);
+    assertFalse(s.isExist());
     }
 
 
@@ -95,7 +94,7 @@ SweetProject.products.clear();
 
         ProductManegmwntSystem updatedProd = new ProductManegmwntSystem(2, "Nutella cake", "Jenin", "Updated description of Nutella cake", 15.0, 65.0, "updated", 15);
 
-        s.ProductUpdate(updatedProd);
+        s.productUpdate(updatedProd);
 
 
         ProductManegmwntSystem updatedProductInList = SweetProject.getProducts().stream()
@@ -133,7 +132,7 @@ SweetProject.products.clear();
         productToDelete.setUniq(2);
 
 
-        s.DeleteProduct(productToDelete);
+        s.deleteProduct(productToDelete);
 
         boolean productExists = SweetProject.getProducts().stream()
                 .anyMatch(p -> p.getUniq() == 2);

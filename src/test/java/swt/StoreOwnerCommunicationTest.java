@@ -34,9 +34,9 @@ public class StoreOwnerCommunicationTest {
 
         SweetProject.users.clear();
         MessagingClass mmmm = new MessagingClass();
-        mmmm.getMessages().clear();
+        MessagingClass.getMessages().clear();
         StoreOwnerMessages sto = new StoreOwnerMessages();
-        sto.getMessegaesList().clear();
+        StoreOwnerMessages.getMessegaesList().clear();
 
         SweetProject.users.add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
         SweetProject.users.add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
@@ -63,15 +63,22 @@ public class StoreOwnerCommunicationTest {
         storeowner.setStorownerename("kjsnhf");
         storeowner.setMessagenum(2);
         storeowner.setUsername("skld");
-        storeowner.getMessage();
-        storeowner.getStorownerename();
-        storeowner.getMessagenum();
-        storeowner.getUsername();
+
+        String message = storeowner.getMessage();
+        String storownerename = storeowner.getStorownerename();
+        int messagenum = storeowner.getMessagenum();
+        String username = storeowner.getUsername();
+
         StoreOwnerMessages.setMessegaesList(StoreOwnerMessages.getMessegaesList());
         StoreOwnerMessages.getMessegaesList();
         StoreOwnerMessages storeownerr = new StoreOwnerMessages(storeowner.getStorownerename(),storeowner.getUsername(),storeowner.getMessage(),storeowner.getMessagenum());
-
-
+        StoreOwnerMessages.getMessegaesList().add(storeownerr);
+        StoreOwnerMessages.getMessegaesList().toString();
+        assertEquals("kldf", message);
+        assertEquals("kjsnhf", storownerename);
+        assertEquals(2, messagenum);
+        assertEquals("skld", username);
+        assertTrue(StoreOwnerMessages.getMessegaesList().contains(storeownerr));
     }
 
 
@@ -95,16 +102,16 @@ SweetProject.users.clear();
         User u = new User("talaa", "12346", 3, "talaa12346@gmail.com", "Jenin");
         s.login(u);
         MessagingClass mmm = new MessagingClass();
-        mmm.getMessages().clear();
+        MessagingClass.getMessages().clear();
 
         mmm.usersendMessages(u, "hi im user talaa");
 
         User uu = new User("talaall", "1234666", 2, "talaall1234666@gmail.com", "Jenin");
         StoreOwnerMessages sto = new StoreOwnerMessages();
-        sto.getMessegaesList().clear();
+        StoreOwnerMessages.getMessegaesList().clear();
         sto.storeResponsemessege(uu, "talaa", "this is my response");
 
-        List<StoreOwnerMessages> messagesList = sto.getMessegaesList();
+        List<StoreOwnerMessages> messagesList = StoreOwnerMessages.getMessegaesList();
         assertNotNull(messagesList);
         assertFalse(messagesList.isEmpty());
 

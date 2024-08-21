@@ -14,14 +14,14 @@ public class AdminReports {
             String city = pro.getCity();
             if (city != null) {
                 if (city.equalsIgnoreCase("nablus")) {
-                SweetProject.Nablusprodcuts.add(pro);
+                SweetProject.nablusProdcuts.add(pro);
             } else if (pro.getCity().equalsIgnoreCase("jenin")) {
                 SweetProject.Jeninprodcuts.add(pro);
             }
         }
         }
 
-        SweetProject.setNablusprodcuts(SweetProject.Nablusprodcuts);
+        SweetProject.setNablusProdcuts(SweetProject.nablusProdcuts);
         SweetProject.setJeninprodcuts(SweetProject.Jeninprodcuts);
 
 
@@ -33,9 +33,9 @@ public class AdminReports {
 
 
 
-        int flag= SweetProject.Nablusprodcuts.get(0).getNumOfsales();
+        int flag= SweetProject.nablusProdcuts.get(0).getNumOfsales();
 
-        for(ProductManegmwntSystem prod : SweetProject.getNablusprodcuts()){
+        for(ProductManegmwntSystem prod : SweetProject.getNablusProdcuts()){
             if (prod.getNumOfsales() > flag) {
                 flag = prod.getNumOfsales();
             }

@@ -21,7 +21,7 @@ SweetProject s;
     @Before
     public void setUp() {
         SweetProject.getProducts().clear();
-        SweetProject.getNablusprodcuts().clear();
+        SweetProject.getNablusProdcuts().clear();
         SweetProject.getJeninprodcuts().clear();
         SweetProject.getNablusbestselling().clear();
         SweetProject.getJeninbestselling().clear();

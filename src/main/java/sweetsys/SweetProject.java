@@ -15,9 +15,9 @@ private boolean exist;
 
   
 
-    static public    ArrayList<User> users =new ArrayList<User>();
-    static protected   ArrayList<User> Nablususers =new ArrayList<User>();
-    static protected ArrayList<User> JeninUsers =new ArrayList<User>();
+    static public    ArrayList<User> users =new ArrayList<>();
+    static protected   ArrayList<User> Nablususers =new ArrayList<>();
+    static protected ArrayList<User> JeninUsers =new ArrayList<>();
 
 
 
@@ -25,18 +25,18 @@ private boolean exist;
     static public ArrayList<ProductManegmwntSystem> products =new ArrayList<>();
     static public ArrayList<ProductManegmwntSystem> bestselling =new ArrayList<>();
 
-    static protected ArrayList<ProductManegmwntSystem> Nablusprodcuts =new ArrayList<>();
+    static protected ArrayList<ProductManegmwntSystem> nablusProdcuts =new ArrayList<>();
     static protected ArrayList<ProductManegmwntSystem> Jeninprodcuts =new ArrayList<>();
-    static protected ArrayList<ProductManegmwntSystem> Jeninbestselling =new ArrayList<ProductManegmwntSystem>();
+    static protected ArrayList<ProductManegmwntSystem> Jeninbestselling =new ArrayList<>();
     static protected ArrayList<ProductManegmwntSystem> Nablusbestselling =new ArrayList<>();
 
 
-    public static ArrayList<ProductManegmwntSystem> getNablusprodcuts() {
-        return Nablusprodcuts;
+    public static ArrayList<ProductManegmwntSystem> getNablusProdcuts() {
+        return nablusProdcuts;
     }
 
-    public static void setNablusprodcuts(ArrayList<ProductManegmwntSystem> nablusprodcuts) {
-        Nablusprodcuts = nablusprodcuts;
+    public static void setNablusProdcuts(ArrayList<ProductManegmwntSystem> nablusProdcuts) {
+        SweetProject.nablusProdcuts = nablusProdcuts;
     }
 
     public static ArrayList<ProductManegmwntSystem> getJeninprodcuts() {
@@ -154,7 +154,7 @@ ProductManegmwntSystem prod;
 
     static protected ArrayList<User> StoreOwnerArrayList = new ArrayList<User>();
 
-    static protected ArrayList<User> UsersArrayList = new ArrayList<User>();
+    static protected ArrayList<User> usersArraylist = new ArrayList<User>();
 
     public static ArrayList<User> getAdminArrayList() {
         return AdminArrayList;
@@ -172,21 +172,16 @@ ProductManegmwntSystem prod;
         StoreOwnerArrayList = storeOwnerArrayList;
     }
 
-    public static ArrayList<User> getUsersArrayList() {
-        return UsersArrayList;
+
+    public static ArrayList<User> getUsersArraylist() {
+        return usersArraylist;
     }
 
-    public static void setUsersArrayList(ArrayList<User> usersArrayList) {
-        UsersArrayList = usersArrayList;
+    public static void setUsersArraylist(ArrayList<User> usersArraylist) {
+        SweetProject.usersArraylist = usersArraylist;
     }
 
-
-
-
-
-
-
-    public void ShowEachTypeOfUsers(){
+    public void showeachTypeofusers(){
 
         for(User u: getUsers()){
             if(u.getUserlevel()==1)  {
@@ -207,8 +202,8 @@ ProductManegmwntSystem prod;
             else if(u.getUserlevel()==3)  {
                User user=new User(u.getUsername(),u.getPass(),u.getUserlevel(),u.getEmail(),u.getCity());
 
-                SweetProject.UsersArrayList.add(user);
-                SweetProject.setUsersArrayList(UsersArrayList);
+                SweetProject.usersArraylist.add(user);
+                SweetProject.setUsersArraylist(usersArraylist);
 
 
             }
@@ -221,7 +216,7 @@ ProductManegmwntSystem prod;
 
 
 
-    public void Update(User user){
+    public void update(User user){
 
 
        for(int i = 0; i < users.size(); i++){
@@ -236,7 +231,7 @@ ProductManegmwntSystem prod;
 
 
 
-    public void Delete(User user){
+    public void delete(User user){
 
 
             for(int i = 0; i < users.size(); i++){
@@ -254,7 +249,7 @@ ProductManegmwntSystem prod;
 
 
 
-    public void ProductUpdate( ProductManegmwntSystem prod){
+    public void productUpdate( ProductManegmwntSystem prod){
 
             for(int i = 0; i < products.size(); i++){
                 if(SweetProject.products.get(i).getUniq()==prod.getUniq()){
@@ -271,17 +266,17 @@ ProductManegmwntSystem prod;
 
 
     public void addnewProduct(ProductManegmwntSystem prod) {
-        boolean Testxist=false;
+        boolean tesTxist=false;
 
 
             for(int i=0 ;i<SweetProject.getProducts().size();i++){
                 if(products.get(i).getUniq()==prod.getUniq()){
-                    Testxist =true;
+                    tesTxist =true;
                     break;
                 }
             }
 
-  if(!Testxist){
+  if(!tesTxist){
       int last=SweetProject.getProducts().size();
       prod.setUniq(last);
       products.add(prod);
@@ -296,7 +291,7 @@ ProductManegmwntSystem prod;
 
 
 
-    public void DeleteProduct(ProductManegmwntSystem prod){
+    public void deleteProduct(ProductManegmwntSystem prod){
 
 
             for(int i = 0; i < products.size(); i++){

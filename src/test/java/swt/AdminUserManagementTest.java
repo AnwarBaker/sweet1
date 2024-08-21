@@ -48,7 +48,7 @@ public class AdminUserManagementTest {
 
 
 
-        s.ShowEachTypeOfUsers();
+        s.showeachTypeofusers();
 int adminexpectsize= SweetProject.getAdminArrayList().size();
         assertEquals(adminexpectsize, SweetProject.getAdminArrayList().size());
         assertTrue(SweetProject.getAdminArrayList().stream().anyMatch(u -> u.getUsername().equals("anwar")));
@@ -58,17 +58,17 @@ int storesizeexpected=SweetProject.getStoreOwnerArrayList().size();
         assertEquals(storesizeexpected, SweetProject.getStoreOwnerArrayList().size());
         assertTrue(SweetProject.getStoreOwnerArrayList().stream().anyMatch(u -> u.getUsername().equals("ahmad")));
 
-int userizeexpected=SweetProject.getUsersArrayList().size();
-        assertEquals(userizeexpected, SweetProject.getUsersArrayList().size());
-        assertTrue(SweetProject.getUsersArrayList().stream().anyMatch(u -> u.getUsername().equals("tarneem")));
+int userizeexpected=SweetProject.getUsersArraylist().size();
+        assertEquals(userizeexpected, SweetProject.getUsersArraylist().size());
+        assertTrue(SweetProject.getUsersArraylist().stream().anyMatch(u -> u.getUsername().equals("tarneem")));
 
 
 
         SweetProject.setAdminArrayList(SweetProject.getAdminArrayList());
         SweetProject.getAdminArrayList();
 
-        SweetProject.setUsersArrayList(SweetProject.getUsersArrayList());
-        SweetProject.getUsersArrayList();
+        SweetProject.setUsersArraylist(SweetProject.getUsersArraylist());
+        SweetProject.getUsersArraylist();
 
         SweetProject.setStoreOwnerArrayList(SweetProject.getStoreOwnerArrayList());
         SweetProject.getStoreOwnerArrayList();
@@ -88,8 +88,8 @@ int userizeexpected=SweetProject.getUsersArrayList().size();
         SweetProject.setJeninprodcuts(SweetProject.getJeninprodcuts());
         SweetProject.getJeninprodcuts();
 
-        SweetProject.setNablusprodcuts(SweetProject.getNablusprodcuts());
-        SweetProject.getNablusprodcuts();
+        SweetProject.setNablusProdcuts(SweetProject.getNablusProdcuts());
+        SweetProject.getNablusProdcuts();
 
     }
 
@@ -139,7 +139,7 @@ s.login(user);
         SweetProject.setUsers(SweetProject.users);
         User  updatedUser= new User("anwar", "225", 1, "anwar225@gmail.com", "Nablus");
 
-        s.Update(updatedUser);
+        s.update(updatedUser);
 
         User retrievedUser = SweetProject.getUsers().stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase("anwar"))
@@ -171,7 +171,7 @@ s.login(user);
 
 
         User nonExistentUser = new User("nonexistent", "000", 0, "nonexistent@gmail.com", "Unknown");
-        s.Update(nonExistentUser);
+        s.update(nonExistentUser);
         boolean userExists = false;
         for (User user : SweetProject.users) {
             if (user.getUsername().equalsIgnoreCase("nonexistent")) {
@@ -203,7 +203,7 @@ s.login(user);
         User userToDelete = new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus");
 
 
-        s.Delete(userToDelete);
+        s.delete(userToDelete);
 
         boolean userDeleted = SweetProject.getUsers().stream()
                 .noneMatch(u -> u.getUsername().equalsIgnoreCase(userToDelete.getUsername())
