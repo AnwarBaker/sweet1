@@ -94,8 +94,8 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
             break;
         }
     }
-    if(!found){
-        exit(0);
+    if (!found) {
+        throw new RuntimeException("User not found");
     }
 
 
@@ -105,7 +105,7 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
 
     public void storeResponsemessege(User user,String usernamee,String res) {
 
-
+boolean find=false;
         String name = user.getUsername();
         int last = getMessegaesList().size();
         for (MessagingClass mmm : MessagingClass.getMessages()) {
@@ -114,10 +114,12 @@ public void storeOwnersendmesseges(User user, String messagee, String usernamee)
                 username = mmm.getSendername();
                 StoreOwnerMessages st = new StoreOwnerMessages(name, usernamee, res, last + 1);
                 messegaesList.add(st);
+                find=true;
                 setMessegaesList(messegaesList);
                 break;
             }
         }
+        if(!find){throw new RuntimeException("User not found");}
     }
 
 }

@@ -7,7 +7,7 @@ public class AdminFeedback {
     public boolean in;
     private String username;
     private String adminname;
-    private String Response;
+    private String response;
     private int responseNumber;
 
 
@@ -15,9 +15,9 @@ public class AdminFeedback {
 
 
     public AdminFeedback(String adminName, int responseNumber, String response, String username) {
-        adminname = adminName;
+        this.adminname = adminName;
         this.responseNumber = responseNumber;
-        Response = response;
+        this.response = response;
         this.username = username;
     }
 
@@ -46,11 +46,11 @@ public class AdminFeedback {
     }
 
     public String getResponse() {
-        return Response;
+        return response;
     }
 
     public void setResponse(String response) {
-        Response = response;
+        this.response = response;
     }
 
     public static ArrayList<AdminFeedback> getAdminresponse() {
@@ -69,7 +69,7 @@ public class AdminFeedback {
         return "AdminFeedback{" +
                 "username='" + username + '\'' +
                 ", AdminName='" + adminname + '\'' +
-                ", Response='" + Response + '\'' +
+                ", Response='" + response + '\'' +
                 '}';
     }
 
