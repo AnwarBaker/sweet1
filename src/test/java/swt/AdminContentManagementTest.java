@@ -103,7 +103,6 @@ assertFalse(a.in);
         AdminFeedback firstadminfeed=new AdminFeedback(adminfeed.getAdminname(),adminfeed.getResponseNumber(),adminfeed.getUsername(), adminfeed.getResponse());
         AdminFeedback admincover=new AdminFeedback(adminfeed.getAdminname(),adminfeed.getResponseNumber(),adminfeed.getResponse(),adminfeed.getUsername());
 
-
     }
 
 
