@@ -20,7 +20,7 @@ SweetProject s;
     public void iAmOnTheSignUpPage() {
         Signup sign=new Signup();
 
-    assertFalse(sign.isIn());
+    assertFalse(sign.IN);
 
     }
 

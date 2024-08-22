@@ -30,7 +30,7 @@ SweetProject s;
     public void userNavigatesToTheRegistrationPage() {
 Signup sign=new Signup();
 
-assertFalse(sign.in);
+assertFalse(sign.IN);
 
     }
 
@@ -156,7 +156,7 @@ assertFalse(s.isExist());
     @When("User navigates to the Account Management section.")
     public void userNavigatesToTheAccountManagementSection() {
         UserAccountManegment in=new UserAccountManegment();
-        assertFalse(in.exist);
+        assertFalse(in.EXIST);
     }
 
 

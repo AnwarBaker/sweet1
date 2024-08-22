@@ -1,14 +1,19 @@
 package sweetsys;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UserShareProducts {
+
+    private static final Logger logger = Logger.getLogger(UserShareProducts.class.getName());
 
     public String productName;
     public String productDescription;
     public double expectedprice;
 
-static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
+    protected static List<UserShareProducts> userproducts = new ArrayList<>();
 
     public String getProductName() {
         return productName;
@@ -18,11 +23,11 @@ static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
         this.productName = productName;
     }
 
-    public static ArrayList<UserShareProducts> getUserproducts() {
+    public static List<UserShareProducts> getUserproducts() {
         return userproducts;
     }
 
-    public static void setUserproducts(ArrayList<UserShareProducts> userproducts) {
+    public static void setUserproducts(List<UserShareProducts> userproducts) {
         UserShareProducts.userproducts = userproducts;
     }
 
@@ -42,7 +47,7 @@ static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
         this.productDescription = productDescription;
     }
 
-    public UserShareProducts(){}
+    public UserShareProducts() {}
 
     public UserShareProducts(String productName) {
         this.productName = productName;
@@ -63,20 +68,20 @@ static protected ArrayList<UserShareProducts> userproducts=new ArrayList<>();
                 '}';
     }
 
-    public void addnewProductForUser(UserShareProducts prod){
+    public void addnewProductForUser(UserShareProducts prod) {
 
-        boolean founded=false;
-        for(ProductManegmwntSystem products : SweetProject.getProducts()){
-            if(products.getProductName().equalsIgnoreCase(prod.getProductName())&&products.getProductDescription().equalsIgnoreCase(prod.getProductDescription())) {
-                System.out.println("this product already exists");
-                founded=true;
+        boolean founded = false;
+        for (ProductManegmwntSystem products : SweetProject.getProducts()) {
+            if (products.getProductName().equalsIgnoreCase(prod.getProductName()) &&
+                    products.getProductDescription().equalsIgnoreCase(prod.getProductDescription())) {
+                logger.log(Level.WARNING, "This product already exists");
+                founded = true;
             }
         }
-        if(!founded){
+        if (!founded) {
             userproducts.add(prod);
             setUserproducts(userproducts);
         }
-
     }
-
 }
+

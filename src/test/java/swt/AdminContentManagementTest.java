@@ -20,7 +20,7 @@ SweetProject s;
     public void adminNavigatesToTheContentManagementSection() {
 ContentSection i =new ContentSection();
 
-assertFalse(i.in);
+assertFalse(i.IN);
 
     }
 
@@ -75,7 +75,7 @@ assertFalse(s.isExist());
     @When("Admin navigates to the Feedback Management section")
     public void adminNavigatesToTheFeedbackManagementSection() {
 AdminFeedback a=new AdminFeedback();
-assertFalse(a.in);
+assertFalse(a.IN);
     }
 
 

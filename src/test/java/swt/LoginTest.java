@@ -70,10 +70,7 @@ public class LoginTest {
         boolean isValidInvalidPass = s.isValidUser(SweetProject.getUsers(), "yasmine", "wrongPass");
         assertFalse("The user should be invalid due to incorrect password", isValidInvalidPass);
 
-
-
     }
-
 
 
 
@@ -124,10 +121,6 @@ assertFalse(s.isExist());
 
         User firstusercover=new User(usercover.getUsername(),usercover.getPass(),usercover.getCity());
         User citycover=new User(usercover.getCity());
-
-
-
-
 
 }
 

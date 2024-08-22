@@ -97,7 +97,7 @@ SweetProject s;
     private static String getExpectedOutput() {
 
         String expectedOutput = """
-    These products do not cause you allergies
+    These products do not cause you allergies:
     {uniqnum=1, productName='Nutel cake', city='null', price=60.0, productDescription='Layers of chocolate cake with chocolate cream in the top', earning=10.0, condition='finished', Num_Of_Sales=10, discount=0.0}
     {uniqnum=2, productName='Nulla popcake', city='null', price=60.0, productDescription='Layers of chocolate cake with chocolate cream in the middle', earning=10.0, condition='not finished', Num_Of_Sales=12, discount=0.0}
     """;

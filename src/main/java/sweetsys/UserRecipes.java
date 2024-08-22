@@ -1,8 +1,11 @@
 package sweetsys;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class UserRecipes {
+
+    private static final Logger logger = Logger.getLogger(UserRecipes.class.getName());
     
     public boolean in;
 
@@ -26,7 +29,8 @@ public class UserRecipes {
                 n.add(prod.getUniq());
             }
         }
-            System.out.println("These products do not cause you allergies");
+        System.out.println("These products do not cause you allergies:");
+
             for(ProductManegmwntSystem pro : SweetProject.getProducts()){
                 if (!n.contains(pro.getUniq())){
                 System.out.println(pro);

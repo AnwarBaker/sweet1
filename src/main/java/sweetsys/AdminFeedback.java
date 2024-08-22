@@ -1,17 +1,18 @@
 package sweetsys;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdminFeedback {
 
-    public boolean in;
+    public static final boolean IN=false;
     private String username;
     private String adminname;
     private String response;
     private int responseNumber;
 
 
-    static public ArrayList<AdminFeedback> adminresponse = new ArrayList<>();
+    protected static List<AdminFeedback> adminresponse = new ArrayList<>();
 
 
     public AdminFeedback(String adminName, int responseNumber, String response, String username) {
@@ -53,11 +54,11 @@ public class AdminFeedback {
         this.response = response;
     }
 
-    public static ArrayList<AdminFeedback> getAdminresponse() {
+    public static List<AdminFeedback> getAdminresponse() {
         return adminresponse;
     }
 
-    public static void setAdminresponse(ArrayList<AdminFeedback> adminresponse) {
+    public static void setAdminresponse(List<AdminFeedback> adminresponse) {
         AdminFeedback.adminresponse = adminresponse;
     }
 
