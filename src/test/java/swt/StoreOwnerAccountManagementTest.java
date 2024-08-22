@@ -30,12 +30,12 @@ public class StoreOwnerAccountManagementTest {
     @Then("Store owner can update account details")
     public void storeOwnerCanUpdateAccountDetails() {
 
-        SweetProject.users.clear();
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 2,"tarneem123456@gmail.com","Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().clear();
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 2,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
         User  updatedUser= new User("tarneem", "225511", 2, "tarneem225511@gmail.com", "Nablus");
 
         StoreOwnerAccountManegment store =new StoreOwnerAccountManegment();

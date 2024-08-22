@@ -32,21 +32,21 @@ public class StoreOwnerCommunicationTest {
     @When("Store owner can send messages to users or suppliers")
     public void storeOwnerCanSendMessagesToUsersOrSuppliers() {
 
-        SweetProject.users.clear();
+        SweetProject.getUsers().clear();
         MessagingClass mmmm = new MessagingClass();
         MessagingClass.getMessages().clear();
         StoreOwnerMessages sto = new StoreOwnerMessages();
         StoreOwnerMessages.getMessegaesList().clear();
 
-        SweetProject.users.add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com", "Jenin"));
-        SweetProject.users.add(new User("rama", "145", 3, "rama145@gmail.com", "nablus"));
-        SweetProject.users.add(new User("tala", "1", 3, "tala1@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("rama", "145", 3, "rama145@gmail.com", "nablus"));
+        SweetProject.getUsers().add(new User("tala", "1", 3, "tala1@gmail.com", "Jenin"));
         User user = new User("talal", "12", 2, "talal12@gmail.com", "Jenin");
         s.login(user);
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.setUsers(SweetProject.getUsers());
 
         User uu = new User("talaall", "1234666", 2, "talaall1234666@gmail.com", "Jenin");
         StoreOwnerMessages stor = new StoreOwnerMessages();
@@ -87,17 +87,17 @@ public class StoreOwnerCommunicationTest {
     public void storeOwnerCanReceiveMessagesAndRespondToThem() {
 
 
-SweetProject.users.clear();
+SweetProject.getUsers().clear();
 
-        SweetProject.users.add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com", "Jenin"));
-        SweetProject.users.add(new User("rama", "145", 3, "rama145@gmail.com", "nablus"));
-        SweetProject.users.add(new User("tala", "1", 3, "tala1@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("rama", "145", 3, "rama145@gmail.com", "nablus"));
+        SweetProject.getUsers().add(new User("tala", "1", 3, "tala1@gmail.com", "Jenin"));
         User user = new User("talal", "12", 2, "talal12@gmail.com", "Jenin");
         s.login(user);
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.setUsers(SweetProject.getUsers());
 
         User u = new User("talaa", "12346", 3, "talaa12346@gmail.com", "Jenin");
         s.login(u);

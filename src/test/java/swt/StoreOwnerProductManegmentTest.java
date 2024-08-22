@@ -43,13 +43,13 @@ public class StoreOwnerProductManegmentTest {
     @Test
     @When("Store owner can add a new product by providing necessary details")
     public void storeOwnerCanAddANewProductByProvidingNecessaryDetails() {
-        SweetProject.products.clear();
+        SweetProject.getProducts().clear();
     ProductManegmwntSystem prod=new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",1);
-    SweetProject.products.add(new ProductManegmwntSystem("Nutella","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutla","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",3));
+    SweetProject.getProducts().add(new ProductManegmwntSystem("Nutella","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutla","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",3));
 
         s.productlogin(prod);
-    SweetProject.setProducts(SweetProject.products);
+    SweetProject.setProducts(SweetProject.getProducts());
         int expected=SweetProject.getProducts().size();
 
     s.addnewProduct(prod);
@@ -85,11 +85,11 @@ for(ProductManegmwntSystem pp :SweetProject.getProducts()){
     @When("Store owner can update existing product information")
     public void storeOwnerCanUpdateExistingProductInformation() {
 
-SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        SweetProject.products.add(new ProductManegmwntSystem(2,"cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
-        SweetProject.setProducts(SweetProject.products);
+SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2,"cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+        SweetProject.setProducts(SweetProject.getProducts());
 
 
         ProductManegmwntSystem updatedProd = new ProductManegmwntSystem(2, "Nutella cake", "Jenin", "Updated description of Nutella cake", 15.0, 65.0, "updated", 15);
@@ -122,11 +122,11 @@ for (ProductManegmwntSystem pro :SweetProject.getProducts()){
     @Test
     @Then("Store owner can remove a product from the list")
     public void storeOwnerCanRemoveAProductFromTheList() {
-SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        SweetProject.products.add(new ProductManegmwntSystem(2,"cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
-        SweetProject.setProducts(SweetProject.products);
+SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2,"cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+        SweetProject.setProducts(SweetProject.getProducts());
 
         ProductManegmwntSystem productToDelete = new ProductManegmwntSystem();
         productToDelete.setUniq(2);
@@ -157,11 +157,11 @@ SweetProject.products.clear();
     @Test
     @Then("System displays sales and profit reports")
     public void systemDisplaysSalesAndProfitReports() {
-        SweetProject.products.clear();
+        SweetProject.getProducts().clear();
 
-        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        SweetProject.products.add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
 
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -214,12 +214,12 @@ ProductManegmwntSystem product=new ProductManegmwntSystem();
     @Test
     @Then("System displays the best-selling products")
     public void systemDisplaysTheBestSellingProducts() {
-SweetProject.products.clear();
-SweetProject.bestselling.clear();
+SweetProject.getProducts().clear();
+SweetProject.getBestselling().clear();
 
-        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        SweetProject.products.add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
 
         SalesReport sales=new SalesReport();
         sales.showBestproduct();
@@ -241,10 +241,10 @@ SweetProject.bestselling.clear();
     public void storeOwnerCanSetDynamicDiscountsForProducts() {
 
 
-        SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem(1, "Nutella cake", "Nablus", "Layers of chocolate cake with chocolate cream in the middle", 10.0, 60.0, "finished", 5));
-        SweetProject.products.add(new ProductManegmwntSystem(2, "Nutella cake", "Jenin", "Layers of chocolate cake with chocolate cream in the middle", 10.0, 60.0, "finished", 10));
-        SweetProject.products.add(new ProductManegmwntSystem(3, "Nutella cake", "Nablus", "Layers of chocolate cake with chocolate cream in the middle", 10.0, 60.0, "finished", 12));
+        SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1, "Nutella cake", "Nablus", "Layers of chocolate cake with chocolate cream in the middle", 10.0, 60.0, "finished", 5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2, "Nutella cake", "Jenin", "Layers of chocolate cake with chocolate cream in the middle", 10.0, 60.0, "finished", 10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3, "Nutella cake", "Nablus", "Layers of chocolate cake with chocolate cream in the middle", 10.0, 60.0, "finished", 12));
 
         ProductManegmwntSystem prodWithDiscount = new ProductManegmwntSystem();
         prodWithDiscount.setUniq(2);

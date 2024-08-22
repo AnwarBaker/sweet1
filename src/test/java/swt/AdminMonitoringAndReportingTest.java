@@ -56,11 +56,11 @@ assertFalse(admin.in);
     @Then("System generates and displays the financial report")
     public void systemGeneratesAndDisplaysTheFinancialReport() {
 
-        SweetProject.products.clear();
+        SweetProject.getProducts().clear();
 
-        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        SweetProject.products.add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
 
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -93,12 +93,12 @@ assertFalse(admin.in);
     @Test
     @Then("System displays a list of best-selling products for each store")
     public void systemDisplaysAListOfBestSellingProductsForEachStore() {
-        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        SweetProject.products.add(new ProductManegmwntSystem(2,"Nutella ","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        SweetProject.products.add(new ProductManegmwntSystem(3,"pop cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
-        SweetProject.products.add(new ProductManegmwntSystem(4,"marcemillo cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",13));
-        SweetProject.products.add(new ProductManegmwntSystem(5,"lotos cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",30));
-        SweetProject.products.add(new ProductManegmwntSystem(6,"juice la","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",35));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2,"Nutella ","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3,"pop cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(4,"marcemillo cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",13));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(5,"lotos cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",30));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(6,"juice la","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",35));
         AdminReports a=new AdminReports();
         a.separateEachCity();
         a.showBestSellingForNablus();
@@ -127,11 +127,11 @@ assertFalse(a.in);
     @Test
     @Then("System displays user statistics categorized by city \\(e.g., Nablus, Jenin)")
     public void systemDisplaysUserStatisticsCategorizedByCityEGNablusJenin() {
-        SweetProject.users.clear();
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.getUsers().clear();
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
         AdminReports a=new AdminReports();
 
         a.separateUsersByCity();

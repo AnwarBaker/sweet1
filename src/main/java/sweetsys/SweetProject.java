@@ -1,5 +1,7 @@
 package sweetsys;
 import java.util.ArrayList;
+import java.util.List;
+
 public class SweetProject {
     private String errorMessage;
     private String existdataMessage;
@@ -13,87 +15,87 @@ private boolean exist;
     }
 
 
-  
-
-    static public    ArrayList<User> users =new ArrayList<>();
-    static protected   ArrayList<User> Nablususers =new ArrayList<>();
-    static protected ArrayList<User> JeninUsers =new ArrayList<>();
-
-    static public ArrayList<ProductManegmwntSystem> products =new ArrayList<>();
-    static public ArrayList<ProductManegmwntSystem> bestselling =new ArrayList<>();
-
-    static protected ArrayList<ProductManegmwntSystem> nablusProdcuts =new ArrayList<>();
-    static protected ArrayList<ProductManegmwntSystem> Jeninprodcuts =new ArrayList<>();
-    static protected ArrayList<ProductManegmwntSystem> Jeninbestselling =new ArrayList<>();
-    static protected ArrayList<ProductManegmwntSystem> Nablusbestselling =new ArrayList<>();
 
 
-    public static ArrayList<ProductManegmwntSystem> getNablusProdcuts() {
+    protected static List <User> users =new ArrayList<>();
+    protected static List<User> nablususers =new ArrayList<>();
+    protected static List<User> jeninUsers =new ArrayList<>();
+
+    protected static List <ProductManegmwntSystem> products =new ArrayList<>();
+    protected static List<ProductManegmwntSystem> bestselling =new ArrayList<>();
+
+    protected static List<ProductManegmwntSystem> nablusProdcuts =new ArrayList<>();
+    protected static List<ProductManegmwntSystem> jeninprodcuts =new ArrayList<>();
+    protected static List<ProductManegmwntSystem> jeninbestselling =new ArrayList<>();
+    protected static List<ProductManegmwntSystem> nablusbestselling =new ArrayList<>();
+
+
+    public static List<ProductManegmwntSystem> getNablusProdcuts() {
         return nablusProdcuts;
     }
 
-    public static void setNablusProdcuts(ArrayList<ProductManegmwntSystem> nablusProdcuts) {
+    public static void setNablusProdcuts(List<ProductManegmwntSystem> nablusProdcuts) {
         SweetProject.nablusProdcuts = nablusProdcuts;
     }
 
-    public static ArrayList<ProductManegmwntSystem> getJeninprodcuts() {
-        return Jeninprodcuts;
+    public static List<ProductManegmwntSystem> getJeninprodcuts() {
+        return jeninprodcuts;
     }
 
-    public static void setJeninprodcuts(ArrayList<ProductManegmwntSystem> jeninsprodcuts) {
-        Jeninprodcuts = jeninsprodcuts;
+    public static void setJeninprodcuts(List<ProductManegmwntSystem> jeninprodcuts) {
+        SweetProject.jeninprodcuts = jeninprodcuts;
     }
 
-    public static ArrayList<ProductManegmwntSystem> getJeninbestselling() {
-        return Jeninbestselling;
+    public static List<ProductManegmwntSystem> getJeninbestselling() {
+        return jeninbestselling;
     }
 
-    public static void setJeninbestselling(ArrayList<ProductManegmwntSystem> jeninbestselling) {
-        Jeninbestselling = jeninbestselling;
+    public static void setJeninbestselling(List<ProductManegmwntSystem> jeninbestselling) {
+        SweetProject.jeninbestselling = jeninbestselling;
     }
 
-    public static ArrayList<ProductManegmwntSystem> getNablusbestselling() {
-        return Nablusbestselling;
+    public static List<ProductManegmwntSystem> getNablusbestselling() {
+        return nablusbestselling;
     }
 
-    public static void setNablusbestselling(ArrayList<ProductManegmwntSystem> nablusbestselling) {
-        Nablusbestselling = nablusbestselling;
+    public static void setNablusbestselling(List<ProductManegmwntSystem> nablusbestselling) {
+        SweetProject.nablusbestselling = nablusbestselling;
     }
 
-    public static ArrayList<User> getNablususers() {
-        return Nablususers;
+
+    public static List<User> getNablususers() {
+        return nablususers;
     }
 
-    public static void setNablususers(ArrayList<User> nablususers) {
-        Nablususers = nablususers;
+    public static void setNablususers(List<User> nablususers) {
+        SweetProject.nablususers = nablususers;
     }
 
-    public static ArrayList<User> getJeninUsers() {
-        return JeninUsers;
+    public static List<User> getJeninUsers() {
+        return jeninUsers;
     }
 
-    public static void setJeninUsers(ArrayList<User> jeninUsers) {
-        JeninUsers = jeninUsers;
+    public static void setJeninUsers(List<User> jeninUsers) {
+        SweetProject.jeninUsers = jeninUsers;
     }
 
-    public static ArrayList<ProductManegmwntSystem> getBestselling() {
+
+    public static List<ProductManegmwntSystem> getBestselling() {
         return bestselling;
     }
 
-    public static void setBestselling(ArrayList<ProductManegmwntSystem> bestselling) {
+    public static void setBestselling(List<ProductManegmwntSystem> bestselling) {
         SweetProject.bestselling = bestselling;
     }
 
 
-    public static ArrayList<ProductManegmwntSystem> getProducts() {
+    public static List<ProductManegmwntSystem> getProducts() {
         return products;
     }
 
-    public static void setProducts(ArrayList<ProductManegmwntSystem> products) {
+    public static void setProducts(List<ProductManegmwntSystem> products) {
         SweetProject.products = products;
     }
-
-
 
     public void login(User u) {
 // empty beacuse well fill later
@@ -107,11 +109,12 @@ ProductManegmwntSystem prod;
 
     }
 
-    public static ArrayList<User> getUsers() {
+
+    public static List<User> getUsers() {
         return users;
     }
 
-    public static void setUsers(ArrayList<User> users) {
+    public static void setUsers(List<User> users) {
         SweetProject.users = users;
     }
 
@@ -119,7 +122,7 @@ ProductManegmwntSystem prod;
         return existdataMessage;
     }
 
-    public  boolean isValidUser(ArrayList<User> users, String name, String pass) {
+    public  boolean isValidUser(List<User> users, String name, String pass) {
         for (User search : users) {
             if (search.getUsername().equals(name) && search.getPass().equals(pass)) {
                this.existdataMessage="User Exists";
@@ -137,34 +140,34 @@ ProductManegmwntSystem prod;
     }
 
 
-    static protected ArrayList<User> AdminArrayList = new ArrayList<User>();
+    protected static List<User> adminArraylist = new ArrayList<>();
 
-    static protected ArrayList<User> StoreOwnerArrayList = new ArrayList<User>();
+    protected static List<User> storeOwnerarraylist = new ArrayList<>();
 
-    static protected ArrayList<User> usersArraylist = new ArrayList<User>();
+    protected static List<User> usersArraylist = new ArrayList<>();
 
-    public static ArrayList<User> getAdminArrayList() {
-        return AdminArrayList;
+
+    public static List<User> getAdminArraylist() {
+        return adminArraylist;
     }
 
-    public static void setAdminArrayList(ArrayList<User> adminArrayList) {
-        AdminArrayList = adminArrayList;
+    public static void setAdminArraylist(List<User> adminArraylist) {
+        SweetProject.adminArraylist = adminArraylist;
     }
 
-    public static ArrayList<User> getStoreOwnerArrayList() {
-        return StoreOwnerArrayList;
+    public static List<User> getStoreOwnerarraylist() {
+        return storeOwnerarraylist;
     }
 
-    public static void setStoreOwnerArrayList(ArrayList<User> storeOwnerArrayList) {
-        StoreOwnerArrayList = storeOwnerArrayList;
+    public static void setStoreOwnerarraylist(List<User> storeOwnerarraylist) {
+        SweetProject.storeOwnerarraylist = storeOwnerarraylist;
     }
 
-
-    public static ArrayList<User> getUsersArraylist() {
+    public static List<User> getUsersArraylist() {
         return usersArraylist;
     }
 
-    public static void setUsersArraylist(ArrayList<User> usersArraylist) {
+    public static void setUsersArraylist(List<User> usersArraylist) {
         SweetProject.usersArraylist = usersArraylist;
     }
 
@@ -174,15 +177,15 @@ ProductManegmwntSystem prod;
             if(u.getUserlevel()==1)  {
                 User user=new User(u.getUsername(),u.getPass(),u.getUserlevel(),u.getEmail(),u.getCity());
 
-                SweetProject.AdminArrayList.add(user);
-                SweetProject.setAdminArrayList(AdminArrayList);
+                SweetProject.adminArraylist.add(user);
+                SweetProject.setAdminArraylist(adminArraylist);
 
 
             }
             else if(u.getUserlevel()==2)  {
                User user=new User(u.getUsername(),u.getPass(),u.getUserlevel(),u.getEmail(),u.getCity());
-                SweetProject.StoreOwnerArrayList.add(user);
-                SweetProject.setStoreOwnerArrayList(StoreOwnerArrayList);
+                SweetProject.storeOwnerarraylist.add(user);
+                SweetProject.setStoreOwnerarraylist(storeOwnerarraylist);
 
             }
 

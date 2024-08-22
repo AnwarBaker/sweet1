@@ -16,12 +16,12 @@ SweetProject s;
 
     @Before
     public void setUp() {
-        SweetProject.users.clear();
+        SweetProject.getUsers().clear();
     }
 
     @After
     public void tearDown() {
-        SweetProject.users.clear();
+        SweetProject.getUsers().clear();
     }
 
 
@@ -39,12 +39,12 @@ assertFalse(sign.in);
     @Test
     @When("User fills in the required details and submits the form.")
     public void userFillsInTheRequiredDetailsAndSubmitsTheForm() {
-        SweetProject.users.clear();
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
-        SweetProject.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
-        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com"));
-        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().clear();
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
         Signup sign = new Signup();
         User newUser = new User("newuser", "password", 1);
@@ -74,12 +74,12 @@ assertFalse(sign.in);
     @Test
     @Then("System creates a new account for the user.")
     public void systemCreatesANewAccountForTheUser() {
-        SweetProject.users.clear();
-        SweetProject.users.add(new User("anwar", "123", 1, "anwar123@gmail.com"));
-        SweetProject.users.add(new User("ahmad", "1234", 2, "ahmad1234@gmail.com"));
-        SweetProject.users.add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com"));
-        SweetProject.users.add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().clear();
+        SweetProject.getUsers().add(new User("anwar", "123", 1, "anwar123@gmail.com"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 2, "ahmad1234@gmail.com"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
         Signup sign = new Signup();
         User newUser = new User("newuser", "password", 1);
@@ -117,13 +117,13 @@ assertFalse(sign.in);
     @Test
     @Then("User enters credentials and logs in.")
     public void userEntersCredentialsAndLogsIn() {
-        SweetProject.users.clear();
+        SweetProject.getUsers().clear();
 
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
-        SweetProject.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
-        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com"));
-        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem1234@gmail.com"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3,"tarneem1234@gmail.com"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
 
         User validUser = new User("yasmine", "12345", 1);
@@ -164,12 +164,12 @@ assertFalse(s.isExist());
     @Then("User can update personal information and account settings.")
     public void userCanUpdatePersonalInformationAndAccountSettings() {
 
-        SweetProject.users.clear();
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com"));
-        SweetProject.users.add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
-        SweetProject.users.add(new User("yasmine", "12345", 2,"yasmine12345@gmail.com"));
-        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem1234@gmail.com"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().clear();
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 2,"ahmad1234@gmail.com"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 2,"yasmine12345@gmail.com"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3,"tarneem1234@gmail.com"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
         User updatedUser = new User("tarneem", "newpass", 3, "newemail@gmail.com");
 
@@ -213,13 +213,13 @@ assertFalse(s.isExist());
     @Test
     @Then("User uploads a new dessert creation with details.")
     public void userUploadsANewDessertCreationWithDetails() {
-        SweetProject.products.clear();
+        SweetProject.getProducts().clear();
         UserShareProducts.getUserproducts().clear();
 
-        SweetProject.products.add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutella","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,14,"not finished",3));
-        SweetProject.setProducts(SweetProject.products);
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutella cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,10,"finished",1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutella","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("cake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,14,"not finished",3));
+        SweetProject.setProducts(SweetProject.getProducts());
 
 
         UserShareProducts newProd  =new UserShareProducts("ds cake","Layers of chocolate cake with chocolate cream in the middle", 60.0);

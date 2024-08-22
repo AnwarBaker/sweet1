@@ -16,13 +16,13 @@ public class AdminReports {
                 if (city.equalsIgnoreCase("nablus")) {
                 SweetProject.nablusProdcuts.add(pro);
             } else if (pro.getCity().equalsIgnoreCase("jenin")) {
-                SweetProject.Jeninprodcuts.add(pro);
+                SweetProject.jeninprodcuts.add(pro);
             }
         }
         }
 
         SweetProject.setNablusProdcuts(SweetProject.nablusProdcuts);
-        SweetProject.setJeninprodcuts(SweetProject.Jeninprodcuts);
+        SweetProject.setJeninprodcuts(SweetProject.jeninprodcuts);
 
 
 
@@ -42,8 +42,8 @@ public class AdminReports {
         }
         for(ProductManegmwntSystem last : SweetProject.getProducts()) {
             if (last.getNumOfsales() == flag) {
-                SweetProject.Nablusbestselling.add(last);
-                SweetProject.setNablusbestselling(SweetProject.Nablusbestselling);
+                SweetProject.nablusbestselling.add(last);
+                SweetProject.setNablusbestselling(SweetProject.nablusbestselling);
                 System.out.println(last);
                 break;
             }
@@ -54,7 +54,7 @@ public class AdminReports {
         AdminReports a=new AdminReports();
         a.separateEachCity();
 
-        int flag= SweetProject.Jeninprodcuts.get(0).getNumOfsales();
+        int flag= SweetProject.jeninprodcuts.get(0).getNumOfsales();
 
         for(ProductManegmwntSystem prod : SweetProject.getJeninprodcuts()){
             if (prod.getNumOfsales() > flag) {
@@ -63,8 +63,8 @@ public class AdminReports {
         }
         for(ProductManegmwntSystem last : SweetProject.getJeninprodcuts()){
             if (last.getNumOfsales()==flag) {
-                SweetProject.Jeninbestselling.add(last);
-                SweetProject.setJeninbestselling(SweetProject.Jeninbestselling);
+                SweetProject.jeninbestselling.add(last);
+                SweetProject.setJeninbestselling(SweetProject.jeninbestselling);
                 System.out.println(last);
                 break;
             }
@@ -79,22 +79,22 @@ public class AdminReports {
                 String city = u.getCity();
                 if (city != null) {
                     if (city.equalsIgnoreCase("nablus")) {
-                        SweetProject.Nablususers.add(u);
+                        SweetProject.nablususers.add(u);
                     } else if (u.getCity().equalsIgnoreCase("jenin")) {
-                        SweetProject.JeninUsers.add(u);
+                        SweetProject.jeninUsers.add(u);
                     }
                 }
             }
 
-            SweetProject.setNablususers(SweetProject.Nablususers);
-            SweetProject.setJeninUsers(SweetProject.JeninUsers);
+            SweetProject.setNablususers(SweetProject.nablususers);
+            SweetProject.setJeninUsers(SweetProject.jeninUsers);
 
             System.out.println("Nablus Users: ");
-            for (User user : SweetProject.Nablususers) {
+            for (User user : SweetProject.nablususers) {
                 System.out.println(user);
             }
             System.out.println("Jenin Users: ");
-            for (User user : SweetProject.JeninUsers) {
+            for (User user : SweetProject.jeninUsers) {
                 System.out.println(user);
             }
 

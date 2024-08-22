@@ -17,7 +17,7 @@ public class Signup {
     public void addnewuser(User user) {
         SweetProject s=new SweetProject();
 
-        boolean exist = s.isValidUser(s.getUsers(), user.getUsername(), user.getPass());
+        boolean exist = s.isValidUser(SweetProject.getUsers(), user.getUsername(), user.getPass());
 
         if (!exist && (user.getUserlevel() == 1 || user.getUserlevel() == 2 || user.getUserlevel() == 3)) {
 

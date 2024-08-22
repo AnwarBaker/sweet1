@@ -37,26 +37,26 @@ public class AdminUserManagementTest {
     @Test
     @When("Admin can view a list of users \\(store owners, raw material suppliers)")
     public void adminCanViewAListOfUsersStoreOwnersRawMaterialSuppliers() {
-        SweetProject.users.clear();
-        SweetProject.users.add(new User("anwar", "123", 1));
-        SweetProject.users.add(new User("ahmad", "1234", 2));
-        SweetProject.users.add(new User("yasmine", "12345", 1));
-        SweetProject.users.add(new User("tarneem", "123456", 3));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().clear();
+        SweetProject.getUsers().add(new User("anwar", "123", 1));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 2));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3));
+        SweetProject.setUsers(SweetProject.getUsers());
 
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.setUsers(SweetProject.getUsers());
 
 
 
         s.showeachTypeofusers();
-int adminexpectsize= SweetProject.getAdminArrayList().size();
-        assertEquals(adminexpectsize, SweetProject.getAdminArrayList().size());
-        assertTrue(SweetProject.getAdminArrayList().stream().anyMatch(u -> u.getUsername().equals("anwar")));
-        assertTrue(SweetProject.getAdminArrayList().stream().anyMatch(u -> u.getUsername().equals("yasmine")));
+int adminexpectsize= SweetProject.getAdminArraylist().size();
+        assertEquals(adminexpectsize, SweetProject.getAdminArraylist().size());
+        assertTrue(SweetProject.getAdminArraylist().stream().anyMatch(u -> u.getUsername().equals("anwar")));
+        assertTrue(SweetProject.getAdminArraylist().stream().anyMatch(u -> u.getUsername().equals("yasmine")));
 
-int storesizeexpected=SweetProject.getStoreOwnerArrayList().size();
-        assertEquals(storesizeexpected, SweetProject.getStoreOwnerArrayList().size());
-        assertTrue(SweetProject.getStoreOwnerArrayList().stream().anyMatch(u -> u.getUsername().equals("ahmad")));
+int storesizeexpected=SweetProject.getStoreOwnerarraylist().size();
+        assertEquals(storesizeexpected, SweetProject.getStoreOwnerarraylist().size());
+        assertTrue(SweetProject.getStoreOwnerarraylist().stream().anyMatch(u -> u.getUsername().equals("ahmad")));
 
 int userizeexpected=SweetProject.getUsersArraylist().size();
         assertEquals(userizeexpected, SweetProject.getUsersArraylist().size());
@@ -64,14 +64,14 @@ int userizeexpected=SweetProject.getUsersArraylist().size();
 
 
 
-        SweetProject.setAdminArrayList(SweetProject.getAdminArrayList());
-        SweetProject.getAdminArrayList();
+        SweetProject.setAdminArraylist(SweetProject.getAdminArraylist());
+        SweetProject.getAdminArraylist();
 
         SweetProject.setUsersArraylist(SweetProject.getUsersArraylist());
         SweetProject.getUsersArraylist();
 
-        SweetProject.setStoreOwnerArrayList(SweetProject.getStoreOwnerArrayList());
-        SweetProject.getStoreOwnerArrayList();
+        SweetProject.setStoreOwnerarraylist(SweetProject.getStoreOwnerarraylist());
+        SweetProject.getStoreOwnerarraylist();
 
         SweetProject.setNablusbestselling(SweetProject.getNablusbestselling());
         SweetProject.getNablusbestselling();
@@ -104,13 +104,13 @@ int userizeexpected=SweetProject.getUsersArraylist().size();
 
 s.login(user);
 
-        SweetProject.users.clear();
+        SweetProject.getUsers().clear();
 
-        SweetProject.users.add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "Nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com", "Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "Nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com", "Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
 
 
@@ -131,12 +131,12 @@ s.login(user);
     @Test
     @When("Admin can update existing user details")
     public void adminCanUpdateExistingUserDetails() {
-        SweetProject.users.clear();
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().clear();
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
         User  updatedUser= new User("anwar", "225", 1, "anwar225@gmail.com", "Nablus");
 
         s.update(updatedUser);
@@ -173,7 +173,7 @@ s.login(user);
         User nonExistentUser = new User("nonexistent", "000", 0, "nonexistent@gmail.com", "Unknown");
         s.update(nonExistentUser);
         boolean userExists = false;
-        for (User user : SweetProject.users) {
+        for (User user : SweetProject.getUsers()) {
             if (user.getUsername().equalsIgnoreCase("nonexistent")) {
                 userExists = true;
                 break;
@@ -193,12 +193,12 @@ s.login(user);
     @Then("Admin can delete a user account")
     public void adminCanDeleteAUserAccount() {
 
-        SweetProject.users.clear();
-        SweetProject.users.add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "Nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 2, "tarneem123456@gmail.com", "Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().clear();
+        SweetProject.getUsers().add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "Nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 2, "tarneem123456@gmail.com", "Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
         User userToDelete = new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus");
 

@@ -29,13 +29,13 @@ SweetProject s;
     @Then("User can send messages to store owners or suppliers")
     public void userCanSendMessagesToStoreOwnersOrSuppliers() {
 
-        SweetProject.users.add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com", "Jenin"));
-        SweetProject.users.add(new User("rama", "123455", 2, "rama123455@gmail.com", "nablus"));
-        SweetProject.users.add(new User("tala", "12345566", 2, "tala12345566@gmail.com", "Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3, "ahmad1234@gmail.com", "Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1, "yasmine12345@gmail.com", "nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3, "tarneem123456@gmail.com", "Jenin"));
+        SweetProject.getUsers().add(new User("rama", "123455", 2, "rama123455@gmail.com", "nablus"));
+        SweetProject.getUsers().add(new User("tala", "12345566", 2, "tala12345566@gmail.com", "Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
         User u = new User("talaa", "12346", 3, "talaa12346@gmail.com", "Jenin");
         s.login(u);
         assertNotNull(u.getCity());
@@ -84,14 +84,14 @@ SweetProject s;
     @Test
     @Then("User submits feedback")
     public void userSubmitsFeedback() {
-        SweetProject.users.add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
-        SweetProject.users.add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
+        SweetProject.getUsers().add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
         User u=new User("talaa", "12346", 3,"talaa12346@gmail.com","Jenin");
         s.login(u);
-        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        SweetProject.products.add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
         FeedBack fe=new FeedBack();
         fe.userFeedback(u,1,"hi this is my feedback");
         fe.showFeedback();

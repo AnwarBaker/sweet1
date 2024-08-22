@@ -31,11 +31,11 @@ public class LoginTest {
 
         User u = new User("yasmine", "12345");
         s.login(u);
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
 
         boolean isValid = s.isValidUser(SweetProject.getUsers(), u.getUsername(), u.getPass());
@@ -56,11 +56,11 @@ public class LoginTest {
     @When("the user enters invalid credentials")
     public void theUserEntersInvalidCredentials() {
 
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
 
         boolean isValidInvalidUser = s.isValidUser(SweetProject.getUsers(), "invalidUser", "12345");
@@ -92,11 +92,11 @@ assertFalse(s.isExist());
     public void anErrorMessageShouldBeDisplayed() {
         User u = new User("fadi", "123548");
         s.login(u);
-        SweetProject.users.add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
-        SweetProject.users.add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
-        SweetProject.users.add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
-        SweetProject.users.add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().add(new User("anwar", "123", 1,"anwar123@gmail.com","Jenin"));
+        SweetProject.getUsers().add(new User("ahmad", "1234", 3,"ahmad1234@gmail.com","Nablus"));
+        SweetProject.getUsers().add(new User("yasmine", "12345", 1,"yasmine12345@gmail.com","nablus"));
+        SweetProject.getUsers().add(new User("tarneem", "123456", 3,"tarneem123456@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
 
 
         boolean isValid = s.isValidUser(SweetProject.getUsers(), u.getUsername(), u.getPass());

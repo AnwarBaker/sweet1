@@ -32,11 +32,11 @@ SweetProject s;
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
-        SweetProject.setProducts(SweetProject.products);
+        SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
+        SweetProject.setProducts(SweetProject.getProducts());
         UserRecipes u=new UserRecipes();
         ProductManegmwntSystem prod = new ProductManegmwntSystem("Nutel cake", "Layers of chocolate cake with chocolate cream on the top", 60.0, 10.0, 10, "finished", 1);
         u.recipesSearch(prod);
@@ -60,11 +60,11 @@ SweetProject s;
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         UserRecipes u=new UserRecipes();
-        SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
-        SweetProject.setProducts(SweetProject.products);
+        SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
+        SweetProject.setProducts(SweetProject.getProducts());
         u.filterRecipes("Nutela");
 
         String actualOutput = outContent.toString().replace("\r\n", "\n").replace("\r", "\n");
@@ -81,11 +81,11 @@ SweetProject s;
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         UserRecipes u=new UserRecipes();
-        SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
-        SweetProject.setProducts(SweetProject.products);
+        SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
+        SweetProject.setProducts(SweetProject.getProducts());
         u.filterRecipes("Nutela");
 
         String actualOutput = outContent.toString().replace("\r\n", "\n").replace("\r", "\n");
@@ -124,11 +124,11 @@ assertFalse(store.in);
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
-        SweetProject.setProducts(SweetProject.products);
+        SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
+        SweetProject.setProducts(SweetProject.getProducts());
 
         store.buyproducts("1,2");
 
@@ -155,11 +155,11 @@ assertFalse(store.in);
         UserStoreClass store = new UserStoreClass();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
-        SweetProject.setProducts(SweetProject.products);
+        SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
+        SweetProject.setProducts(SweetProject.getProducts());
 
         store.buyproducts("a,b");
 
@@ -179,11 +179,11 @@ assertFalse(store.in);
         System.setOut(new PrintStream(outContent));
 
 
-        SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
-        SweetProject.setProducts(SweetProject.products);
+        SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
+        SweetProject.setProducts(SweetProject.getProducts());
 
         store.buyproducts("");
 
@@ -225,11 +225,11 @@ assertFalse(store.in);
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        SweetProject.products.clear();
-        SweetProject.products.add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
-        SweetProject.setProducts(SweetProject.products);
+        SweetProject.getProducts().clear();
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutel cake","Layers of chocolate cake with chocolate cream in the top", 60.0,10.0,10,"finished",1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nulla popcake","Layers of chocolate cake with chocolate cream in the middle", 60.0,10.0,12,"not finished",2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutela juice","Layers of chocolate cake with chocolate cream in the front", 60.0,10.0,14,"not finished",3));
+        SweetProject.setProducts(SweetProject.getProducts());
 
         store.buyproducts("1,2");
 

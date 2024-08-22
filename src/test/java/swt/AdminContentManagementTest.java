@@ -31,9 +31,9 @@ assertFalse(i.in);
     @Then("Admin can add, update, or delete recipes and posts shared by users")
     public void adminCanAddUpdateOrDeleteRecipesAndPostsSharedByUsers() {
 
-        SweetProject.products.add(new ProductManegmwntSystem("Nutella cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0, 10.0, 10, "finished", 1));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutella cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0, 10.0, 12, "not finished", 2));
-        SweetProject.products.add(new ProductManegmwntSystem("Nutella cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0, 10.0, 14, "not finished", 3));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutella cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0, 10.0, 10, "finished", 1));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutella cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0, 10.0, 12, "not finished", 2));
+        SweetProject.getProducts().add(new ProductManegmwntSystem("Nutella cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0, 10.0, 14, "not finished", 3));
 
         UserShareProducts prod = new UserShareProducts("cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0);
         UserShareProducts pro = new UserShareProducts("ds cake", "Layers of chocolate cake with chocolate cream in the middle", 60.0);
@@ -111,17 +111,17 @@ assertFalse(a.in);
 
     @Then("Admin can respond to or moderate feedback")
     public void adminCanRespondToOrModerateFeedback() {
-SweetProject.users.clear();
+SweetProject.getUsers().clear();
 FeedBack.getFeedBacklist().clear();
 AdminFeedback.getAdminresponse().clear();
-        SweetProject.users.add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
-        SweetProject.users.add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
-        SweetProject.setUsers(SweetProject.users);
+        SweetProject.getUsers().add(new User("rama", "123455", 2,"rama123455@gmail.com","nablus"));
+        SweetProject.getUsers().add(new User("tala", "12345566", 2,"tala12345566@gmail.com","Jenin"));
+        SweetProject.setUsers(SweetProject.getUsers());
         User u=new User("talaa", "12346", 3,"talaa12346@gmail.com","Jenin");
         s.login(u);
-        SweetProject.products.add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
-        SweetProject.products.add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
-        SweetProject.products.add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(1,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",5));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(2,"Nutella cake","Jenin","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",10));
+        SweetProject.getProducts().add(new ProductManegmwntSystem(3,"Nutella cake","Nablus","Layers of chocolate cake with chocolate cream in the middle",10.0,60.0,"finished",12));
         FeedBack fe=new FeedBack();
         fe.userFeedback(u,1,"this is my msg to you");
         User uuu=new User("eeee", "1", 1,"eeee1@gmail.com","Jenin");
@@ -136,14 +136,14 @@ AdminFeedback.getAdminresponse().clear();
         assertEquals("this is my response to you", AdminFeedback.getAdminresponse().get(0).getResponse());
         assertEquals("talaa", AdminFeedback.getAdminresponse().get(0).getUsername());
 
-int expectedproductssize=SweetProject.products.size();
-        assertEquals(expectedproductssize, SweetProject.products.size());
-        assertEquals("Nutella cake", SweetProject.products.get(0).getProductName());
+int expectedproductssize=SweetProject.getProducts().size();
+        assertEquals(expectedproductssize, SweetProject.getProducts().size());
+        assertEquals("Nutella cake", SweetProject.getProducts().get(0).getProductName());
 
-        String expectedcity=SweetProject.products.get(0).getCity();
-        assertEquals(expectedcity, SweetProject.products.get(0).getCity());
-        assertEquals(2, SweetProject.users.size());
-        assertEquals("rama", SweetProject.users.get(0).getUsername());
+        String expectedcity=SweetProject.getProducts().get(0).getCity();
+        assertEquals(expectedcity, SweetProject.getProducts().get(0).getCity());
+        assertEquals(2, SweetProject.getUsers().size());
+        assertEquals("rama", SweetProject.getUsers().get(0).getUsername());
 
     }
 
