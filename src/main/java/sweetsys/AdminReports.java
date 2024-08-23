@@ -14,15 +14,15 @@ public class AdminReports {
             String city = pro.getCity();
             if (city != null) {
                 if (city.equalsIgnoreCase("nablus")) {
-                SweetProject.nablusProdcuts.add(pro);
+                SweetProject.getNablusProdcuts().add(pro);
             } else if (pro.getCity().equalsIgnoreCase("jenin")) {
-                SweetProject.jeninprodcuts.add(pro);
+                SweetProject.getJeninprodcuts().add(pro);
             }
         }
         }
 
-        SweetProject.setNablusProdcuts(SweetProject.nablusProdcuts);
-        SweetProject.setJeninprodcuts(SweetProject.jeninprodcuts);
+        SweetProject.setNablusProdcuts(SweetProject.getNablusProdcuts());
+        SweetProject.setJeninprodcuts(SweetProject.getJeninprodcuts());
 
 
 
@@ -49,6 +49,7 @@ public class AdminReports {
             }
         }
     }
+
     public void showBestSellingForJenin(){
 
         AdminReports a=new AdminReports();

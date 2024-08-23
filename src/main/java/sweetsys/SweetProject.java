@@ -254,7 +254,7 @@ ProductManegmwntSystem prod;
 
   if(!tesTxist){
       int last=SweetProject.getProducts().size();
-      prod.setUniq(last);
+      prod.setUniq(last+1);
       products.add(prod);
   }
   setProducts(products);

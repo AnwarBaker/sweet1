@@ -69,13 +69,13 @@ public class AdminFeedback {
     public String toString() {
         return "AdminFeedback{" +
                 "username='" + username + '\'' +
-                ", AdminName='" + adminname + '\'' +
-                ", Response='" + response + '\'' +
+                ", adminname='" + adminname + '\'' +
+                ", response='" + response + '\'' +
+                ", responseNumber=" + responseNumber +
                 '}';
     }
 
-
-    public void adminResponsemessege(User user,int num,String resmsg) {
+    public void adminResponsemessege(User user, int num, String resmsg) {
 
 
         String name = user.getUsername();
