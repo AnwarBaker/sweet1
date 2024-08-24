@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 public class SalesReport {
 
     private boolean userIn;
-    private static final Logger logger = Logger.getLogger(MainSweetSystem.class.getName());
+    private static final Logger logger = Logger.getLogger(SalesReport.class.getName());
 
     public boolean isUserIn() {
         return userIn;
