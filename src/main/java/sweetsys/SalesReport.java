@@ -25,7 +25,7 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
     public void showBestproduct(){
 
         logger.log(Level.WARNING,"Best Product :\n");
-        try{
+
         int flag=SweetProject.products.get(0).getNumOfsales();
 
         System.out.println("Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n");
@@ -42,7 +42,7 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
                 System.out.println(last);
                 break;
             }
-        }}catch (Exception e){e.printStackTrace();}
+        }
 
     }
 
