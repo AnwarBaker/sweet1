@@ -124,7 +124,7 @@ ProductManegmwntSystem prod;
 
     public  boolean isValidUser(List<User> users, String name, String pass) {
         for (User search : users) {
-            if (search.getUsername().equals(name) && search.getPass().equals(pass)) {
+            if (search.getUsername().equalsIgnoreCase(name) && search.getPass().equalsIgnoreCase(pass)) {
                this.existdataMessage="User Exists";
                 return true;
 
