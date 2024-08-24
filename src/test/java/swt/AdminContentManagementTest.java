@@ -44,10 +44,8 @@ assertFalse(i.IN);
         ContentSection c = new ContentSection();
         c.updateUserrecipes(toupdatepro);
 
-      boolean updated = false;
         for (UserShareProducts p : UserShareProducts.getUserproducts()) {
             if (p.getProductName().equalsIgnoreCase("cake") && p.getExpectedprice() == 20.0) {
-                updated = true;
                 break;
             }
         }
@@ -55,10 +53,8 @@ assertFalse(i.IN);
 
         c.deleteUserrecipes(toupdatepro);
 
-        boolean deleted = true;
         for (UserShareProducts p : UserShareProducts.getUserproducts()) {
             if (p.getProductName().equalsIgnoreCase("cake")) {
-                deleted = false;
                 break;
             }
         }

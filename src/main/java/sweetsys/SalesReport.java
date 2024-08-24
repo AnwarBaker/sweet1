@@ -1,8 +1,10 @@
 package sweetsys;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class SalesReport {
 
     private boolean userIn;
+    private static final Logger logger = Logger.getLogger(MainSweetSystem.class.getName());
 
     public boolean isUserIn() {
         return userIn;
@@ -10,7 +12,6 @@ public class SalesReport {
 
     public SalesReport(){
         //not now
-
     }
     public void shoewSalesreport(){
 
@@ -23,8 +24,8 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
 
     public void showBestproduct(){
 
-        System.out.println("Best Product :\n");
-
+        logger.log(Level.WARNING,"Best Product :\n");
+        try{
         int flag=SweetProject.products.get(0).getNumOfsales();
 
         System.out.println("Product Name:\tDescrption:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrice\tEwarning:\tCondition:\tNum_OF_Sales:\tUniq Num:\n");
@@ -41,7 +42,7 @@ System.out.println(prod.getProductName()+"\t"+prod.getProductDescription()+"\t\t
                 System.out.println(last);
                 break;
             }
-        }
+        }}catch (Exception e){e.printStackTrace();}
 
     }
 
