@@ -50,7 +50,7 @@ public class StoreOwnerProductManegmentTest {
 
         s.productlogin(prod);
     SweetProject.setProducts(SweetProject.getProducts());
-        int expected=SweetProject.getProducts().size();
+
 
     s.addnewProduct(prod);
 
@@ -75,7 +75,7 @@ for(ProductManegmwntSystem pp :SweetProject.getProducts()){
     System.out.println(pp);
 }
         assertNotNull("Product should be added", addedProduct);
-//        assertEquals("Unique ID should be set correctly", expected, addedProduct.getUniq());
+
 
     }
 

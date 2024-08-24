@@ -23,7 +23,7 @@ public class StoreOwnerOrderManegStepsTest {
     @Given("Store owner navigates to the Order Management section.")
     public void storeOwnerNavigatesToTheOrderManagementSection() {
         OrderManegmentClass order =new OrderManegmentClass();
-   assertFalse(order.isIn());
+   assertFalse(order.IN);
     }
 
     @Test

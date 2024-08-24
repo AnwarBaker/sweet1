@@ -1,5 +1,6 @@
 package sweetsys;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class OrderManegmentClass {
@@ -10,9 +11,9 @@ public class OrderManegmentClass {
     private int ordernum;
     private String orderstatus;
 
-    static protected ArrayList<OrderManegmentClass> orderlist=new ArrayList<>();
+    protected static List<OrderManegmentClass> orderlist=new ArrayList<>();
 
-      public static boolean in;
+      public static final boolean IN=false;
 
     public OrderManegmentClass(){}
 
@@ -40,14 +41,14 @@ public class OrderManegmentClass {
         return discount;
     }
 
-    public static ArrayList<OrderManegmentClass> getOrderlist() {
+
+    public static List<OrderManegmentClass> getOrderlist() {
         return orderlist;
     }
 
-    public static void setOrderlist(ArrayList<OrderManegmentClass> orderlist) {
+    public static void setOrderlist(List<OrderManegmentClass> orderlist) {
         OrderManegmentClass.orderlist = orderlist;
     }
-
 
     public int getOrdernum() {
         return ordernum;
@@ -84,9 +85,7 @@ public class OrderManegmentClass {
                 '}';
     }
 
-    public boolean isIn() {
-        return in;
-    }
+
 
 
 public void showOrders(){

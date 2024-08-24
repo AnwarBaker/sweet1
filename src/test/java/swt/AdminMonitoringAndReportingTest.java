@@ -40,7 +40,7 @@ assertFalse(s.isExist());
     @When("Admin navigates to the Reports section")
     public void adminNavigatesToTheReportsSection() {
         AdminReports admin=new AdminReports();
-assertFalse(admin.in);
+assertFalse(admin.IN);
     }
 
 
@@ -120,7 +120,7 @@ assertFalse(admin.in);
     @When("Admin navigates to the User Statistics section")
     public void adminNavigatesToTheUserStatisticsSection() {
 AdminReports a=new AdminReports();
-assertFalse(a.in);
+assertFalse(a.IN);
     }
 
 

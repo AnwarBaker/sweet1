@@ -39,7 +39,7 @@ public class StoreOwnerAccountManagementTest {
         User  updatedUser= new User("tarneem", "225511", 2, "tarneem225511@gmail.com", "Nablus");
 
         StoreOwnerAccountManegment store =new StoreOwnerAccountManegment();
-        store.UpdateStoreOwnerAccount(updatedUser);
+        store.updateStoreowneraccount(updatedUser);
 
         User retrievedUser = SweetProject.getUsers().stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase("tarneem"))

@@ -50,7 +50,7 @@ SweetProject s;
     @Given("User navigates to the Recipes section")
     public void userNavigatesToTheRecipesSection() {
         UserRecipes u=new UserRecipes();
-        assertFalse(u.in);
+        assertFalse(u.IN);
     }
 
 
@@ -111,7 +111,7 @@ SweetProject s;
     @Given("User navigates to the Store section")
     public void userNavigatesToTheStoreSection() {
         UserStoreClass store =new UserStoreClass();
-assertFalse(store.in);
+assertFalse(store.IN);
     }
 
 

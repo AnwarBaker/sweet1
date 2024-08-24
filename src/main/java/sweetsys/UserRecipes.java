@@ -1,13 +1,12 @@
 package sweetsys;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
+
 
 public class UserRecipes {
 
-    private static final Logger logger = Logger.getLogger(UserRecipes.class.getName());
-    
-    public boolean in;
+
+    public static final boolean IN=false;
 
     public void recipesSearch(ProductManegmwntSystem prod){
 

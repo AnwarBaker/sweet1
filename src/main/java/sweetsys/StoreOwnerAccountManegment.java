@@ -7,7 +7,7 @@ private boolean come;
         return come;
     }
 
-    public void UpdateStoreOwnerAccount(User user){
+    public void updateStoreowneraccount(User user){
 
         if(user.getUserlevel()==2){
             for(int i = 0; i < SweetProject.getUsers().size(); i++){

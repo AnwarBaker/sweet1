@@ -1,19 +1,20 @@
 package sweetsys;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 import static java.lang.System.exit;
 
 public class StoreOwnerMessages {
-    public boolean in;
+    public static final boolean IN=false;
   private String storownerename;
   private String username;
   private String message;
   private int messagenum;
 
 
-  static protected ArrayList<StoreOwnerMessages> messegaesList =new ArrayList<>();
+  protected static List<StoreOwnerMessages> messegaesList =new ArrayList<>();
 
 
     public StoreOwnerMessages(String storownereName, String username, String message, int messagenum) {
@@ -56,11 +57,11 @@ public class StoreOwnerMessages {
         this.messagenum = messagenum;
     }
 
-    public static ArrayList<StoreOwnerMessages> getMessegaesList() {
+    public static List<StoreOwnerMessages> getMessegaesList() {
         return messegaesList;
     }
 
-    public static void setMessegaesList(ArrayList<StoreOwnerMessages> messegaesList) {
+    public static void setMessegaesList(List<StoreOwnerMessages> messegaesList) {
         StoreOwnerMessages.messegaesList = messegaesList;
     }
 

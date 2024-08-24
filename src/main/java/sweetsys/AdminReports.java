@@ -4,7 +4,7 @@ public class AdminReports {
 
 
 
-    public boolean in;
+    public static final boolean IN=false;
 
     public void separateEachCity() {
 

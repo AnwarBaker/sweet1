@@ -1,6 +1,7 @@
 package sweetsys;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MessagingClass {
@@ -9,7 +10,7 @@ public class MessagingClass {
      private String recivername;
      private String meessage;
 
-     static protected ArrayList<MessagingClass> messages =new ArrayList<>();
+     protected static List<MessagingClass> messages =new ArrayList<>();
 
     public MessagingClass(String senderName, String reciverName, String message) {
         sendername = senderName;
@@ -41,15 +42,15 @@ public class MessagingClass {
         this.meessage = meessage;
     }
 
-    public static ArrayList<MessagingClass> getMessages() {
+    public static List<MessagingClass> getMessages() {
         return messages;
     }
 
-    public static void setMessages(ArrayList<MessagingClass> messages) {
+    public static void setMessages(List<MessagingClass> messages) {
         MessagingClass.messages = messages;
     }
 
-    public boolean in;
+    public static final boolean IN=false;
 
     @Override
     public String toString() {

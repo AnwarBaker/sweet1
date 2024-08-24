@@ -4,7 +4,7 @@ public class User {
     String username;
     String pass;
     int userlevel;
-    String Email;
+    String email;
     String city;
 
     public User(String username,String pass){
@@ -19,18 +19,18 @@ public class User {
 
     }
 
-    public User(String username,String pass, int userlevel,String Email){
+    public User(String username,String pass, int userlevel,String email){
         this.username=username;
         this.pass=pass;
         this.userlevel=userlevel;
-        this.Email=Email;
+        this.email=email;
     }
 
     public User(String username, String pass, int userlevel, String email, String city) {
         this.username = username;
         this.pass = pass;
         this.userlevel = userlevel;
-        Email = email;
+        this.email = email;
         this.city = city;
     }
 
@@ -52,7 +52,7 @@ public class User {
                 "username='" + username + '\'' +
                 ", pass='" + pass + '\'' +
                 ", userlevel=" + userlevel +
-                ", Email='" + Email + '\'' +
+                ", Email='" + email + '\'' +
                 ", city='" + city + '\'' +
                 '}'+"\n";
     }
@@ -64,11 +64,11 @@ public class User {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getCity() {

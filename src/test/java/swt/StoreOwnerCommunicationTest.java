@@ -24,7 +24,7 @@ public class StoreOwnerCommunicationTest {
     @When("Store owner navigates to the Messaging section")
     public void storeOwnerNavigatesToTheMessagingSection() {
         StoreOwnerMessages store =new StoreOwnerMessages();
-        assertFalse(store.in);
+        assertFalse(store.IN);
     }
 
 

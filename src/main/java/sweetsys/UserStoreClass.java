@@ -1,7 +1,7 @@
 package sweetsys;
 import java.util.ArrayList;
 public class UserStoreClass {
-    public boolean in;
+    public static final boolean IN=false;
 
     public UserStoreClass(){
         //dd

@@ -20,7 +20,7 @@ SweetProject s;
     @Given("User navigates to the Messaging section")
     public void userNavigatesToTheMessagingSection() {
         MessagingClass messege=new MessagingClass();
-        assertFalse(messege.in);
+        assertFalse(messege.IN);
     }
 
 
