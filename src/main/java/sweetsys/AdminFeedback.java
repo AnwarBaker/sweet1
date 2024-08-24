@@ -74,7 +74,9 @@ public class AdminFeedback {
                 ", responseNumber=" + responseNumber +
                 '}';
     }
-
+public void login(AdminFeedback a){
+        //f
+}
     public void adminResponsemessege(User user, int num, String resmsg) {
 
 

@@ -1,10 +1,11 @@
 package sweetsys;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FeedBack {
 
-    public boolean in;
+    public static final boolean IN=false;
     private String feedbackMessage;
     private int feednumber;
 private String senderName;
@@ -17,7 +18,7 @@ private String productName;
         this.productName = productName;
     }
 
-    static protected ArrayList<FeedBack> feedBacklist =new ArrayList<>();
+    protected static List<FeedBack> feedBacklist =new ArrayList<>();
 
 
     public String getProductName() {
@@ -44,11 +45,12 @@ private String productName;
         this.senderName = senderName;
     }
 
-    public static ArrayList<FeedBack> getFeedBacklist() {
+
+    public static List<FeedBack> getFeedBacklist() {
         return feedBacklist;
     }
 
-    public static void setFeedBacklist(ArrayList<FeedBack> feedBacklist) {
+    public static void setFeedBacklist(List<FeedBack> feedBacklist) {
         FeedBack.feedBacklist = feedBacklist;
     }
 

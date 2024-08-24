@@ -33,9 +33,7 @@ public class StoreOwnerCommunicationTest {
     public void storeOwnerCanSendMessagesToUsersOrSuppliers() {
 
         SweetProject.getUsers().clear();
-        MessagingClass mmmm = new MessagingClass();
         MessagingClass.getMessages().clear();
-        StoreOwnerMessages sto = new StoreOwnerMessages();
         StoreOwnerMessages.getMessegaesList().clear();
 
         SweetProject.getUsers().add(new User("anwar", "123", 1, "anwar123@gmail.com", "Jenin"));

@@ -73,7 +73,7 @@ SweetProject s;
     @Given("User navigates to the Feedback section")
     public void userNavigatesToTheFeedbackSection() {
         FeedBack feed=new FeedBack();
-        assertFalse(feed.in);
+        assertFalse(feed.IN);
     }
 
 

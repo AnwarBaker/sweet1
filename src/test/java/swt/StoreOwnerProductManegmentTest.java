@@ -189,15 +189,6 @@ ProductManegmwntSystem product=new ProductManegmwntSystem();
         product.setCity("jenin");
         product.setNumOfsales(10);
 
-        product.getUniq();
-        product.getCity();
-        product.getProductDescription();
-        product.getProductName();
-        product.getCondition();
-        product.getNumOfsales();
-        product.getEarning();
-        product.getPrice();
-        product.getDiscount();
 
  ProductManegmwntSystem newproduct=new ProductManegmwntSystem( product.getUniq(),product.getProductName(),product.getCity(),product.getProductDescription(),product.getPrice());
  ProductManegmwntSystem secnewproduct=new ProductManegmwntSystem(product.getProductName(),product.getProductDescription(),product.getPrice());
@@ -205,6 +196,13 @@ ProductManegmwntSystem product=new ProductManegmwntSystem();
  ProductManegmwntSystem covercons=new ProductManegmwntSystem(product.getProductName(),product.getProductDescription(),product.getNumOfsales(),product.getCondition(),product.getUniq());
  ProductManegmwntSystem uniqcons=new ProductManegmwntSystem(product.getUniq());
  ProductManegmwntSystem newcons =new ProductManegmwntSystem(product.getUniq(),product.getDiscount());
+        newproduct.prologin(newproduct);
+        secnewproduct.prologin(secnewproduct);
+        thirdnewproduct.prologin(thirdnewproduct);
+        covercons.prologin(covercons);
+        uniqcons.prologin(uniqcons);
+        newcons.prologin(newcons);
+
 
     }
 

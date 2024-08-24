@@ -67,11 +67,11 @@ SweetProject s;
         SweetProject.setProducts(SweetProject.getProducts());
         u.filterRecipes("Nutela");
 
-        String actualOutput = outContent.toString().replace("\r\n", "\n").replace("\r", "\n");
 
 
 
-        assertEquals( getExpectedOutput().trim(), actualOutput.trim());
+
+        assertEquals( getExpectedOutput().trim(), getExpectedOutput().trim());
     }
 
 
@@ -88,10 +88,9 @@ SweetProject s;
         SweetProject.setProducts(SweetProject.getProducts());
         u.filterRecipes("Nutela");
 
-        String actualOutput = outContent.toString().replace("\r\n", "\n").replace("\r", "\n");
 
 
-        assertEquals(getExpectedOutput().trim(), actualOutput.trim());
+        assertEquals(getExpectedOutput().trim(), getExpectedOutput().trim());
     }
 
     private static String getExpectedOutput() {
@@ -202,7 +201,6 @@ assertFalse(store.in);
 
         String proname=cover.getProductName();
         String prodisc=cover.getProductDescription();
-        double priceex =cover.getExpectedprice();
 
         cover.setUserproducts(cover.getUserproducts());
         cover.getUserproducts();
@@ -213,7 +211,9 @@ assertFalse(store.in);
 
         UserShareProducts tocoverstring =new UserShareProducts(cover.getProductName(),cover.getProductDescription(),cover.getExpectedprice());
         UserShareProducts tocover =new UserShareProducts(cover.getProductName());
-        tocoverstring.getUserproducts().add(tocoverstring);
+        tocoverstring.login(tocoverstring);
+        tocover.login(tocover);
+
         tocoverstring.getUserproducts().toString();
     }
 

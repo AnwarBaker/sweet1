@@ -33,7 +33,7 @@ public class UserRecipes {
 
             for(ProductManegmwntSystem pro : SweetProject.getProducts()){
                 if (!n.contains(pro.getUniq())){
-                System.out.println(pro);
+                System.out.println(pro.getUniq()+"\t"+pro.getProductName()+"\t"+pro.getProductDescription()+"\t"+pro.getPrice());
             }
 
         }

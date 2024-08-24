@@ -112,15 +112,12 @@ assertFalse(s.isExist());
         usercover.setUsername("jksdhj");
         usercover.setEmail("jksdhksd");
 
-        usercover.getUserlevel();
-        usercover.getCity();
-        usercover.getPass();
-        usercover.getEmail();
-        usercover.getUsername();
 
 
         User firstusercover=new User(usercover.getUsername(),usercover.getPass(),usercover.getCity());
         User citycover=new User(usercover.getCity());
+        s.login(firstusercover);
+        s.login(citycover);
 
 }
 

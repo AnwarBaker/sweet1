@@ -85,7 +85,7 @@ assertFalse(a.IN);
     @When("Admin can view all feedback from users")
     public void adminCanViewAllFeedbackFromUsers() {
         FeedBack feed=new FeedBack();
-        assertFalse(feed.in);
+        assertFalse(feed.IN);
 
         AdminFeedback adminfeed=new AdminFeedback();
 
@@ -95,14 +95,12 @@ assertFalse(a.IN);
         adminfeed.setUsername("hjgsd");
         adminfeed.setResponseNumber(1);
 
-        adminfeed.getResponse();
-        adminfeed.getAdminname();
-        adminfeed.getResponseNumber();
-        adminfeed.getUsername();
+
 
         AdminFeedback firstadminfeed=new AdminFeedback(adminfeed.getAdminname(),adminfeed.getResponseNumber(),adminfeed.getUsername(), adminfeed.getResponse());
         AdminFeedback admincover=new AdminFeedback(adminfeed.getAdminname(),adminfeed.getResponseNumber(),adminfeed.getResponse(),adminfeed.getUsername());
-
+        firstadminfeed.login(firstadminfeed);
+        admincover.login(admincover);
     }
 
 

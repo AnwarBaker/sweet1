@@ -50,16 +50,12 @@ assertFalse(sign.IN);
         User newUser = new User("newuser", "password", 1);
         sign.addnewuserforuseronly(newUser);
 
-        boolean userAdded = SweetProject.getUsers().stream()
-                .anyMatch(u -> u.getUsername().equals("newuser") && u.getPass().equals("password") && u.getUserlevel() == 1);
-       // assertTrue(userAdded);
+
 
         User differentLevelUser = new User("differentlevel", "password", 3);
         sign.addnewuserforuseronly(differentLevelUser);
 
-        boolean userNotAdded = SweetProject.getUsers().stream()
-                .noneMatch(u -> u.getUsername().equals("differentlevel"));
-//        assertTrue(userNotAdded);
+
 
         User existingUser = new User("anwar", "123", 1);
         sign.addnewuserforuseronly(existingUser);
@@ -85,24 +81,16 @@ assertFalse(sign.IN);
         User newUser = new User("newuser", "password", 1);
         sign.addnewuserforuseronly(newUser);
 
-        boolean userAdded = SweetProject.getUsers().stream()
-                .anyMatch(u -> u.getUsername().equals("newuser") && u.getPass().equals("password") && u.getUserlevel() == 1);
-
-        //assertTrue("New user account should be created", userAdded);
 
         User existingUser = new User("anwar", "123", 1);
         sign.addnewuserforuseronly(existingUser);
 
-        int expectedSize = 5;
-        //assertEquals("User list size should remain unchanged if user already exists", expectedSize, SweetProject.getUsers().size());
+
 
         User differentLevelUser = new User("anotheruser", "password", 3);
         sign.addnewuserforuseronly(differentLevelUser);
 
-        boolean userNotAdded = SweetProject.getUsers().stream()
-                .noneMatch(u -> u.getUsername().equals("anotheruser"));
-
-//        assertTrue("User should not be added if user level is not 1", userNotAdded);
+assertFalse(s.isExist());
 
     }
 

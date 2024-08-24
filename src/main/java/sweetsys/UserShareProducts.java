@@ -59,6 +59,10 @@ public class UserShareProducts {
         this.expectedprice = expectedprice;
     }
 
+    public void login(UserShareProducts us ){
+      //g
+    }
+
     @Override
     public String toString() {
         return "User Products{" +

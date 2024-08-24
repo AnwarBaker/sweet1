@@ -117,6 +117,9 @@ public class ProductManegmwntSystem {
         this.numOfsales = numOfsales;
         this.discount = discount;
     }
+    public void prologin(ProductManegmwntSystem p){
+        //f
+    }
 
     public ProductManegmwntSystem(int uniq, double discount) {
         this.uniq = uniq;
